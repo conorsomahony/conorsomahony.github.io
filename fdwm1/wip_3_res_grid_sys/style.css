@@ -1,0 +1,238 @@
+/* 
+ * Defaults 
+ */
+
+nav,
+header,
+footer {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    margin: 0;
+    /* everything is to the edges */
+    font-family: 'Roboto', sans-serif;
+        background-image: url(images/header-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header button
+{
+    border: 2px white solid;
+    background-color: rgba(0,0,0,0);
+}
+
+header h1,h2,h3{
+    color: white;
+    text-transform: uppercase;
+}
+
+
+/*
+ * Navigation Bar
+ *
+ * Adapted from the following:
+ * https://www.udemy.com/ultimate-web/learn/v4/t/lecture/6786614?start=0 
+ */
+
+.logo {
+    float: left;
+    /*    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;*/
+}
+
+nav {
+    width: 100%;
+    margin: 0;
+}
+
+nav ul {
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    /* any elements that are too big will be clipped */
+    margin: 0;
+    padding: 0;
+}
+
+ul.topnav li {
+    list-style: none;
+    /* remove bullets */
+    float: right;
+}
+
+ul.topnav li a {
+    display: inline-block;
+    text-decoration: none;
+    /* remove underline */
+    min-height: 16px;
+    /* minimum font size */
+    text-align: center;
+    padding: 16px;
+    text-transform: uppercase;
+    color: white;
+}
+
+ul.topnav li a:hover {
+    background-color: lightgray;
+    color: white;
+}
+
+ul.topnav li.dropdownIcon {
+    display: none;
+    /* hide menu icon by default */
+}
+
+*/
+/*
+ * Responsive Grid System 
+ * 
+ * Adapted from the following: 
+ * http://www.responsivegridsystem.com/ 
+ */
+
+/*  SECTIONS  */
+
+.section {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+
+.col {
+    display: block;
+    float: left;
+    margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child {
+    margin-left: 0;
+}
+
+/*  GROUPING  */
+
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    zoom: 1;
+    /* For IE 6/7 */
+}
+
+
+/*  GRID OF TWELVE  */
+
+.span_12_of_12 {
+    width: 100%;
+}
+
+.span_11_of_12 {
+    width: 91.53%;
+}
+
+.span_10_of_12 {
+    width: 83.06%;
+}
+
+.span_9_of_12 {
+    width: 74.6%;
+}
+
+.span_8_of_12 {
+    width: 66.13%;
+}
+
+.span_7_of_12 {
+    width: 57.66%;
+}
+
+.span_6_of_12 {
+    width: 49.2%;
+}
+
+.span_5_of_12 {
+    width: 40.73%;
+}
+
+.span_4_of_12 {
+    width: 32.26%;
+}
+
+.span_3_of_12 {
+    width: 23.8%;
+}
+
+.span_2_of_12 {
+    width: 15.33%;
+}
+
+.span_1_of_12 {
+    width: 6.866%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+    .col {
+        margin: 1% 0 1% 0%;
+    }
+
+    .span_1_of_12,
+    .span_2_of_12,
+    .span_3_of_12,
+    .span_4_of_12,
+    .span_5_of_12,
+    .span_6_of_12,
+    .span_7_of_12,
+    .span_8_of_12,
+    .span_9_of_12,
+    .span_10_of_12,
+    .span_11_of_12,
+    .span_12_of_12 {
+        width: 100%;
+    }
+
+    ul.topnav li {
+        display: none;
+    }
+
+    ul.topnav li.dropdownIcon {
+        display: block;
+        float: right;
+    }
+
+    ul.topnav.responsive li.dropdownIcon {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    ul.topnav.responsive {
+        position: relative;
+    }
+
+    ul.topnav.responsive li {
+        display: inline;
+        float: none;
+    }
+
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
+    }
+}
+
+/*
+ * END OF: Responsive Grid System
+ */
