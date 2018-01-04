@@ -9,11 +9,14 @@ footer {
 }
 
 body {
+    color: white;
     line-height: 1;
     margin: 0;
     /* everything is to the edges */
+    
     font-family: 'Roboto', sans-serif;
-        background-image: url(images/header-image.jpg);
+    
+    background-image: url(images/header-image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -25,7 +28,6 @@ header button
 }
 
 header h1,h2,h3{
-    color: white;
     text-transform: uppercase;
 }
 
@@ -40,6 +42,7 @@ header h1,h2,h3{
 .logo {
     float: left;
     /*    display: inline-block;
+    
     vertical-align: top;
     margin-right: 20px;*/
 }
