@@ -1,77 +1,82 @@
 /* 
- * Defaults 
+ * My Defaults 
  */
-
-nav,
-header,
-footer {
-    display: block;
-}
 
 body {
     color: white;
-    line-height: 1;
-    margin: 0;
-    /* everything is to the edges */
-    
+    background-color: white;
     font-family: 'Roboto', sans-serif;
-    
-    background-image: url(images/header-image.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
-header button
-{
-    border: 2px white solid;
-    background-color: rgba(0,0,0,0);
+.learnbutton {
+    color: white;
+    border: 5px white solid;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
 }
 
-header h1,h2,h3{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-transform: uppercase;
 }
 
 
-/*
- * Navigation Bar
- *
- * Adapted from the following:
- * https://www.udemy.com/ultimate-web/learn/v4/t/lecture/6786614?start=0 
- */
+/* HEADER */
 
-.logo {
-    float: left;
-    /*    display: inline-block;
-    
-    vertical-align: top;
-    margin-right: 20px;*/
+header {
+    background-image: url(images/header-image.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    background-size: cover;
 }
+
+
+aside {
+    background-image: url(images/events-image.jpg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main {
+    color: black;
+}
+
+footer
+{
+    color: black;
+}
+
+/* NAVIGATION */
 
 nav {
     width: 100%;
-    margin: 0;
 }
 
 nav ul {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(200, 0, 0, 0.5);
     overflow: hidden;
     /* any elements that are too big will be clipped */
-    margin: 0;
-    padding: 0;
+}
+
+.navlogo {
+    float: left;
 }
 
 ul.topnav li {
-    list-style: none;
-    /* remove bullets */
     float: right;
 }
 
 ul.topnav li a {
     display: inline-block;
     text-decoration: none;
-    /* remove underline */
     min-height: 16px;
-    /* minimum font size */
     text-align: center;
     padding: 16px;
     text-transform: uppercase;
@@ -83,28 +88,35 @@ ul.topnav li a:hover {
     color: white;
 }
 
+/* hamburger icon */
+
 ul.topnav li.dropdownIcon {
     display: none;
-    /* hide menu icon by default */
+
 }
 
-*/
 /*
  * Responsive Grid System 
  * 
  * Adapted from the following: 
  * http://www.responsivegridsystem.com/ 
+ * by Graham Miller, licensed under a Creative Commons Attribution 3.0 License
+ * 
  */
 
-/*  SECTIONS  */
+/*  ROW SETUP
+ *  splits up the page horizontally.
+ */
 
-.section {
+.row {
     clear: both;
     padding: 0px;
     margin: 0px;
 }
 
-/*  COLUMN SETUP  */
+/*  COLUMN SETUP 
+ *  divides the section into columns.
+ */
 
 .col {
     display: block;
@@ -116,7 +128,9 @@ ul.topnav li.dropdownIcon {
     margin-left: 0;
 }
 
-/*  GROUPING  */
+/*  GROUPING  
+ *  solves floating problems, by forcing the section to self clear its children (aka the clearfix hack)
+ */
 
 .group:before,
 .group:after {
@@ -184,7 +198,7 @@ ul.topnav li.dropdownIcon {
     width: 6.866%;
 }
 
-/*  GO FULL WIDTH BELOW 480 PIXELS */
+/*  Mobile Media Query */
 
 @media only screen and (max-width: 480px) {
     .col {
@@ -206,36 +220,27 @@ ul.topnav li.dropdownIcon {
         width: 100%;
     }
 
+    /* navigation items */
     ul.topnav li {
         display: none;
     }
 
+    /* hamburger icon */
     ul.topnav li.dropdownIcon {
         display: block;
         float: right;
     }
 
-    ul.topnav.responsive li.dropdownIcon {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
-    ul.topnav.responsive {
-        position: relative;
-    }
-
-    ul.topnav.responsive li {
-        display: inline;
-        float: none;
-    }
-
-    ul.topnav.responsive li a {
-        display: block;
-        text-align: left;
+    footer .lists {
+        width: 0;
+        display: none;
     }
 }
 
-/*
- * END OF: Responsive Grid System
- */
+/* TABLET ONLY Media Query */
+
+@media only screen and (min-width:480px) and (max-width: 768px) {
+    body {
+        background-color: red;
+    }
+}

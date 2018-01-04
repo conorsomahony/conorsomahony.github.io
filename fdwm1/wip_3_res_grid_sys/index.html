@@ -4,66 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <title>Asterisk - Today's Solutions Tomorrow</title>
+    <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:500,700" rel="stylesheet">
 </head>
 
 <body>
-
-    <nav>
-        <img src="./images/logo@2x.png" alt="Asterisk logo" class="logo">
-        <ul class="topnav" id="dropdownClick">
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#news">Products</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropDownMenu()">&#9776;</a></li>
-        </ul>
-    </nav>
-    
+    <!-- Header  -->
     <header>
-        <h1>Today's Solution Tomorrow</h1>
-        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
-        <button type="button"><h3>Learn More</h3></button>
+        <!-- Navigation -->
+        <nav class="row group">
+            <img src="./images/logo@2x.png" alt="Asterisk logo" class="navlogo">
+            <ul class="topnav" s>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#news">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li class="dropdownIcon"><a href="javascript:void(0);">&#9776;</a></li>
+            </ul>
+        </nav>
+        <div>
+            <h1>Today's Solution Tomorrow</h1>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
+            <button type="button" class="learnbutton"><h3>Learn More</h3></button>
+        </div>
     </header>
-    
-    <section class="section group">
-        <div class="col span_4_of_12">
+
+    <!-- Main  -->
+    <main class="row group">
+        <article class="col span_4_of_12">
+            <img src="./images/today.jpg" alt="Today Image">
             <h1>Today</h1>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.
-        </div>
-        <div class="col span_4_of_12">
+        </article>
+        <article class="col span_4_of_12">
+            <img src="./images/solutions.jpg" alt="Solutions Image">
+
             <h1>Solutions</h1>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.
-        </div>
-        <div class="col span_4_of_12">
+        </article>
+        <article class="col span_4_of_12">
+            <img src="./images/tomorrow.jpg" alt="Tomorrow Image">
+
             <h1>Tomorrow</h1>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.
-        </div>
-    </section>
-    
-    <section class="section group">
+        </article>
+    </main>
+
+    <aside class="row group">
         <div class="col span_8_of_12">
             <h1>Tomorrow</h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto veniam distinctio est totam tenetur cum, eius atque libero consectetur modi nisi qui incidunt consequatur voluptatibus assumenda, dicta officia dignissimos ipsa.
         </div>
         <div class="col span_4_of_12">
-            <img src="./images/calendar.png" alt="Calendar icon"/>
-            <img src="./images/calendar.png" alt="Calendar icon"/>
-            <img src="./images/calendar.png" alt="Calendar icon"/>
+            <h3>First Event</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+            <img src="./images/calendar.png" alt="Calendar icon" />
+            <hr>
+            <h3>Second Event</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+            <img src="./images/calendar.png" alt="Calendar icon" />
+            <hr>
+            <h3>Third Event</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+            <img src="./images/calendar.png" alt="Calendar icon" />
         </div>
-    </section>
+    </aside>
 
-    <script>
-        function dropDownMenu() {
-            var x = document.getElementById("dropdownClick");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-                /* change topnav to topnav.responsive*/
-            } else {
-                x.className = "topnav";
-            }
-        }
-    </script>
+    <footer>
+        <div class="col span_8_of_12 lists">
+            SOMETHING
+        </div>
+        <div class="col span_4_of_12">
+            <form action="post">
+                <label for="message">Message</label>
+                <input type="text" name="message" id="message" placeholder="Message" required>
+                <br>
+
+                <label for="myemail">Email</label>
+                <input type="email" name="myemail" id="myemail" class="text" />
+                <br>
+
+                <input type="submit">
+
+            </form>
+        </div>
+
+    </footer>
 
 </body>
 
