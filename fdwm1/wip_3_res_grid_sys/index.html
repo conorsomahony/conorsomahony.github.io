@@ -11,83 +11,112 @@
 
 <body>
     <!-- Header  -->
-    <header>
+    <header role="banner" id="pageheader">
+
         <!-- Navigation -->
-        <nav class="row group">
+        <nav class="row group" role="navigation">
             <img src="./images/logo@2x.png" alt="Asterisk logo" class="navlogo">
             <ul class="topnav" s>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#news">Products</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li class="dropdownIcon"><a href="javascript:void(0);">&#9776;</a></li>
+                <li class="dropdownIcon"><a href="#">&#9776;</a></li>
             </ul>
         </nav>
-        <div>
-            <h1>Today's Solution Tomorrow</h1>
-            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
-            <button type="button" class="learnbutton"><h3>Learn More</h3></button>
+        <div class="row group">
+            <div class="col span_12_of_12 content">
+                <h1>Today's Solution Tomorrow</h1>
+                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
+                <button type="button">Learn More</button>
+            </div>
         </div>
     </header>
 
-    <!-- Main  -->
-    <main class="row group">
-        <article class="col span_4_of_12">
-            <img src="./images/today.jpg" alt="Today Image">
+    <!-- Main - Articles-->
+    <main class="row group" role="main">
+        <article class="col span_4_of_12 content">
+            <img src="./images/today.jpg" alt="Today Image" class="articleimage">
             <h1>Today</h1>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.
         </article>
-        <article class="col span_4_of_12">
-            <img src="./images/solutions.jpg" alt="Solutions Image">
-
+        <article class="col span_4_of_12 content">
+            <img src="./images/solutions.jpg" alt="Solutions Image" class="articleimage">
             <h1>Solutions</h1>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.
         </article>
-        <article class="col span_4_of_12">
-            <img src="./images/tomorrow.jpg" alt="Tomorrow Image">
-
+        <article class="col span_4_of_12 content">
+            <img src="./images/tomorrow.jpg" alt="Tomorrow Image" class="articleimage">
             <h1>Tomorrow</h1>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.
         </article>
     </main>
 
-    <aside class="row group">
-        <div class="col span_8_of_12">
+    <!-- Aside - Events -->
+    <aside class="row group" id="events">
+        <div class="col span_8_of_12 content">
             <h1>Tomorrow</h1>
             <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto veniam distinctio est totam tenetur cum, eius atque libero consectetur modi nisi qui incidunt consequatur voluptatibus assumenda, dicta officia dignissimos ipsa.
         </div>
-        <div class="col span_4_of_12">
+        <div class="col span_4_of_12 content">
             <h3>First Event</h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-            <img src="./images/calendar.png" alt="Calendar icon" />
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <img src="./images/calendar.png" alt="Calendar icon" class="calendaricon"/>
             <hr>
             <h3>Second Event</h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-            <img src="./images/calendar.png" alt="Calendar icon" />
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <img src="./images/calendar.png" alt="Calendar icon" class="calendaricon"/>
             <hr>
             <h3>Third Event</h3>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-            <img src="./images/calendar.png" alt="Calendar icon" />
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <img src="./images/calendar.png" alt="Calendar icon" class="calendaricon"/>
         </div>
     </aside>
 
-    <footer>
-        <div class="col span_8_of_12 lists">
-            SOMETHING
+    <!-- Footer -->
+    <footer class="row group" id="pagefooter">
+        <div class="col span_7_of_12 content lists">
+            <div class="row group">
+                <div class="col span_4_of_12">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li>Sub 1</li>
+                        <li>Sub 2</li>
+                        <li>Sub 3</li>
+                    </ul>
+                </div>
+                <div class="col span_4_of_12">
+                    <h3>Products</h3>
+                    <ul>
+                        <li>Sub 1</li>
+                        <li>Sub 2</li>
+                        <li>Sub 3</li>
+                    </ul>
+                </div>
+                <div class="col span_4_of_12">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Sub 1</li>
+                        <li>Sub 2</li>
+                        <li>Sub 3</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col span_4_of_12">
-            <form action="post">
-                <label for="message">Message</label>
-                <input type="text" name="message" id="message" placeholder="Message" required>
-                <br>
-
-                <label for="myemail">Email</label>
-                <input type="email" name="myemail" id="myemail" class="text" />
-                <br>
-
+        <div class="col span_5_of_12 content">
+           <!-- Contact Form -->
+            <form action="post" id="contactform">
+                <h3>Send Message</h3>
+                <label for="message">Message</label><br>
+                <input type="text" name="message" id="message" class="bigText" required><br>
+                <label for="myemail">Email</label><br>
+                <input type="email" name="myemail" id="myemail" /><br>
                 <input type="submit">
-
             </form>
+            <div id="copyrightnotice">
+                <h3>Copyright</h3>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima laboriosam, libero unde aliquid cupiditate et vitae modi, nostrum corporis, quidem sint cum assumenda praesentium hic dolore enim voluptates ipsam soluta.
+            </div>
         </div>
 
     </footer>

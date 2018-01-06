@@ -8,26 +8,24 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.learnbutton {
-    color: white;
-    border: 5px white solid;
-    background-color: rgba(0, 0, 0, 0);
-    text-align: center;
-}
-
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
     text-transform: uppercase;
 }
 
+main {
+    color: darkgray;
+}
 
-/* HEADER */
+main h1 {
+    color: hsl(177, 19, 79);
+}
 
-header {
+/*
+ * Content styles
+ */
+
+#pageheader {
     background-image: url(images/header-image.jpg);
     background-repeat: no-repeat;
     background-position: left top;
@@ -35,8 +33,7 @@ header {
     background-size: cover;
 }
 
-
-aside {
+#events {
     background-image: url(images/events-image.jpg);
     background-repeat: no-repeat;
     background-position: left bottom;
@@ -44,16 +41,58 @@ aside {
     background-size: cover;
 }
 
-main {
-    color: black;
+#pagefooter {
+    background-color: hsl(174, 43%, 10%);
+    overflow: hidden;
+    color: hsl(177, 19%, 79%);
 }
 
-footer
-{
-    color: black;
+#contactform {
+    border-left: 2px red solid;
+    padding-left: 10px;
 }
 
-/* NAVIGATION */
+.content {
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/*
+ * Buttons and Forms
+ */
+
+button,
+input[type=submit] {
+    display: block;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px white solid;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bigText {
+    height: 60px;
+}
+
+#contactform {
+    display: none;
+}
+
+#copyrightnotice {
+    display: block;
+}
+
+/*
+ * NAVIGATION 
+ */
 
 nav {
     width: 100%;
@@ -95,6 +134,7 @@ ul.topnav li.dropdownIcon {
 
 }
 
+
 /*
  * Responsive Grid System 
  * 
@@ -111,7 +151,6 @@ ul.topnav li.dropdownIcon {
 .row {
     clear: both;
     padding: 0px;
-    margin: 0px;
 }
 
 /*  COLUMN SETUP 
@@ -198,7 +237,11 @@ ul.topnav li.dropdownIcon {
     width: 6.866%;
 }
 
-/*  Mobile Media Query */
+/*
+ * MEDIA QUERIES
+ */
+
+/* MOBILE Media Query */
 
 @media only screen and (max-width: 480px) {
     .col {
@@ -231,8 +274,19 @@ ul.topnav li.dropdownIcon {
         float: right;
     }
 
+    /* not shown in mobile view */
     footer .lists {
-        width: 0;
+        display: none;
+    }
+    #events {
+        display: none;
+    }
+
+    #contactform {
+        display: inherit;
+        border: none;
+    }
+    #copyrightnotice {
         display: none;
     }
 }
@@ -242,5 +296,14 @@ ul.topnav li.dropdownIcon {
 @media only screen and (min-width:480px) and (max-width: 768px) {
     body {
         background-color: red;
+    }
+
+    #contactform {
+        display: inherit;
+        border: none;
+    }
+
+    #copyrightnotice {
+        display: none;
     }
 }
