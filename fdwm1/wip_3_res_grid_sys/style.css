@@ -33,12 +33,18 @@ main h1 {
     background-size: cover;
 }
 
-#events {
+#eventsection {
     background-image: url(images/events-image.jpg);
     background-repeat: no-repeat;
     background-position: left bottom;
     background-attachment: fixed;
     background-size: cover;
+}
+
+p.event{
+}
+img.eventicon{
+    float: right;
 }
 
 #pagefooter {
@@ -78,7 +84,7 @@ input[type=submit] {
     text-transform: uppercase;
 }
 
-.bigText {
+input[type=text].bigText {
     height: 60px;
 }
 
