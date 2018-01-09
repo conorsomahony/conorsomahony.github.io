@@ -1,3 +1,18 @@
+/*
+
+FDWM1 Assessment 1:
+Name: Conor O'Mahony
+ID: STU-00001490
+ 
+Main Stylesheet, including default styles, media queries and responsive grid system.
+
+Responsive Grid system adapted from:
+http://www.responsivegridsystem.com/ 
+by Graham Miller, licensed under a Creative Commons Attribution 3.0 License
+
+*/ 
+
+
 /* 
  * My Defaults 
  */
@@ -43,6 +58,7 @@ main h1 {
 
 p.event{
 }
+
 img.eventicon{
     float: right;
 }
