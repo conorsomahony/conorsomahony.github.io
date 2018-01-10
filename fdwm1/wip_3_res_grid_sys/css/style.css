@@ -41,7 +41,7 @@ main h1 {
  */
 
 #pageheader {
-    background-image: url(images/header-image.jpg);
+    background-image: url(../images/header-image.jpg);
     background-repeat: no-repeat;
     background-position: left top;
     background-attachment: fixed;
@@ -49,7 +49,7 @@ main h1 {
 }
 
 #eventsection {
-    background-image: url(images/events-image.jpg);
+    background-image: url(../images/events-image.jpg);
     background-repeat: no-repeat;
     background-position: left bottom;
     background-attachment: fixed;
