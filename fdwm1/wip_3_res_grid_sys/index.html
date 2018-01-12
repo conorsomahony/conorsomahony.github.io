@@ -39,7 +39,7 @@ Main HTML Page
             <div class="col span_12_of_12 content">
                 <h1 id="headertext">Today's Solution Tomorrow</h1>
                 <h2 id="headerdescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
-                <button type="button">Learn More</button>
+                <button type="button" class="learnbutton"><emph>LEARN MORE</emph></button>
             </div>
         </div>
     </header>
@@ -48,16 +48,19 @@ Main HTML Page
     <main class="row group" role="main">
         <article class="col span_4_of_12 content">
             <img src="./images/today.jpg" alt="Today Image" class="articleimage">
+            <button class="learnbutton onimage"><emph>LEARN MORE</emph></button>
             <h2>Today</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</p>
         </article>
         <article class="col span_4_of_12 content">
             <img src="./images/solutions.jpg" alt="Solutions Image" class="articleimage">
+            <button class="learnbutton onimage"><emph>LEARN MORE</emph></button>
             <h2>Solutions</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</p>
         </article>
         <article class="col span_4_of_12 content">
             <img src="./images/tomorrow.jpg" alt="Tomorrow Image" class="articleimage">
+            <button class="learnbutton onimage"><emph>LEARN MORE</emph></button>
             <h2>Tomorrow</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</p>
         </article>
@@ -71,16 +74,29 @@ Main HTML Page
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto veniam distinctio est totam tenetur cum, eius atque libero consectetur modi nisi qui incidunt consequatur voluptatibus assumenda, dicta officia dignissimos ipsa.
         </div>
         <div class="col span_4_of_12 content">
-            <h3>FIRST EVENT</h3>
-            <p class="event">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <img src="./images/calendar.png" alt="Calendar icon" class="eventicon" /></p>
-
+            <div class="event">
+                <h3>FIRST EVENT</h3>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </div>
+            <div class="eventicon">
+                <img src="./images/calendar.png" alt="Calendar icon" />
+            </div>
             <hr>
-            <h3>SECOND EVENT</h3>
-            <p class="event">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <img src="./images/calendar.png" alt="Calendar icon" class="eventicon" /></p>
-
+            <div class="event">
+                <h3>SECOND EVENT</h3>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </div>
+            <div class="eventicon">
+                <img src="./images/calendar.png" alt="Calendar icon" />
+            </div>
             <hr>
-            <h3>THIRD EVENT</h3>
-            <p class="event">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <img src="./images/calendar.png" alt="Calendar icon" class="eventicon" /></p>
+            <div class="event">
+                <h3>THIRD EVENT</h3>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </div>
+            <div class="eventicon">
+                <img src="./images/calendar.png" alt="Calendar icon" />
+            </div>
 
         </div>
     </aside>
@@ -115,16 +131,16 @@ Main HTML Page
                 </div>
             </div>
         </div>
-        <div class="col span_5_of_12 content" >
+        <div class="col span_5_of_12 content">
             <!-- Contact Form -->
-<div id="contactform">
+            <div id="contactform">
                 <form action="post">
                     <h3>Send message</h3>
                     <label for="message">Message</label><br>
                     <input type="text" name="message" id="message" class="bigText" required><br>
                     <label for="myemail">Mail</label><br>
                     <input type="email" name="myemail" id="myemail" /><br>
-                    <button type="button">Submit</button>
+                    <button type="button" class="learnbutton">Submit</button>
                 </form>
             </div>
             <div id="copyrightnotice">
