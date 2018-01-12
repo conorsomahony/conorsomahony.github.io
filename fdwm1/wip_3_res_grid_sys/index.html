@@ -4,6 +4,8 @@ FDWM1 Assessment 1:
 Name: Conor O'Mahony
 ID: STU-00001490
 
+Main HTML Page
+
 ->
 
 <!DOCTYPE html>
@@ -13,9 +15,10 @@ ID: STU-00001490
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asterisk - Today's Solutions Tomorrow</title>
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <!--link rel="stylesheet" href="./css/reset.css"-->
     <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
@@ -34,8 +37,8 @@ ID: STU-00001490
         </nav>
         <div class="row group">
             <div class="col span_12_of_12 content">
-                <h1>Today's Solution Tomorrow</h1>
-                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
+                <h1 id="headertext">Today's Solution Tomorrow</h1>
+                <h2 id="headerdescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
                 <button type="button">Learn More</button>
             </div>
         </div>
@@ -45,18 +48,18 @@ ID: STU-00001490
     <main class="row group" role="main">
         <article class="col span_4_of_12 content">
             <img src="./images/today.jpg" alt="Today Image" class="articleimage">
-            <h1>Today</h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.
+            <h2>Today</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</p>
         </article>
         <article class="col span_4_of_12 content">
             <img src="./images/solutions.jpg" alt="Solutions Image" class="articleimage">
-            <h1>Solutions</h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.
+            <h2>Solutions</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</p>
         </article>
         <article class="col span_4_of_12 content">
             <img src="./images/tomorrow.jpg" alt="Tomorrow Image" class="articleimage">
-            <h1>Tomorrow</h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.
+            <h2>Tomorrow</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</p>
         </article>
     </main>
 
@@ -64,27 +67,27 @@ ID: STU-00001490
     <aside class="row group" id="eventsection">
         <div class="col span_8_of_12 content">
             <h1>Tomorrow</h1>
-            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h3>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto veniam distinctio est totam tenetur cum, eius atque libero consectetur modi nisi qui incidunt consequatur voluptatibus assumenda, dicta officia dignissimos ipsa.
         </div>
         <div class="col span_4_of_12 content">
-            <h3>First Event</h3>
+            <h3>FIRST EVENT</h3>
             <p class="event">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <img src="./images/calendar.png" alt="Calendar icon" class="eventicon" /></p>
-            
+
             <hr>
-            <h3>Second Event</h3>
+            <h3>SECOND EVENT</h3>
             <p class="event">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <img src="./images/calendar.png" alt="Calendar icon" class="eventicon" /></p>
-            
+
             <hr>
-            <h3>Third Event</h3>
+            <h3>THIRD EVENT</h3>
             <p class="event">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <img src="./images/calendar.png" alt="Calendar icon" class="eventicon" /></p>
-            
+
         </div>
     </aside>
 
     <!-- Footer -->
     <footer class="row group" id="pagefooter">
-        <div class="col span_7_of_12 content lists">
+        <div class="col span_7_of_12 content" id="footerlists">
             <div class="row group">
                 <div class="col span_4_of_12">
                     <h3>About Us</h3>
@@ -112,16 +115,18 @@ ID: STU-00001490
                 </div>
             </div>
         </div>
-        <div class="col span_5_of_12 content">
+        <div class="col span_5_of_12 content" >
             <!-- Contact Form -->
-            <form action="post" id="contactform">
-                <h3>Send Message</h3>
-                <label for="message">Message</label><br>
-                <input type="text" name="message" id="message" class="bigText" required><br>
-                <label for="myemail">Email</label><br>
-                <input type="email" name="myemail" id="myemail" /><br>
-                <input type="submit">
-            </form>
+<div id="contactform">
+                <form action="post">
+                    <h3>Send message</h3>
+                    <label for="message">Message</label><br>
+                    <input type="text" name="message" id="message" class="bigText" required><br>
+                    <label for="myemail">Mail</label><br>
+                    <input type="email" name="myemail" id="myemail" /><br>
+                    <button type="button">Submit</button>
+                </form>
+            </div>
             <div id="copyrightnotice">
                 <h3>Copyright</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima laboriosam, libero unde aliquid cupiditate et vitae modi, nostrum corporis, quidem sint cum assumenda praesentium hic dolore enim voluptates ipsam soluta.</p>

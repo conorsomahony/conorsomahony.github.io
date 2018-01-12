@@ -5,166 +5,16 @@ Name: Conor O'Mahony
 ID: STU-00001490
  
 Main Stylesheet, including default styles, media queries and responsive grid system.
-
-Responsive Grid system adapted from:
-http://www.responsivegridsystem.com/ 
-by Graham Miller, licensed under a Creative Commons Attribution 3.0 License
-
-*/ 
-
-
-/* 
- * My Defaults 
- */
-
-body {
-    color: white;
-    background-color: white;
-    font-family: 'Roboto', sans-serif;
-}
-
-h1,
-h2 {
-    text-transform: uppercase;
-}
-
-main {
-    color: darkgray;
-}
-
-main h1 {
-    color: hsl(177, 19, 79);
-}
+*/
 
 /*
- * Content styles
- */
-
-#pageheader {
-    background-image: url(../images/header-image.jpg);
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-#eventsection {
-    background-image: url(../images/events-image.jpg);
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-p.event{
-}
-
-img.eventicon{
-    float: right;
-}
-
-#pagefooter {
-    background-color: hsl(174, 43%, 10%);
-    overflow: hidden;
-    color: hsl(177, 19%, 79%);
-}
-
-#contactform {
-    border-left: 2px red solid;
-    padding-left: 10px;
-}
-
-.content {
-    padding: 10px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-/*
- * Buttons and Forms
- */
-
-button,
-input[type=submit] {
-    display: block;
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px white solid;
-    border-radius: 3px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0);
-    text-align: center;
-    text-transform: uppercase;
-}
-
-input[type=text].bigText {
-    height: 60px;
-}
-
-#contactform {
-    display: none;
-}
-
-#copyrightnotice {
-    display: block;
-}
-
-/*
- * NAVIGATION 
- */
-
-nav {
-    width: 100%;
-}
-
-nav ul {
-    background-color: rgba(200, 0, 0, 0.5);
-    overflow: hidden;
-    /* any elements that are too big will be clipped */
-}
-
-.navlogo {
-    float: left;
-}
-
-ul.topnav li {
-    float: right;
-}
-
-ul.topnav li a {
-    display: inline-block;
-    text-decoration: none;
-    min-height: 16px;
-    text-align: center;
-    padding: 16px;
-    text-transform: uppercase;
-    color: white;
-}
-
-ul.topnav li a:hover {
-    background-color: lightgray;
-    color: white;
-}
-
-/* hamburger icon */
-
-ul.topnav li.dropdownIcon {
-    display: none;
-
-}
-
-
-/*
- * Responsive Grid System 
- * 
- * Adapted from the following: 
- * http://www.responsivegridsystem.com/ 
- * by Graham Miller, licensed under a Creative Commons Attribution 3.0 License
- * 
- */
+* Responsive Grid System 
+* 
+* Adapted from the following: 
+* http://www.responsivegridsystem.com/ 
+* by Graham Miller, licensed under a Creative Commons Attribution 3.0 License
+* 
+*/
 
 /*  ROW SETUP
  *  splits up the page horizontally.
@@ -189,7 +39,7 @@ ul.topnav li.dropdownIcon {
     margin-left: 0;
 }
 
-/*  GROUPING  
+/*  GROUPING 
  *  solves floating problems, by forcing the section to self clear its children (aka the clearfix hack)
  */
 
@@ -207,7 +57,6 @@ ul.topnav li.dropdownIcon {
     zoom: 1;
     /* For IE 6/7 */
 }
-
 
 /*  GRID OF TWELVE  */
 
@@ -259,17 +108,209 @@ ul.topnav li.dropdownIcon {
     width: 6.866%;
 }
 
+/* END OF RESPONSIVE GRID SYSTEM */
+
+/* 
+ * My Defaults 
+ */
+
+body {
+    color: white;
+    background-color: rgb(234, 241, 239);
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+main {
+    color: darkgray;
+}
+
+main h1 {
+    color: hsl(177, 19, 79);
+}
+
+article h2 {
+    color: rgb(44, 89, 76);
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+/*
+ * Content styles
+ */
+
+.content {
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+article.content {
+    background-color: white;
+    border: 2px lightgray solid;
+}
+
+img.eventicon {
+    float: right;
+}
+
+img.articleimage {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+/*
+ * Specific page elements (IDs)
+ */
+
+#pageheader {
+    background-image: url(../images/header-image.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#headertext {
+    text-transform: uppercase;
+}
+
+#eventsection {
+    background-image: url(../images/events-image.jpg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#pagefooter {
+    background-color: hsl(174, 43%, 10%);
+    overflow: hidden;
+    color: hsl(177, 19%, 79%);
+}
+
+#contactform {
+    border-left: 2px red solid;
+    padding-left: 10px;
+}
+
+/*
+ * Buttons and Forms
+ */
+
+button,
+input[type=submit] {
+    display: block;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px white solid;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+}
+
+input[type=text],
+input[type=email] {
+    background-color: gray;
+    border-radius: 3px;
+    border: 1px white solid;
+}
+
+.bigText {
+    height: 60px;
+}
+
+#contactform {
+    display: none;
+}
+
+#copyrightnotice {
+    display: block;
+}
+
+/*
+ * NAVIGATION 
+ */
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    background-color: rgba(100, 50, 50, 0.5);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.navlogo {
+    float: left;
+}
+
+ul.topnav li {
+    float: right;
+}
+
+ul.topnav li a {
+    display: inline-block;
+    text-decoration: none;
+    min-height: 16px;
+    text-align: center;
+    padding: 16px;
+    text-transform: uppercase;
+    color: white;
+}
+
+ul.topnav li a:hover {
+    background-color: lightgray;
+    color: white;
+}
+
+/* hamburger icon hidden */
+
+ul.topnav li.dropdownIcon {
+    display: none;
+
+}
+
 /*
  * MEDIA QUERIES
  */
 
-/* MOBILE Media Query */
+/* upto MOBILE (480px) Styles */
 
 @media only screen and (max-width: 480px) {
+    body {
+        font-size: 20px;
+    }
+    #headertext {
+        text-align: center;
+    }
+    /* not shown in mobile view */
+    #footerlists,
+    #eventsection,
+    #headerdescription {
+        display: none;
+    }
+    #contactform {
+        border: none;
+        margin: auto;
+        text-align: center;
+    }
+    /*
+     * Responsive Grid
+     */
     .col {
         margin: 1% 0 1% 0%;
     }
-
     .span_1_of_12,
     .span_2_of_12,
     .span_3_of_12,
@@ -284,48 +325,77 @@ ul.topnav li.dropdownIcon {
     .span_12_of_12 {
         width: 100%;
     }
+}
 
+/* MOBILE, TABLET Styles*/
+
+@media only screen and (max-width: 768px) {
     /* navigation items */
     ul.topnav li {
         display: none;
     }
-
     /* hamburger icon */
     ul.topnav li.dropdownIcon {
         display: block;
         float: right;
     }
+}
 
-    /* not shown in mobile view */
-    footer .lists {
-        display: none;
-    }
-    #events {
-        display: none;
-    }
+/* TABLET ONLY Styles */
 
+@media only screen and (min-width:480px) and (max-width: 768px) {
+    body,
+    h3 {
+        font-size: 14px;
+    }
+    /* Articles are full width */
+    article.content {
+        width: 100%;
+        margin: 1% 0 1% 0%;
+    }
+    img.articleimage {
+        /* semi-transparent overlay on images for tablet */
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+        /* For IE8 and earlier */
+        object-fit: cover;
+        height: 200px;
+    }
+    #eventsection div.content {
+        width: 100%;
+    }
+}
+
+/* MOBILE, TABLET, DESKTOP Styles */
+
+@media only screen and (max-width:1440px) {
+    #pageheader {
+        background-size: auto;
+    }
     #contactform {
         display: inherit;
-        border: none;
     }
     #copyrightnotice {
         display: none;
     }
 }
 
-/* TABLET ONLY Media Query */
+/* DESKTOP ONLY */
 
-@media only screen and (min-width:480px) and (max-width: 768px) {
+@media only screen and (min-width:768px) and (max-width:1440px) {
     body {
-        background-color: red;
+        font-size: 20px;
     }
 
+}
+
+/* DESKTOP HD and bigger Styles */
+
+@media only screen and (min-width:1440px) {
     #contactform {
-        display: inherit;
-        border: none;
-    }
-
-    #copyrightnotice {
         display: none;
+    }
+    #copyrightnotice {
+        display: block;
     }
 }
