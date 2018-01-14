@@ -1,15 +1,15 @@
-<!-
+<!--
 
 FDWM1 Assessment 1:
 Name: Conor O'Mahony
 ID: STU-00001490
 
-Main HTML Page
+HTML for responsive webpage.
 
-->
+-->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
     <meta charset="UTF-8">
@@ -27,19 +27,19 @@ Main HTML Page
 
         <!-- Navigation -->
         <nav class="row group" role="navigation">
-            <img src="./images/logo@2x.png" alt="Asterisk logo" class="navlogo">
-            <ul class="topnav" s>
+            <img src="./images/logo@2x.png" alt="Asterisk logo" class="topnav">
+            <ul class="topnav" id="dropdownclick">
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#news">Products</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li class="dropdownIcon"><a href="#">&#9776;</a></li>
+                <li class="hamburger"><a href="javascript:void(0);" onclick="dropDownMenu()">&#9776;</a></li>
             </ul>
         </nav>
         <div class="row group">
             <div class="col span_12_of_12 content">
                 <h1 id="headertext">Today's Solution Tomorrow</h1>
                 <h2 id="headerdescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h2>
-                <button type="button" class="learnbutton"><emph>LEARN MORE</emph></button>
+                <button type="button" class="learnbutton">LEARN MORE</button>
             </div>
         </div>
     </header>
@@ -48,19 +48,19 @@ Main HTML Page
     <main class="row group" role="main">
         <article class="col span_4_of_12 content">
             <img src="./images/today.jpg" alt="Today Image" class="articleimage">
-            <button class="learnbutton onimage"><emph>LEARN MORE</emph></button>
+            <button class="learnbutton onimage">LEARN MORE</button>
             <h2>Today</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</p>
         </article>
         <article class="col span_4_of_12 content">
             <img src="./images/solutions.jpg" alt="Solutions Image" class="articleimage">
-            <button class="learnbutton onimage"><emph>LEARN MORE</emph></button>
+            <button class="learnbutton onimage">LEARN MORE</button>
             <h2>Solutions</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</p>
         </article>
         <article class="col span_4_of_12 content">
             <img src="./images/tomorrow.jpg" alt="Tomorrow Image" class="articleimage">
-            <button class="learnbutton onimage"><emph>LEARN MORE</emph></button>
+            <button class="learnbutton onimage">LEARN MORE</button>
             <h2>Tomorrow</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</p>
         </article>
@@ -69,7 +69,7 @@ Main HTML Page
     <!-- Aside - Events -->
     <aside class="row group" id="eventsection">
         <div class="col span_8_of_12 content">
-            <h1>Tomorrow</h1>
+            <h2>Tomorrow</h2>
             <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci magni nisi delectus neque laborum, dolorem dolor doloremque rerum tempora officia sequi iusto at culpa porro laboriosam id unde, ad.</h3>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto veniam distinctio est totam tenetur cum, eius atque libero consectetur modi nisi qui incidunt consequatur voluptatibus assumenda, dicta officia dignissimos ipsa.
         </div>
@@ -81,7 +81,7 @@ Main HTML Page
             <div class="eventicon">
                 <img src="./images/calendar.png" alt="Calendar icon" />
             </div>
-            <hr>
+            <hr class="eventdivider">
             <div class="event">
                 <h3>SECOND EVENT</h3>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -89,7 +89,7 @@ Main HTML Page
             <div class="eventicon">
                 <img src="./images/calendar.png" alt="Calendar icon" />
             </div>
-            <hr>
+            <hr class="eventdivider">
             <div class="event">
                 <h3>THIRD EVENT</h3>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -97,7 +97,6 @@ Main HTML Page
             <div class="eventicon">
                 <img src="./images/calendar.png" alt="Calendar icon" />
             </div>
-
         </div>
     </aside>
 
@@ -137,7 +136,7 @@ Main HTML Page
                 <form action="post">
                     <h3>Send message</h3>
                     <label for="message">Message</label><br>
-                    <input type="text" name="message" id="message" class="bigText" required><br>
+                    <input type="text" name="message" id="message" class="bigtext" required><br>
                     <label for="myemail">Mail</label><br>
                     <input type="email" name="myemail" id="myemail" /><br>
                     <button type="button" class="learnbutton">Submit</button>
@@ -148,8 +147,19 @@ Main HTML Page
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima laboriosam, libero unde aliquid cupiditate et vitae modi, nostrum corporis, quidem sint cum assumenda praesentium hic dolore enim voluptates ipsam soluta.</p>
             </div>
         </div>
-
     </footer>
+
+    <script>
+        function dropDownMenu() {
+            var x = document.getElementById("dropdownclick");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+                /* change topnav to topnav.responsive*/
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 
 </body>
 

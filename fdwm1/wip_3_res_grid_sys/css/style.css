@@ -22,7 +22,7 @@ Main Stylesheet, including default styles, media queries and responsive grid sys
 
 .row {
     clear: both;
-    padding: 0px;
+    padding: 0;
 }
 
 /*  COLUMN SETUP 
@@ -51,11 +51,6 @@ Main Stylesheet, including default styles, media queries and responsive grid sys
 
 .group:after {
     clear: both;
-}
-
-.group {
-    zoom: 1;
-    /* For IE 6/7 */
 }
 
 /*  GRID OF TWELVE  */
@@ -126,7 +121,7 @@ main {
 }
 
 main h1 {
-    color: hsl(177, 19, 79);
+    color: rgb(191, 212, 211);
 }
 
 article h2 {
@@ -156,11 +151,12 @@ article.content {
 img.articleimage {
     width: 100%;
     max-width: 100%;
+    min-height: 150px;
     text-align: center;
 }
 
 /*
- * Specific page elements (IDs)
+ * Specific page elements
  */
 
 #pageheader {
@@ -184,14 +180,36 @@ img.articleimage {
 }
 
 #pagefooter {
-    background-color: hsl(174, 43%, 10%);
+    background-color: rgb(15, 36, 34);
     overflow: hidden;
-    color: hsl(177, 19%, 79%);
+    color: rgb(191, 212, 211);
 }
 
 #contactform {
     border-left: 2px red solid;
     padding-left: 10px;
+}
+
+/** Events section styling **/
+
+div.event {
+    display: inline-block;
+    width: 70%;
+}
+
+div.eventicon {
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+}
+
+div.eventicon img {
+    text-align: center;
+}
+
+.eventdivider {
+    width: 90%;
+    float: left;
 }
 
 /*
@@ -201,25 +219,25 @@ img.articleimage {
 button.learnbutton {
     display: block;
     color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto;
+    padding: 10px;
     border: 3px white solid;
     border-radius: 3px;
-    padding: 10px;
     background-color: rgba(0, 0, 0, 0.25);
     text-align: center;
-    height: 50px;
 }
-button.learnbutton:hover
-{
+
+button.learnbutton:hover {
     background-color: rgba(100, 50, 50, 0.5);
 }
 
-button.onimage{
+button.submit {
+    text-align: left;
+}
+
+button.onimage {
     position: relative;
-    top:-150px;
+    top: -100px;
     margin-bottom: -50px;
 }
 
@@ -231,22 +249,8 @@ input[type=email] {
     width: 90%;
 }
 
-.bigText {
+.bigtext {
     height: 60px;
-}
-div.event{
-    display: inline-block;
-    width: 70%;
-}
-div.eventicon{
-    display: inline-block;
-    height: 100%;
-    width:20%;
-}
-
-div.eventicon img
-{
-    text-align: center;
 }
 
 #contactform {
@@ -259,10 +263,15 @@ div.eventicon img
 
 /*
  * NAVIGATION 
+ *
+ * Adapted from the following lesson on Udemy:
+ * https://www.udemy.com/ultimate-web/learn/v4/t/lecture/6786614?start=0 
  */
 
 nav {
     width: 100%;
+    max-height: 163px;
+    overflow: hidden;
 }
 
 nav ul {
@@ -272,7 +281,8 @@ nav ul {
     padding: 0;
 }
 
-.navlogo {
+img.topnav {
+    display: inherit;
     float: left;
 }
 
@@ -295,11 +305,10 @@ ul.topnav li a:hover {
     color: white;
 }
 
-/* hamburger icon hidden */
+/* hamburger icon hidden when not mobile */
 
-ul.topnav li.dropdownIcon {
+ul.topnav li.hamburger {
     display: none;
-
 }
 
 /*
@@ -324,7 +333,28 @@ ul.topnav li.dropdownIcon {
     #contactform {
         border: none;
         margin: auto;
-        text-align: center;
+    }
+
+    /* navigation - handle hamburger dropdown menu when clicked */
+    ul.topnav.responsive li.hamburger {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    ul.topnav.responsive {
+        position: relative;
+        background-color: gainsboro;
+    }
+
+    ul.topnav.responsive li {
+        display: inline;
+        float: none;
+    }
+
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
     }
     /*
      * Responsive Grid
@@ -346,21 +376,20 @@ ul.topnav li.dropdownIcon {
     .span_12_of_12 {
         width: 100%;
     }
-}
-
-/* MOBILE, TABLET Styles*/
-
-@media only screen and (max-width: 768px) {
     /* navigation items */
     ul.topnav li {
         display: none;
     }
     /* hamburger icon */
-    ul.topnav li.dropdownIcon {
+    ul.topnav li.hamburger {
         display: block;
         float: right;
     }
 }
+
+/* MOBILE, TABLET Styles*/
+
+@media only screen and (max-width: 768px) {}
 
 /* TABLET ONLY Styles */
 
@@ -375,15 +404,13 @@ ul.topnav li.dropdownIcon {
         margin: 1% 0 1% 0%;
     }
     img.articleimage {
-        /* semi-transparent overlay on images for tablet */
+        /* semi-transparent overlay on images for tablet only */
         opacity: 0.5;
-        filter: alpha(opacity=50);
-        /* For IE8 and earlier */
         object-fit: cover;
         height: 200px;
     }
     #eventsection div.content {
-        width: 100%;
+        width: 98%;
     }
 }
 
@@ -407,7 +434,6 @@ ul.topnav li.dropdownIcon {
     body {
         font-size: 20px;
     }
-
 }
 
 /* DESKTOP HD and bigger Styles */
