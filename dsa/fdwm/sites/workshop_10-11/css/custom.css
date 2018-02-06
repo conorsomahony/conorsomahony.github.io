@@ -1,0 +1,52 @@
+/* Custom CSS*/
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+body {
+    background-color: #F6F6F6;
+    font-family: 'Titillium Web'
+}
+
+header {
+    height: 200px;
+    margin: 0 0 20px 0;
+    padding: 30px;
+}
+
+.jumbotron {
+    background-image: url(../img/carousel_image1.jpg);
+    background-size: auto;
+}
+
+.jumbotron h1 {
+    color: #ffffff;
+    font-size: 500%;
+    text-align: center;
+}
+
+.jumbotron p {
+    color: #ffffff;
+}
+
+.box {
+    background: #fcfcfc;
+    padding: 20px;
+    margin: 0 0 20px;
+    height: 250px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #dbdbdb;
+}
+
+.box p {
+    font-size: 90%;
+}
+
+.box .glyphicon {
+    font-size: 4em;
+    color: #05a3cf;
+}
+
+.box:hover {
+    background-color: #e1e1e1;
+}

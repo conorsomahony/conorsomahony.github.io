@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Great Site</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--<script type="text/javascript">
+    var headerText = prompt("This is your header text", "Enter something");
+</script>-->
+
+</head>
+
+<body>
+
+
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    <!--end .row-->
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1 id="hero-head">My great site!</h1>
+        <button class="btn btn-danger btn-lg" href="#" role="button" id="hero-btn">Learn more &raquo;</button>
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id facilis labore possimus itaque nulla maiores laborum veritatis, quibusdam quis fugiat quasi veniam consequatur saepe dolore facere modi. Soluta, dignissimos, consequatur!</p>-->
+    </div>
+    <!-- end .jumbotron-->
+
+    <!-- CAROUSEL-->
+    <!--<div class="row">
+    <div class="carousel slide" id="carousel-example-generic" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="img/carousel_image1.jpg" alt="A nice picture">
+                <div class="carousel-caption">
+                    <h2>Jump</h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/carousel_image2.jpg" alt="Another nice picture">
+                <div class="carousel-caption">
+                    <h2>Look</h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/carousel_image3.jpg" alt="Lovely picture">
+                <div class="carousel-caption">
+                    <h2>Go</h2>
+                </div>
+            </div>
+        </div>
+        <!- -end .carousel-inner- ->
+    </div>
+    <!- -end .carousel - ->
+</div>
+<!- - end .row - ->-->
+
+    <div class="container">
+        <!-- MOBILE VIDEO AUDIO -->
+        <div class="row">
+            <section class="col-md-4 box">
+                <span class="glyphicon glyphicon-phone"></span>
+                <h3>Mobile</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <button class="btn btn-info">Learn More &raquo;</button>
+            </section>
+            <!-- end section.col-md-4 -->
+            <section class="col-md-4 box">
+                <span class="glyphicon glyphicon-facetime-video"></span>
+                <h3>Video</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                <button class="btn btn-info">Learn More &raquo;</button>
+            </section>
+            <!-- end section.col-md-4 -->
+            <section class="col-md-4 box">
+                <span class="glyphicon glyphicon-headphones"></span>
+                <h3>Audio</h3>
+                <p>Lorem ipsum dolor sit.</p>
+                <button class="btn btn-info">Learn More &raquo;</button>
+            </section>
+            <!-- end section.col-md-4 -->
+
+        </div>
+        <!-- end .row -->
+
+        <div class="row well">
+            <section class="col-md-4 col-md-push-4">
+                <h2>Subscribe</h2>
+                <form id="myform" action="myactionform.html" method="get">
+
+                    <div class="form-group">
+                        <label for="input-email">Email Address</label>
+                        <input type="email," class="form-control" id="input-email" placeholder="Enter Email">
+                    </div>
+
+                    <div class="form-group"><label for="input-password">Password</label>
+                        <input type="password," class="form-control" id="input-password" placeholder="Enter Email">
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox">Subscribe
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+
+                </form>
+
+            </section>
+        </div>
+    </div>
+    <!-- end .container -->
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        var i = 1;
+        $(function() {
+            $('#hero-btn').removeClass("btn-danger").addClass("btn-primary center-block");
+            /* $('#myjumbo').css("background-image", "url(../img/carousel_image2.jpg)");*/
+            $('#hero-btn').click(function() {
+                i = ((i++) % 3) + 1;
+                $('#myjumbo').css("background-image", "url(../img/carousel_image" + i + ".jpg)");
+            });
+        });
+        /* $(function() { $('#hero-head').text(headerText) } );*/
+    </script>
+
+</body>
+
+</html>
