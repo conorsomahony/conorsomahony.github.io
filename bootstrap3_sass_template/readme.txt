@@ -47,6 +47,7 @@ Part 5
   ...
 
 Part 6
+  SCSS/sass
 
 Part 7
 

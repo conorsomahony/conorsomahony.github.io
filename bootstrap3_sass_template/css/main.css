@@ -1,5 +1,37 @@
-/*
-* IMPORTS
-*/
+/* line 1, ../scss/base/_normalize.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
 
-/*# sourceMappingURL=../css/main.map */
+/* line 1, ../scss/base/_base.scss */
+body {
+  font-family: "Segoe UI", "Segoe Regular", sans-serif;
+  font-size: 15px;
+  line-height: 1.7em;
+  color: #666666;
+}
+
+/* line 8, ../scss/base/_base.scss */
+a {
+  color: #00aff0;
+}
+
+/* line 12, ../scss/base/_base.scss */
+ul,
+li {
+  list-style: none;
+}
+
+/* line 17, ../scss/base/_base.scss */
+input,
+textarea,
+button {
+  border-radius: 0;
+}
+
+/*# sourceMappingURL=main.css.map */
