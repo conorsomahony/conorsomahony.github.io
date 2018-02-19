@@ -1,0 +1,27 @@
+// Mixins
+=border-radius($radius)
+    -moz-border-radius: $radius
+    -webkit-border-radius: $radius
+    -ms-border-radius: $radius
+    border-radius: $radius
+
+=add-border($size, $color, $position)
+    @if $position == "all"
+        border: $size solid $color
+    @else if $position == "top-bottom"
+        border-top: $size solid $color
+        border-bottom: $size solid $color
+    @else if $position == "right-left"
+        border-right: $size solid $color
+        border-left: $size solid $color
+    @else
+        // assuming correctness of $position
+        border-#{$position}: $size solid $color
+
+=add-background($color)
+    background: $color
+
+    @if $color == $light-color
+        color: #666666
+    @else
+        color: #ffffff

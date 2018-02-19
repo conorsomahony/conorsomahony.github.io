@@ -1,0 +1,20 @@
+// CAROUSEL
+
+.carousel
+    margin-bottom: 20
+
+    img
+        padding: 3px
+
+        +add-border(1px, $light-color, "all")
+
+// TABS
+.tab-pane
+    padding: 20px 10px
+
+    +border-radius(5px)
+
+    margin-bottom: 20px
+
+.tab-primary .tab-pane, .tab-primary .nav-tabs > li.active > a, .tab-primary .nav-tabs > li.active > a:focus, .tab-primary .nav-tabs > li.active > a:hover
+    +add-background($primary-color)

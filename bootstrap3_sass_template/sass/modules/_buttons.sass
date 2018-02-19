@@ -1,0 +1,10 @@
+// Buttons (bootstrap)
+.btn-primary
+    +add-background($primary-color)
+
+    +add-border(2px, #ffffff, "all")
+
+.btn-primary:hover
+    background: lighten($primary-color, 10%)
+
+    +add-border(2px, #ffffff, "all")

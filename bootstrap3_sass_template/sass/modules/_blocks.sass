@@ -1,0 +1,66 @@
+// Blocks
+
+.block
+    padding: 15px
+    margin-bottom: 15px
+
+    h3
+        margin-top: 0
+        padding-top: 0
+
+.block-primary
+    @extend .block
+
+    +add-background($primary-color)
+
+.block-secondary
+    @extend .block
+
+    +add-background($secondary-color)
+
+.block-light
+    @extend .block
+
+    +add-background($light-color)
+
+.block-dark
+    @extend .block
+
+    +add-background($dark-color)
+
+.block-center
+    text-align: center !important
+
+.block-image img
+    width: 100%
+
+.block-border
+    +add-border(1px, #cccccc, "all")
+
+.block-primary-head
+    h3
+        padding: 15px 5px 15px 10px
+
+        +add-background($primary-color)
+
+        margin: 0
+        font-size: 18px
+
+    .block-content
+        +add-border(1px, $primary-color, "all")
+
+        padding: 10px
+
+.block-icon
+    h3
+        margin: 0
+        padding: 0
+
+    .icon
+        float: left
+        width: 20%
+        margin-top: 10px
+
+    .icon-content
+        float: left
+        width: 70%

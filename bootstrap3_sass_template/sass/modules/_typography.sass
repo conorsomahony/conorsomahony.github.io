@@ -1,0 +1,81 @@
+// Lists
+.list
+    margin-bottom: 30px
+
+.list-feature
+    @extend .list
+
+    margin: 0
+    padding: 0
+    width: 80%
+
+    li
+        line-height: 3.6em
+
+        +add-border(1px, #cccccc, "bottom")
+
+    li:last-child
+        border: 0
+
+    span
+        vertical-align: top
+        padding-top: 9px
+        font-size: 120%
+
+    i
+        margin-top: -9px
+        margin-right: 5px
+
+// icons
+.fa-2
+    font-size: 18px
+
+.fa-3
+    font-size: 24px
+
+.fa-4
+    font-size: 27px
+
+.fa-5
+    font-size: 35px
+
+.fa-6
+    font-size: 40px
+
+.fa-primary
+    color: $primary-color
+    width: 70px
+    padding: 13px 15px
+    margin-bottom: 10px
+
+.fa-border
+    +add-border(1px, $primary-color, "all")
+    +border-radius(15px)
+
+// headings
+
+.heading-primary
+    color: $primary-color
+
+.heading-secondary
+    color: $secondary-color
+
+.heading-light
+    color: $light-color
+
+.heading-dark
+    color: $light-color
+
+.heading-primary-a
+    @extend .heading-primary
+
+    +add-border(2px, $primary-color, "bottom")
+
+.heading-secondary-a
+    @extend .heading-secondary
+
+    +add-border(2px, $secondary-color, "bottom")
+
+// Emphasise text
+.em-primary
+    color: $primary-color

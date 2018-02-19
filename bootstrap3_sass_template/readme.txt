@@ -46,17 +46,29 @@ Part 4
   ...
 
 Part 5
-  (Blog Page)
-  ...
-  (Contact Page)
+  (blog page, contact page... TODO)
   ...
 
 Part 6
   SCSS/sass
 
 Part 7
+  section styles
+  block styles
+  list styles
+  mixins
 
 Part 8
+  buttons
+  lighten and darken SASS function
+  footer
 
+Part 9
+  about page
+  services page
 
+Part 10
+  (blog page, contact page... TODO)
 
+Part 11 
+  media queries
