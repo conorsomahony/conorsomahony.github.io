@@ -3,8 +3,13 @@ https://www.youtube.com/watch?v=Mu74UmFBAq8
 HTML 5
 Bootstrap 3
 SASS
-Scout
-Ruby GEM
+  sass --watch sass:css -l
+Scout (not used)
+Ruby GEM installer
+browser-sync
+  browser-sync --watch .
+VS Code
+  SASS formatter extension (format SASS on save)
 
 Part 1
   folder structure
