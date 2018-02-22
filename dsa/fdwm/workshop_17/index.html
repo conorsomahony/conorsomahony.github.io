@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Overload_local_storage</title>
+</head>
+
+<body>
+    <p>
+        <img src="cat.gif" alt="Cat">
+    </p>
+    <p>
+        <button onclick="clearLocalStorage();">Clear Local Storage</button>
+    </p>
+    <!-- <form action=""> -->
+    <input type="number" name="num" id="num" min="1" value="1">
+    <button onclick="doStuff();">Run loop</button>
+    <!-- </form> -->
+    <script>
+        // storeLoadsOfStuff();
+
+        function doStuff() {
+            console.log("dooStuff()");
+            var inputText = document.getElementById("num").value;
+            var loopNum = 10;
+            console.log("inputText:" + inputText);
+            if (parseInt(inputText) != NaN) {
+                loopNum = parseInt(inputText);
+            }
+            storeLoadsOfStuff(loopNum);
+        };
+
+        function storeLoadsOfStuff(num) {
+            for (var i = 0; i < num; i++) {
+                localStorage.setItem("A" + i, i);
+                if (i % 1000 == 0) {
+                    console.log("adding:" + i);
+                }
+            }
+        };
+
+        function clearLocalStorage() {
+            localStorage.clear();
+            console.log("cleared");
+        }
+    </script>
+</body>
+
+</html>
