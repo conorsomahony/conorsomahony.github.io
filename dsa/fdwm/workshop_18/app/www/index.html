@@ -17,6 +17,9 @@
     <p>
         <button onclick="clearObjectStore();">Clear IndexedDB</button>
     </p>
+    <p id="info">
+        No info
+    </p>
     <!-- <form action=""> -->
     <input type="number" name="num" id="num" min="1" value="1">
     <button onclick="storeStuff();">Add to IndexedDB</button>
@@ -77,6 +80,7 @@
                 });
                 request.onsuccess = function (event) {
                     console.log("store successful!");
+                    document.getElementById("info").innerText = "store successful!";
                 }
                 request.onerror = function (event) {
                     console.error("store error!");
