@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Use IndexedDB</title>
+
+</head>
+
+<body>
+    <script src="phonegap.js"></script>
+    <p>
+        <img src="cat.gif" alt="Cat">
+    </p>
+    <p>
+        <button onclick="clearObjectStore();">Clear IndexedDB</button>
+    </p>
+    <!-- <form action=""> -->
+    <input type="number" name="num" id="num" min="1" value="1">
+    <button onclick="storeStuff();">Add to IndexedDB</button>
+    <!-- </form> -->
+    <script>
+        if (!window.indexedDB) {
+            window.alert("Your browser doesn't support a stable version of IndexedDB.")
+        }
+
+        var db;
+        var request = window.indexedDB.open("myDatabase", 3);
+
+        request.onerror = function (event) {
+            console.log("onerror: error opening database");
+        };
+
+        request.onsuccess = function (event) {
+            db = request.result;
+            console.log("onsuccess: success opening database!");
+        };
+
+        request.onupgradeneeded = function (event) {
+            console.log("onupgradeneeded: start");
+            db = event.target.result;
+            var objectStore = db.createObjectStore("myStore", {
+                keyPath: "id"
+            });
+            console.log("onupgradeneeded: end");
+        }
+
+        function storeStuff() {
+            console.log("storeStuff(): start");
+            var inputText = document.getElementById("num").value;
+            var loopNum = 10;
+            console.log("storeStuff().inputText:" + inputText);
+            if (parseInt(inputText) != NaN) {
+                loopNum = parseInt(inputText);
+            }
+            storeLoadsOfStuffInDB(loopNum);
+            console.log("storeStuff(): end");
+        };
+
+        function storeLoadsOfStuffInDB(num) {
+            var transaction = db.transaction(["myStore"], "readwrite");
+            transaction.oncomplete = function (event) {
+                console.log("transaction finished!");
+            }
+            transaction.onerror = function (event) {
+                console.error("transaction error!");
+            }
+
+            var objectStore = transaction.objectStore("myStore");
+
+            for (var i = 0; i < num; i++) {
+                var request = objectStore.put({
+                    id: i,
+                    value: i + "value"
+                });
+                request.onsuccess = function (event) {
+                    console.log("store successful!");
+                }
+                request.onerror = function (event) {
+                    console.error("store error!");
+                }
+            }
+        };
+
+
+        function clearObjectStore() {
+            var store = getObjectStore("myStore", 'readwrite');
+            var req = store.clear();
+            req.onsuccess = function (evt) {
+                console.log("clearObjectStore(): success");
+            };
+            req.onerror = function (evt) {
+                console.error("clearObjectStore(): failed");
+            };
+        }
+
+        /**
+         * @param {string} store_name
+         * @param {string} mode either "readonly" or "readwrite"
+         */
+        function getObjectStore(store_name, mode) {
+            var tx = db.transaction(store_name, mode);
+            return tx.objectStore(store_name);
+        }
+    </script>
+</body>
+
+</html>
