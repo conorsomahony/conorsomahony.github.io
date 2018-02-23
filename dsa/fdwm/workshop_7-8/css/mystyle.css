@@ -1,0 +1,177 @@
+body {
+    background: #7fd7a0;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+}
+
+/** header styles **/
+
+header {
+    background: #149682;
+    color: #fff;
+    min-height: 200px;
+    text-align: center;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)), url(../img/ban.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.headerimg {
+    margin-top: 20px;
+}
+
+header button {
+    background: #007c77;
+    border: 0;
+    padding: 16px;
+    color: #fff;
+    font-size: 1.5em;
+    background-color: #fcc956;
+    border-radius: 4px;
+    margin: 40px 0 40px 0;
+    border-bottom: 2px solid #d68244;
+    text-shadow: 1px 1px 1px #8b5b00;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header button:hover {
+    background-color: #d9ac44;
+    -moz-transform: scale(1.5) rotate(5deg);
+    -webkit-transform: scale(1.5) rotate(5deg);
+    -o-transform: scale(1.5) rotate(5deg);
+    -ms-transform: scale(1.5) rotate(5deg);
+    transform: scale(1.5) rotate(5deg);
+}
+
+/** nav styles **/
+
+nav {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+}
+
+nav ul li a:hover {
+    background-color: #fcc956;
+    color: beige;
+}
+
+
+
+/** main styles **/
+
+main {
+    background: #65c597;
+    min-height: 500px;
+    text-align: center;
+    overflow: hidden;
+}
+
+section {
+    color: #fff;
+    width: 30%;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 100px;
+}
+
+footer {
+    min-height: 100px;
+}
+
+/* ABOUT STYLES */
+
+.roundimg {
+    width: 200px;
+    border-radius: 100px;
+}
+
+/** Contact Styles **/
+
+#contact {
+    width: 400px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+#contact fieldset {
+    color: #fff;
+    border: none;
+}
+
+#contact fieldset div {
+    margin: 8px auto;
+    text-align: center;
+}
+
+#contact label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+
+#contact input {
+    border: 1px solid #33aaa7;
+    margin: 6px auto;
+    border-radius: 3px;
+}
+
+#formcomments {
+    height: 100px;
+}
+
+#contact input[type="submit"] {
+    color: white;
+    background-color: #f49525;
+    border: 1px solid white;
+    padding: 12px;
+}
+
+#map {
+    height: 400px;
+    width: 50%;
+    background-color: grey;
+    margin: auto;
+
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen and (max-device-width: 480px) {
+    /* Styles */
+    main {
+        width: 100%;
+    }
+    section {
+        width: 100%;
+    }
+    nav ul li {
+        display: block;
+    }
+    #map {
+        width: 100%;
+    }
+}
