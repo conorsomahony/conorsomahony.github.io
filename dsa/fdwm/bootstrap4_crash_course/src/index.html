@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Bootstrap 4 Template</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/custom.css">
+</head>
+
+<body>
+
+    <!-- .container - TOP-LEVEL -->
+    <div class="container">
+        <!-- nav - NAVIGATION -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+            <!-- <a class="navbar-brand" href="#">Street Art Finder</a> -->
+            <div class="hover01">
+                <a href="#" class="navbar-brand">
+                    <img id="main-nav-logo" height="80" src="./assets/streetart-logo_orig_trans.png" alt="Street Art Finder Logo">
+                </a>
+            </div>
+
+            <!-- button - NAV TOGGLER BUTTON -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- #navbarSupportedContent -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
+                            Products
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Product 1</a>
+                            <a class="dropdown-item" href="#">Product 2</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Another Product</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END #navbarSupportedContent -->
+        </nav>
+        <!-- END nav -->
+
+        <!-- .jumbotron - JUMBOTRON/HERO -->
+        <div class="jumbotron">
+            <h1 class="display-4">Street Art Finder</h1>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat illum reprehenderit vitae officiis dicta quaerat
+                iure soluta, deserunt animi facere qui quidem ut, saepe nostrum ipsa ducimus voluptas, similique veniam!</p>
+
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
+        </div>
+        <!-- END .jumbotron -->
+
+        <!-- .row - CARDS SECTION -->
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title</p>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title</p>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title</p>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END .row - CARDS -->
+
+        <!-- .row - TEXT AND VERTICAL NAV -->
+        <div class="row mt-sm-4 mt-md-0">
+            <!-- .col - TEXT -->
+            <div class="col-sm-12 col-md-8 text-sm-center text-md-left">
+                <h3>An important heading</h3>
+                <p class="lead">A sort of important subheading can go here, which is larger and gray.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <!-- END .col - TEXT -->
+
+            <!-- .col - VERTICAL NAV -->
+            <div class="col-sm-12 col-md-4">
+                <h3 class="mb-4">Secondary Menu</h3>
+
+                <ul class="nav flex-column nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END .col VERTICAL NAV -->
+        </div>
+        <!-- END .row - TEXT AND VERTICAL NAV -->
+    </div>
+    <!-- END .container -->
+
+
+
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+
+</html>
