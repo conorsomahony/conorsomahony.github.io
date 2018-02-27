@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 * Author: Conor O'Mahony
 * Assignment: FDWM2 Assessment 1 - Street Art Finder
 * Student ID: STU-00001490
@@ -26,8 +26,8 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
 
     <!-- Bootstrap 4 imported into main.sass and compiled into main.css -->
-    <!-- <link rel="stylesheet" href="/css/bootstrap.css"> -->
-    <link rel="stylesheet" href="/css/main.css">
+    <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
@@ -35,21 +35,25 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
     <!-- header -->
     <header role="navigation">
         <!-- nav -->
-        <nav class="navbar navbar-expand-sm navbar-dark">
-            <a href="#" class="navbar-brand">
-                <img id="main-nav-logo" height="80" src="./assets/img/streetart-logo_orig_trans.png" alt="Street Art Finder Logo">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/img/streetart-logo_orig_trans.png" class="cons-nav-logo">
             </a>
-            <div class="collapse navbar-collapse justify-content-md-center" id="navbarSupportedContent">
-                <ul class="navbar-nav">
+
+            <!-- account toggle -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#account" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-user fa-2x"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="account">
+                <ul class="navbar-nav ml-auto">
+
                     <li class="nav-item">
-                        <img class="img-fluid w-50" src="./assets/img/a_logo.png" alt="">
+                        <a class="nav-link" href="#">Sign in</a>
                     </li>
                     <li class="nav-item">
-                        <!-- <i class="fas fa-user-circle fa-3x"></i> -->
-                        <img class="rounded-circle" src="./assets/img/user.jpg" alt="User profile picture" width="50px" />
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">comahony</a>
+                        <a class="nav-link" href="#">Register</a>
                     </li>
                 </ul>
             </div>
@@ -71,16 +75,6 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100 img-fluid" src="./assets/img/streetart_1.jpg" alt="First slide">
-                    <!-- <div class="container">
-                                    <div class="carousel-caption">
-                                        <h1>Another example headline.</h1>
-                                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
-                                            at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                        <p>
-                                            <a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a>
-                                        </p>
-                                    </div>
-                                </div> -->
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100 img-fluid" src="./assets/img/streetart_2.jpg" alt="Second slide">
@@ -142,67 +136,54 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
 
             <!-- ALBUM section-->
             <section>
-                <div class="album py-5">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="card mb-4 box-shadow">
-                                    <img class="card-img-top" src="./assets/img/streetart_1.jpg" alt="Card image cap">
-                                    <div class="card-body text-dark">
-                                        <p class="card-text">Stu Unger is one of the biggest superstars to have immerged from the professional
-                                            poker world. Besides being a true poker genius and a three time World Series
-                                            of Poker champion, Stu Unger had a fascinating life story. It was not surprising
-                                            that after his death Stu was the subject of a biography and a biopic. Stu Unger
-                                            live d.</p>
-                                    </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="./assets/img/streetart_1.jpg" alt="Card image cap">
+                                <div class="card-body text-dark">
+                                    <h4 class="card-title">Card title</h4>
+                                    <h5>
+                                        <span class="badge badge-secondary">Location</span>
+                                        <span class="badge badge-info">#Hashtag</span>
+                                    </h5>
+                                    <p class="card-text">Stu Unger is one of the biggest superstars to have immerged from the professional poker
+                                        world. Besides being a true poker genius and a three time World Series of Poker champion,
+                                        Stu Unger had a fascinating life story. It was not surprising that after his death
+                                        Stu was the subject of a biography and a biopic. Stu Unger live d.</p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card mb-4">
+                                <img class="card-img-top" src="./assets/img/streetart_2.jpg" alt="Card image cap">
+                                <div class="card-body text-dark">
+                                    <p class="card-text">Gas prices are soaring! This has resulted in elevated travel expenses. If you travel
+                                        by car, YOU have some control over the costs. Here are some ways to save money on
+                                        gas:
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="./assets/img/streetart_3.jpg" alt="Card image cap">
+                                <div class="card-body text-dark">
+                                    <p class="card-text">It is not always possible to jet off half way around the world when you and your signiﬁcant
+                                        other are wishing to go off on a private and romantic getaway. The great news is
+                                        that you don’t have to spend a lot of money or go very far to get away from everyone
+                                        and everything. You can ﬁnd cheap romantic vacations nearby, and you</p>
+                                </div>
+                            </div>
+                        </div>
 
-                            <div class="col-lg-6">
-                                <div class="card mb-4 box-shadow">
-                                    <img class="card-img-top" src="./assets/img/streetart_2.jpg" alt="Card image cap">
-                                    <div class="card-body text-dark">
-                                        <p class="card-text">Gas prices are soaring! This has resulted in elevated travel expenses. If you travel
-                                            by car, YOU have some control over the costs. Here are some ways to save money
-                                            on gas:</p>
-                                        <!-- <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                            </div>
-                                            <small class="text-muted">9 mins</small>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="card mb-4 box-shadow">
-                                    <img class="card-img-top" src="./assets/img/streetart_3.jpg" alt="Card image cap">
-                                    <div class="card-body text-dark">
-                                        <p class="card-text">It is not always possible to jet off half way around the world when you and your
-                                            signiﬁcant other are wishing to go off on a private and romantic getaway. The
-                                            great news is that you don’t have to spend a lot of money or go very far to get
-                                            away from everyone and everything. You can ﬁnd cheap romantic vacations nearby,
-                                            and you</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="card mb-4 box-shadow">
-                                    <img class="card-img-top" src="./assets/img/streetart_4.jpg" alt="Card image cap">
-                                    <div class="card-body text-dark">
-                                        <p class="card-text">IT” (otherwise known as HD 36405.b) isn’t your average “oddball” exo-solar planet
-                                            made of rock that wobbles on its end & zips around a nearby star in less than
-                                            2.46 days. Seeking a spot of serenity somewhere in the univers e, I</p>
-                                        <!-- <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                            </div>
-                                            <small class="text-muted">9 mins</small>
-                                        </div> -->
-                                    </div>
+                        <div class="col-lg-6">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="./assets/img/streetart_4.jpg" alt="Card image cap">
+                                <div class="card-body text-dark">
+                                    <p class="card-text">IT” (otherwise known as HD 36405.b) isn’t your average “oddball” exo-solar planet made
+                                        of rock that wobbles on its end & zips around a nearby star in less than 2.46 days.
+                                        Seeking a spot of serenity somewhere in the univers e, I</p>
                                 </div>
                             </div>
                         </div>
