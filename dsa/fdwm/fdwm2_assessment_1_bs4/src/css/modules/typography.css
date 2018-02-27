@@ -1,15 +1,20 @@
 html {
   font-size: 0.8rem; }
 
-@media (min-width: 576px) {
-  html {
-    font-size: 1rem; } }
 @media (min-width: 768px) {
   html {
-    font-size: 1.2rem; } }
+    font-size: 1rem; } }
 @media (min-width: 992px) {
   html {
-    font-size: 1.4rem; } }
+    font-size: 1.2rem; } }
 @media (min-width: 1200px) {
   html {
-    font-size: 1.6rem; } }
+    font-size: 1.4rem; } }
+@font-face {
+  font-family: "humgerregular";
+  src: url("../fonts/humger-webfont.woff2") format("woff2"), url("../fonts/humger-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+.cons-display-font {
+  font-family: "humgerregular", "Roboto", sans-serif;
+  text-transform: uppercase; }

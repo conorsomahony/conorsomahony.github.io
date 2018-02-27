@@ -12,21 +12,27 @@
 html
     font-size: 0.8rem
 
-+media-breakpoint-up(sm)
++media-breakpoint-up(md)
     html
         font-size: 1rem
 
 
-+media-breakpoint-up(md)
++media-breakpoint-up(lg)
     html
         font-size: 1.2rem
 
 
-+media-breakpoint-up(lg)
++media-breakpoint-up(xl)
     html
         font-size: 1.4rem
 
 
-+media-breakpoint-up(xl)
-    html
-        font-size: 1.6rem
+@font-face
+    font-family: "humgerregular"
+    src: url("../fonts/humger-webfont.woff2") format("woff2"), url("../fonts/humger-webfont.woff") format("woff")
+    font-weight: normal
+    font-style: normal
+
+.cons-display-font
+    font-family: "humgerregular", "Roboto", sans-serif
+    text-transform: uppercase

@@ -27,6 +27,7 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
 
     <!-- Bootstrap 4 imported into main.sass and compiled into main.css -->
     <!-- <link rel="stylesheet" href="./css/bootstrap.css"> -->
+
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
@@ -40,7 +41,7 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
                 <img src="./assets/img/streetart-logo_orig_trans.png" class="cons-nav-logo">
             </a>
 
-            <!-- account toggle -->
+            <!-- toggle -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#account" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-user fa-2x"></i>
@@ -48,7 +49,6 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
 
             <div class="collapse navbar-collapse" id="account">
                 <ul class="navbar-nav ml-auto">
-
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sign in</a>
                     </li>
@@ -98,35 +98,35 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
         <div class="container text-light bg-dark">
             <!-- "INFORMATION" section -->
             <section>
-                <div class="container">
+                <div class="container mt-3">
                     <div class="row">
                         <div class="col text-center my-5">
-                            <h2>How to use StreetArt Finder?</h2>
+                            <h1 class="cons-display-font">How to use StreetArt Finder</h1>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col-md-4 text-center">
                             <span class="fa-stack fa-3x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <strong class="fa-stack-1x text-dark">1</strong>
+                                <i class="fa fa-circle fa-stack-2x text-info"></i>
+                                <strong class="fa-stack-1x text-light">1</strong>
                             </span>
-                            <h3>Take a photo</h3>
+                            <h3 class="text-info">Take a photo</h3>
                             <p>Take a photo with your phone</p>
                         </div>
                         <div class="col-md-4 text-center">
                             <span class="fa-stack fa-3x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <strong class="fa-stack-1x text-dark">2</strong>
+                                <i class="fa fa-circle fa-stack-2x text-info"></i>
+                                <strong class="fa-stack-1x text-light">2</strong>
                             </span>
-                            <h3>Upload it</h3>
+                            <h3 class="text-info">Upload it</h3>
                             <p>Upload it to StreetArt Finder</p>
                         </div>
                         <div class="col-md-4 text-center">
                             <span class="fa-stack fa-3x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <strong class="fa-stack-1x text-dark">3</strong>
+                                <i class="fa fa-circle fa-stack-2x text-info"></i>
+                                <strong class="fa-stack-1x text-light">3</strong>
                             </span>
-                            <h3>Tag it</h3>
+                            <h3 class="text-info">Tag it</h3>
                             <p>Tag it so everyone can find it</p>
                         </div>
                     </div>
@@ -136,54 +136,77 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
 
             <!-- ALBUM section-->
             <section>
-                <div class="container">
+                <div class="container text-dark">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="card mb-4 box-shadow">
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100">
                                 <img class="card-img-top" src="./assets/img/streetart_1.jpg" alt="Card image cap">
-                                <div class="card-body text-dark">
-                                    <h4 class="card-title">Card title</h4>
+                                <div class="card-body">
+                                    <h4 class="card-title">Cool Vista</h4>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, consectetur neque,
+                                        consequuntur est temporibus dolor debitis et, ullam excepturi soluta harum magnam
+                                        ut ad maiores deleniti accusamus doloremque numquam vero voluptatibus fugiat in corrupti
+                                        cumque ipsam ipsum! Ab, recusandae sit.</p>
+                                </div>
+                                <div class="card-footer">
                                     <h5>
                                         <span class="badge badge-secondary">Location</span>
                                         <span class="badge badge-info">#Hashtag</span>
                                     </h5>
-                                    <p class="card-text">Stu Unger is one of the biggest superstars to have immerged from the professional poker
-                                        world. Besides being a true poker genius and a three time World Series of Poker champion,
-                                        Stu Unger had a fascinating life story. It was not surprising that after his death
-                                        Stu was the subject of a biography and a biopic. Stu Unger live d.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="card mb-4">
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100">
                                 <img class="card-img-top" src="./assets/img/streetart_2.jpg" alt="Card image cap">
-                                <div class="card-body text-dark">
-                                    <p class="card-text">Gas prices are soaring! This has resulted in elevated travel expenses. If you travel
-                                        by car, YOU have some control over the costs. Here are some ways to save money on
-                                        gas:
+                                <div class="card-body">
+                                    <h4 class="card-title">Political Satire</h4>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident illo libero reprehenderit?
+                                        Exercitationem blanditiis molestiae quod iste repellendus delectus dicta laudantium,
+                                        impedit minus rem ab error ex rerum ratione animi?
                                     </p>
                                 </div>
+                                <div class="card-footer">
+                                    <h5>
+                                        <span class="badge badge-secondary">Location</span>
+                                        <span class="badge badge-info">#Hashtag</span>
+                                    </h5>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="card mb-4 box-shadow">
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100">
                                 <img class="card-img-top" src="./assets/img/streetart_3.jpg" alt="Card image cap">
-                                <div class="card-body text-dark">
-                                    <p class="card-text">It is not always possible to jet off half way around the world when you and your signiﬁcant
-                                        other are wishing to go off on a private and romantic getaway. The great news is
-                                        that you don’t have to spend a lot of money or go very far to get away from everyone
-                                        and everything. You can ﬁnd cheap romantic vacations nearby, and you</p>
+                                <div class="card-body">
+                                    <h4 class="card-title">Buenos Aires Bunny</h4>
+                                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id necessitatibus sit tempora,
+                                        esse ullam, provident magni placeat cum natus perferendis nam aperiam inventore eos
+                                        neque et in amet harum sequi eligendi quo alias quis. Veniam?</p>
+                                </div>
+                                <div class="card-footer">
+                                    <h5>
+                                        <span class="badge badge-secondary">Location</span>
+                                        <span class="badge badge-info">#Hashtag</span>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-6">
-                            <div class="card mb-4 box-shadow">
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100">
                                 <img class="card-img-top" src="./assets/img/streetart_4.jpg" alt="Card image cap">
-                                <div class="card-body text-dark">
-                                    <p class="card-text">IT” (otherwise known as HD 36405.b) isn’t your average “oddball” exo-solar planet made
-                                        of rock that wobbles on its end & zips around a nearby star in less than 2.46 days.
-                                        Seeking a spot of serenity somewhere in the univers e, I</p>
+                                <div class="card-body">
+                                    <h4 class="card-title">Madrid Master</h4>
+                                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim aspernatur, alias autem
+                                        deleniti tenetur atque eveniet ut quo ipsum dolorum fuga aliquam voluptate blanditiis
+                                        quis hic vel exercitationem sint corrupti a consectetur. Non, atque? Sapiente, iusto
+                                        doloremque? Illo quisquam impedit laudantium corrupti molestias dignissimos atque!</p>
+                                </div>
+                                <div class="card-footer">
+                                    <h5>
+                                        <span class="badge badge-secondary">Location</span>
+                                        <span class="badge badge-info">#Hashtag</span>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
@@ -196,44 +219,54 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
 
         <!-- "TOP LEVEL LIGHT" .container -->
         <div class="container-fluid text-dark bg-light">
-
             <!-- UPLOAD -->
             <div class="row">
                 <div class="col text-center">
-                    <h2>Upload</h2>
+                    <div class="my-4">
+                        <h3>Upload</h3>
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-7">
-                    <h2>
-                        How to
-                    </h2>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quis cupiditate ratione aperiam natus. Vitae deleniti excepturi,
-                        facilis nisi quis quasi? Sint minus vel, neque dolorum sit enim ea facere? Lorem, ipsum dolor sit
-                        amet consectetur adipisicing elit. Nobis, sit labore! Tenetur, laudantium ipsam deserunt officiis
-                        asperiores quis recusandae quos doloremque sit molestiae inventore illum soluta totam ipsum officia
-                        voluptatibus.
-                    </p>[
+                <div class="col-md-6 order-2 order-md-1">
+                    <div class="card bg-info text-light mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">How to</h4>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quis cupiditate ratione aperiam natus. Vitae deleniti excepturi,
+                                facilis nisi quis quasi? Sint minus vel, neque dolorum sit enim ea facere? Lorem, ipsum dolor
+                                sit amet consectetur adipisicing elit. Nobis, sit labore! Tenetur, laudantium ipsam deserunt
+                                officiis asperiores quis recusandae quos doloremque sit molestiae inventore illum soluta
+                                totam ipsum officia voluptatibus.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <form>
-                        <div class="form-group">
-                            <label for="photo-name">Photo name</label>
-                            <input type="email" class="form-control" id="photo-name" placeholder="Photo Name">
+                <div class="col-md-6 order-1 order-md-2">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="card-title d-none d-md-block h4 text-center">
+                                Upload here
+                            </div>
+                            <form>
+                                <div class="form-group">
+                                    <label for="photo-name">Photo name</label>
+                                    <input type="text" class="form-control" id="photo-name" placeholder="Photo Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="photo-hashtag">Hashtag</label>
+                                    <input type="text" class="form-control" id="photo-hashtag" placeholder="#">
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-secondary btn-lg text-dark mt-3 w-100">Upload</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="photo-hashtag">Hashtag</label>
-                            <input type="password" class="form-control" id="photo-hashtag" placeholder="#">
-                        </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile">
-                            <label class="custom-file-label" for="customFile">Choose file</label>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Upload</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <!-- end-of "UPLOAD " -->
@@ -246,9 +279,7 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
     <!-- footer -->
     <footer class="text-center text-light">
         <div>
-            <p>
-                Copyright &copy; 2018 Street Art Finder
-            </p>
+            Copyright &copy; 2018 Street Art Finder
         </div>
     </footer>
     <!-- end-of footer -->
