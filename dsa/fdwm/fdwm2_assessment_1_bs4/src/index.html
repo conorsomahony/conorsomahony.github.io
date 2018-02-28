@@ -292,7 +292,7 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-secondary btn-lg text-dark mt-3 w-100">Upload</button>
+                                    <button type="submit" class="btn btn-primary btn-lg text-light mt-3 w-100">Upload</button>
                                 </div>
                             </form>
                         </div>
@@ -319,8 +319,8 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Temporary text</h5>
+                <div class="modal-header bg-info text-light">
+                    <h4 class="modal-title" id="exampleModalLabel">Temporary text</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -330,15 +330,15 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
                 </div>
                 <div class="modal-footer">
                     <div>
-                        <button class="btn btn-primary">
-                            <i class="fab fa-facebook-square fa-2x"></i>
-                        </button>
-                        <button class="btn btn-primary">
-                            <i class="fab fa-twitter fa-2x"></i>
-                        </button>
-                        <button class="btn btn-primary">
-                            <i class="fab fa-instagram fa-2x"></i>
-                        </button>
+                        <a class="btn btn-primary" href="https://www.facebook.com" target="_blank">
+                            <i class="fab fa-facebook fa-2x text-light"></i>
+                        </a>
+                        <a class="btn btn-primary" href="https://www.twitter.com" target="_blank">
+                            <i class="fab fa-twitter fa-2x text-light"></i>
+                        </a>
+                        <a class="btn btn-primary" href="https://www.instagram.com" target="_blank">
+                            <i class="fab fa-instagram fa-2x text-light"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -353,7 +353,7 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
         getLocation();
         setInterval(getLocation, 5000);
 
-        // get location and compare to previously stored location
+        // get current location and store if different to last known location
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
@@ -364,6 +364,8 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
                     var longitude = position.coords.longitude;
                     var location = latitude + "," + longitude;
                     if (previousLocation != location) {
+                        localStorage.setItem("latitude", latitude);
+                        localStorage.setItem("longitude", longitude);
                         console.log("location has changed, do reverse geocode")
                         doReverseLookup(latitude, longitude);
                     }
@@ -373,9 +375,8 @@ Bootstrap 4, with JQuery, Popper.js, SASS, FontAwesome 5
             }
         }
 
+        // given a location, perform a geocoder reverse lookup to store name of location
         function doReverseLookup(latitude, longitude) {
-            localStorage.setItem("latitude", latitude);
-            localStorage.setItem("longitude", longitude);
             var latlng = {
                 lat: parseFloat(latitude),
                 lng: parseFloat(longitude)
