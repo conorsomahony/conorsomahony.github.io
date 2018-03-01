@@ -39,9 +39,6 @@ References:
 
     <!-- Investigate localForage for IndexedDB/localStorage access -->
     <script src="./js/localforage.min.js"></script>
-    <script>
-        console.log('localforage is: ', localforage);
-    </script>
 </head>
 
 <body>
@@ -297,7 +294,7 @@ References:
                             <div class="card-title d-none d-md-block h4 text-center">
                                 Upload here
                             </div>
-                            <form>
+                            <form id="uploadForm">
                                 <div class="form-group">
                                     <label for="photo-name">Photo Name</label>
                                     <input type="text" class="form-control" id="photo-name" placeholder="Photo Name" required="true">
@@ -311,7 +308,7 @@ References:
                                     <textarea class="form-control" id="photo-description" rows="3" placeholder="Description" required="true" maxlength="280"></textarea>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile" accept="image/*" required="true">
+                                    <input type="file" class="custom-file-input" id="photo-file" accept="image/*" required="true">
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                                 <div class="form-group">
@@ -376,23 +373,30 @@ References:
         // getLocation();
         setInterval(getLocation, 10000);
 
+        var imagesStore = localforage.createInstance({
+            name: "StreetArtImages"
+        });
+
+        var locationStore = localforage.createInstance({
+            name: "StreetArtLocation"
+        });
+
         //
-        // get current location and store if different to last known location
+        // JS: Get current location and store if different to last known location
         //
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
-                    var previousLocation = localforage.getItem("latitude") + "," + localforage.getItem(
-                        "longitude");
-                    var latitude = position.coords.latitude;
-                    var longitude = position.coords.longitude;
-                    var location = latitude + "," + longitude;
-                    if (previousLocation != location) {
-                        localforage.setItem("latitude", latitude);
-                        localforage.setItem("longitude", longitude);
-                        console.log("location has changed, do reverse geocode")
-                        doReverseLookup(latitude, longitude);
-                    }
+                    locationStore.getItem("lastLocation", function (err, lastLocation) {
+                        console.log("lastLocation: " + lastLocation);
+                        var location = position.coords.latitude + "," + position.coords.longitude;
+                        console.log("location:" + location);
+                        if (lastLocation != location) {
+                            locationStore.setItem("lastLocation", location);
+                            console.log("location:" + location);
+                            doReverseLookup(location);
+                        }
+                    });
                 });
             } else {
                 console.warn("location not found");
@@ -400,12 +404,13 @@ References:
         }
 
         //
-        // Given a location, perform a geocoder reverse lookup to store name of location
+        // JS: Given a location, perform a geocoder reverse lookup to store name of location
         //
-        function doReverseLookup(latitude, longitude) {
+        function doReverseLookup(location) {
+            var split = location.split(",");
             var latlng = {
-                lat: parseFloat(latitude),
-                lng: parseFloat(longitude)
+                lat: parseFloat(split[0]),
+                lng: parseFloat(split[1])
             };
             var geocoder = new google.maps.Geocoder;
             geocoder.geocode({
@@ -414,7 +419,7 @@ References:
                 if (status === 'OK') {
                     if (results[0]) {
                         // store formatted address
-                        localforage.setItem("locationText", results[0].formatted_address)
+                        locationStore.setItem("locationText", results[0].formatted_address)
                         // store shorter address information
                         var res, locality, country = '';
                         var components = results[0].address_components;
@@ -427,7 +432,7 @@ References:
                             }
                         }
                         res = locality + ', ' + country;
-                        localforage.setItem("shortLocationText", res);
+                        locationStore.setItem("shortLocationText", res);
                     } else {
                         console.warn('No results found');
                     }
@@ -438,20 +443,51 @@ References:
         }
 
         //
-        // Handle showing modal dialog for "Share" buttons
+        // jQuery: event handlers
         //
-        $('#exampleModal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget) // Button that triggered the modal
-            var imageTitle = button.data('image-title') // Extract info from data-* attributes
-            // Update the modal's content.
-            var modal = $(this)
-            modal.find('.modal-title').text('Share "' + imageTitle + '"')
-            // get current location from local storage
-            localforage.getItem('shortLocationText').then(function (value) {
-                modal.find('.modal-body').text('Found this in ' + value +
-                    ' with StreetArt Finder!')
+        $(document).ready(function () {
+
+            // Handler for showing modal dialog for "Share" buttons
+            //
+            $('#exampleModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) // Button that triggered the modal
+                var imageTitle = button.data('image-title') // Extract info from data-* attributes
+                // Update the modal's content.
+                var modal = $(this)
+                modal.find('.modal-title').text('Share "' + imageTitle + '"')
+                // get current location from local storage
+                locationStore.getItem('shortLocationText').then(function (value) {
+                    modal.find('.modal-body').text('Found this in ' + value +
+                        ' with StreetArt Finder!')
+                });
             });
-        })
+
+            // Handler for upload form submit event
+            //
+            // prevent the form being submitted and handle it locally
+            $('#uploadForm').on('submit', function (event) {
+                event.preventDefault();
+                var photoName = $('#photo-name').val();
+                var photoDescription = $('#photo-description').val();
+                var photoHashtag = $('#photo-hashtag').val();
+                var photoFile = $('#photo-file')[0].files[0];
+                // console.log(photoName);
+                // console.log(photoDescription);
+                // console.log(photoHashtag);
+                // console.log(photoFile);
+                var reader = new FileReader();
+                reader.readAsDataURL(photoFile);
+                reader.onload = function () {
+                    var dataURL = reader.result;
+                    imagesStore.setItem(photoName, {
+                        name: photoName,
+                        description: photoDescription,
+                        hashtag: photoHashtag,
+                        dataURL: dataURL
+                    });
+                }
+            });
+        });
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiBf9WrNYKOB-klGNa_HRZRfqu1hSh_Bw">
     </script>
