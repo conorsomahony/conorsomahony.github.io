@@ -88,7 +88,7 @@ References:
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100 img-fluid" src="./assets/img/streetart_1.jpg" alt="First slide">
+                                <img id="carousel-item-1-img" class="d-block w-100 img-fluid" src="./assets/img/streetart_1.jpg" alt="First slide">
                                 <div class="carousel-caption cons-carousel-caption d-none d-md-block px-3">
                                     <div class="card-body">
                                         <h4 class="card-title">Cool Vista</h4>
@@ -170,7 +170,7 @@ References:
                 <div class="container-fluid text-dark">
                     <div class="row">
                         <!-- .card -->
-                        <div class="col-lg-6 mb-4">
+                        <div id="col-card-1" class="col-lg-6 mb-4">
                             <div class="card h-100">
                                 <img class="card-img-top" src="./assets/img/streetart_1.jpg" alt="Card image cap">
                                 <div class="card-body">
@@ -188,7 +188,7 @@ References:
                             </div>
                             <!-- end-of .card -->
                         </div>
-                        <div class="col-lg-6 mb-4">
+                        <div id="col-card-2" class="col-lg-6 mb-4">
                             <!-- .card -->
                             <div class="card h-100">
                                 <img class="card-img-top" src="./assets/img/streetart_2.jpg" alt="Card image cap">
@@ -208,7 +208,7 @@ References:
                             </div>
                             <!-- end-of .card -->
                         </div>
-                        <div class="col-lg-6 mb-4">
+                        <div id="col-card-3" class="col-lg-6 mb-4">
                             <!-- .card -->
                             <div class="card h-100">
                                 <img class="card-img-top" src="./assets/img/streetart_3.jpg" alt="Card image cap">
@@ -227,18 +227,18 @@ References:
                             </div>
                             <!-- end-of .card -->
                         </div>
-                        <div class="col-lg-6 mb-4">
+                        <div id="col-card-4" class="col-lg-6 mb-4">
                             <!-- .card -->
                             <div class="card h-100">
-                                <img class="card-img-top" src="./assets/img/streetart_4.jpg" alt="Card image cap">
+                                <img class="card-img-top" id="card-4-img" src="./assets/img/streetart_4.jpg" alt="Card image cap">
                                 <div class="card-img-overlay">
                                     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" data-image-title="Madrid Master">Share&NonBreakingSpace;
                                         <i class="fa fa-share-alt" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="card-body">
-                                    <h4 class="card-title">Madrid Master</h4>
-                                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim aspernatur, alias autem
+                                    <h4 class="card-title" id="card-4-name">Madrid Master</h4>
+                                    <p class="card-text" id="card-4-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim aspernatur, alias autem
                                         deleniti tenetur atque eveniet ut quo ipsum dolorum fuga aliquam voluptate blanditiis
                                         quis hic vel exercitationem sint corrupti a consectetur. Non, atque? Sapiente, iusto
                                         doloremque? Illo quisquam impedit laudantium corrupti molestias dignissimos atque!</p>
@@ -246,7 +246,7 @@ References:
                                 <div class="card-footer">
                                     <h5>
                                         <span class="badge badge-secondary">Location</span>
-                                        <span class="badge badge-info">#Hashtag</span>
+                                        <span class="badge badge-info" id="card-4-hashtag">#Hashtag</span>
                                     </h5>
                                 </div>
                             </div>
@@ -342,7 +342,7 @@ References:
                 <div class="modal-header bg-info text-light">
                     <h4 class="modal-title" id="exampleModalLabel">Temporary text</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span class="text-light" aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -365,6 +365,26 @@ References:
         </div>
     </div>
     <!-- end-of "MODAL SHARE DIALOG" -->
+
+    <!-- "MODAL UPLOAD COMPLETE" -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-light">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Upload complete!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="text-light" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your image has been uploaded to StreetArt Finder!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="./js/jquery.min.js"></script>
     <script src="./js/popper.min.js"></script>
@@ -471,23 +491,34 @@ References:
                 var photoDescription = $('#photo-description').val();
                 var photoHashtag = $('#photo-hashtag').val();
                 var photoFile = $('#photo-file')[0].files[0];
-                // console.log(photoName);
-                // console.log(photoDescription);
-                // console.log(photoHashtag);
-                // console.log(photoFile);
                 var reader = new FileReader();
                 reader.readAsDataURL(photoFile);
                 reader.onload = function () {
-                    var dataURL = reader.result;
-                    imagesStore.setItem(photoName, {
+                    var uploadedPhoto = {
                         name: photoName,
                         description: photoDescription,
                         hashtag: photoHashtag,
-                        dataURL: dataURL
+                        dataURL: reader.result
+                    };
+                    imagesStore.setItem(photoName, uploadedPhoto, function (err, result) {
+                        putImageInCarousel(uploadedPhoto);
+                        $('#exampleModalCenter').modal('show');
                     });
                 }
             });
         });
+
+        function putImageInCarousel(uploadedPhoto) {
+            $('#carousel-item-1-img').attr('src', uploadedPhoto.dataURL);
+            $('#card-4-img').attr('src', uploadedPhoto.dataURL);
+            $('#card-4-name').text(uploadedPhoto.name);
+            $('#card-4-description').text(uploadedPhoto.description);
+            $('#card-4-hashtag').text(uploadedPhoto.hashtag);
+            $('#col-card-4').addClass("order-1");
+            $('#col-card-1').addClass("order-2");
+            $('#col-card-2').addClass("order-3");
+            $('#col-card-3').addClass("order-4");
+        }
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiBf9WrNYKOB-klGNa_HRZRfqu1hSh_Bw">
     </script>
