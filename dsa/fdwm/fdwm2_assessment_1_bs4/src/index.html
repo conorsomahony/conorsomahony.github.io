@@ -2,24 +2,30 @@
 * Author: Conor O'Mahony
 * Assignment: FDWM2 Assessment 1 - Street Art Finder
 * Student ID: STU-00001490
-* Date: 2018/02/26
-* Refs:  
+* Date: 2018/02/26 
 
-Initial project setup is based on: 
-- https://coursetro.com/posts/code/130/Learn-Bootstrap-4-Final-in-2018-with-our-Free-Crash-Course
+REFERENCES:
+Development folder setup (including Bootstrap, SASS and CSS setup)
 - https://www.youtube.com/watch?v=Mu74UmFBAq8&t=3s
 
-Technologies:
-- Bootstrap 4 (JQuery, Popper.js)
-- SASS, 
-- FontAwesome 5, 
-- Google Maps API
-- localForage,
-
-References:
+Bootstrap 4 (with jQuery, Popper.js)
+- https://coursetro.com/posts/code/130/Learn-Bootstrap-4-Final-in-2018-with-our-Free-Crash-Course
 - https://getbootstrap.com/docs/4.0/getting-started/introduction/
-- https://getbootstrap.com/docs/4.0/components/modal/
+
+Google Maps API
 - https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse
+
+jQuery
+- https://www.youtube.com/playlist?list=PLillGF-RfqbYJVXBgZ_nA7FTAAEpp_IAc
+
+localForage
+- https://localforage.github.io/localForage/
+
+Fonts
+- https://fontawesome.com/
+- https://fonts.google.com/specimen/Roboto
+- https://www.graphicpear.com/humger-free-font/
+
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -473,7 +479,7 @@ References:
         //
         $(document).ready(function () {
 
-            // Handler for showing modal dialog for"Share" buttons
+            // Handler for showing modal dialog for "Share" buttons
             //
             $('#exampleModal').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
