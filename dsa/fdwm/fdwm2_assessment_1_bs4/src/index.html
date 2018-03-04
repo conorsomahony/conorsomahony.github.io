@@ -8,18 +8,21 @@ REFERENCES:
 Development folder setup (including Bootstrap, SASS and CSS setup)
 - https://www.youtube.com/watch?v=Mu74UmFBAq8&t=3s
 
-Bootstrap 4 (with jQuery, Popper.js)
+Bootstrap 4
 - https://coursetro.com/posts/code/130/Learn-Bootstrap-4-Final-in-2018-with-our-Free-Crash-Course
 - https://getbootstrap.com/docs/4.0/getting-started/introduction/
 
-Google Maps API
-- https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse
+Bootstrap Carousel
+- http://ryanringler.com/blog/2014/08/24/fixed-height-carousel-for-twitter-bootstrap
 
 jQuery
 - https://www.youtube.com/playlist?list=PLillGF-RfqbYJVXBgZ_nA7FTAAEpp_IAc
 
-localForage
+localForage (Wrapper for local storage and IndexedDB)
 - https://localforage.github.io/localForage/
+
+Google Maps API
+- https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse
 
 Fonts
 - https://fontawesome.com/
@@ -54,7 +57,7 @@ Fonts
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="grow">
                 <a class="navbar-brand" href="#">
-                    <img src="./assets/img/streetart-logo_orig_trans.png" class="cons-nav-logo">
+                    <img src="./img/streetart-logo_orig_trans.png" class="cons-nav-logo">
                 </a>
             </div>
             <!-- toggle -->
@@ -82,7 +85,7 @@ Fonts
     <main role="main">
         <!--"CAROUSEL" section -->
         <section>
-            <div class="container-fluid">
+            <div class="container-fluid bg-dark cons-wall-background pb-2">
                 <div class="row">
                     <div class="col-12">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -93,27 +96,13 @@ Fonts
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img id="carousel-item-1-img" class="d-block w-100 img-fluid" src="./assets/img/streetart_1.jpg" alt="First slide">
-                                    <div class="carousel-caption cons-carousel-caption d-none d-md-block px-3">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Cool Vista</h4>
-                                            <p class="card-text">I hear the jury's still out on science. It's called 'taking advantage.' It's
-                                                what gets you ahead in life. Get me a vodka rocks. And a piece of toast.
-                                                Whoa, this guy's straight? We just call it a sausage.</p>
-                                        </div>
-                                        <div>
-                                            <h5>
-                                                <span class="badge badge-secondary">Location</span>
-                                                <span class="badge badge-info">#Hashtag</span>
-                                            </h5>
-                                        </div>
-                                    </div>
+                                    <img id="carousel-item-1-img" class="d-block w-100 img-fluid" src="./img/streetart_1.jpg" alt="First slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100 img-fluid" src="./assets/img/streetart_2.jpg" alt="Second slide">
+                                    <img id="carousel-item-2-img" class="d-block w-100 img-fluid" src="./img/streetart_2.jpg" alt="Second slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100 img-fluid" src="./assets/img/streetart_3.jpg" alt="Third slide">
+                                    <img id="carousel-item-3-img" class="d-block w-100 img-fluid" src="./img/streetart_3.jpg" alt="Third slide">
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -174,7 +163,7 @@ Fonts
         <!-- "ALBUM" section-->
         <section>
             <!--"TOP LEVEL DARK" .container -->
-            <div class="container-fluid text-light bg-dark">
+            <div class="container-fluid text-light bg-dark cons-wall-background">
                 <div class="row">
                     <div class="col text-center my-5">
                         <h1 class="cons-display-font">Latest Uploads</h1>
@@ -185,18 +174,27 @@ Fonts
                         <!-- .card -->
                         <div id="col-card-1" class="col-lg-6 mb-4">
                             <div class="card h-100">
-                                <img class="card-img-top" src="./assets/img/streetart_1.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="./img/streetart_1.jpg" alt="Card image cap">
+                                <div class="card-img-overlay">
+                                    <button type="button" id="button-share-1" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal"
+                                        data-image-title="Cool Vista">Share&NonBreakingSpace;
+                                        <i class="fas fa-share-alt" aria-hidden="true"></i>
+                                    </button>
+                                </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Cool Vista</h4>
+                                    <p class="card-text">
+                                        <span class="badge badge-secondary">Dublin, Ireland</span>
+                                        <span class="badge badge-info">#Coffee #Ideas</span>
+                                    </p>
                                     <p class="card-text">I hear the jury's still out on science. It's called 'taking advantage.' It's what gets
                                         you ahead in life. Get me a vodka rocks. And a piece of toast. Whoa, this guy's straight?
                                         We just call it a sausage.</p>
                                 </div>
-                                <div class="card-footer">
-                                    <h5>
-                                        <span class="badge badge-secondary">Dublin, Ireland</span>
-                                        <span class="badge badge-info">#Coffee #Ideas</span>
-                                    </h5>
+                                <div class="card-footer text-right">
+                                    <p class="card-text">
+                                        <small class="text-muted">Uploaded: Sun, 04 Mar 2018 13:33:28 GMT</small>
+                                    </p>
                                 </div>
                             </div>
                             <!-- end-of .card -->
@@ -204,19 +202,28 @@ Fonts
                         <div id="col-card-2" class="col-lg-6 mb-4">
                             <!-- .card -->
                             <div class="card h-100">
-                                <img class="card-img-top" src="./assets/img/streetart_2.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="./img/streetart_2.jpg" alt="Card image cap">
+                                <div class="card-img-overlay">
+                                    <button type="button" id="button-share-2" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal"
+                                        data-image-title="Political Satire">Share&NonBreakingSpace;
+                                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                    </button>
+                                </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Political Satire</h4>
+                                    <p class="card-text">
+                                        <span class="badge badge-secondary">Cork, Ireland</span>
+                                        <span class="badge badge-info">#Lovers #Kiss</span>
+                                    </p>
                                     <p class="card-text">Get me a vodka rocks. And a piece of toast. That's why you always leave a note! It's
                                         called 'taking advantage.' It's what gets you ahead in life. As you may or may not
                                         know, Lindsay and I have hit a bit of a rough patch.
                                     </p>
                                 </div>
-                                <div class="card-footer">
-                                    <h5>
-                                        <span class="badge badge-secondary">Cork, Ireland</span>
-                                        <span class="badge badge-info">#Lovers #Kiss</span>
-                                    </h5>
+                                <div class="card-footer text-right">
+                                    <p class="card-text">
+                                        <small class="text-muted">Uploaded: Sun, 04 Mar 2018 13:33:28 GMT</small>
+                                    </p>
                                 </div>
                             </div>
                             <!-- end-of .card -->
@@ -224,18 +231,27 @@ Fonts
                         <div id="col-card-3" class="col-lg-6 mb-4">
                             <!-- .card -->
                             <div class="card h-100">
-                                <img class="card-img-top" src="./assets/img/streetart_3.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="./img/streetart_3.jpg" alt="Card image cap">
+                                <div class="card-img-overlay">
+                                    <button type="button" id="button-share-3" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal"
+                                        data-image-title="Buenos Aires Bunny">Share&NonBreakingSpace;
+                                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                    </button>
+                                </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Buenos Aires Bunny</h4>
+                                    <p class="card-text">
+                                        <span class="badge badge-secondary">Buenos Aires, Argentina</span>
+                                        <span class="badge badge-info">#Bicycle #Sunny</span>
+                                    </p>
                                     <p class="card-text">We just call it a sausage. It's called 'taking advantage.' It's what gets you ahead in
                                         life. That's what it said on 'Ask Jeeves.' There's so many poorly chosen words in
                                         that sentence.</p>
                                 </div>
-                                <div class="card-footer">
-                                    <h5>
-                                        <span class="badge badge-secondary">Buenos Aires, Argentina</span>
-                                        <span class="badge badge-info">#Bicycle #Sunny</span>
-                                    </h5>
+                                <div class="card-footer text-right">
+                                    <p class="card-text">
+                                        <small class="text-muted">Uploaded: Sun, 04 Mar 2018 13:33:28 GMT</small>
+                                    </p>
                                 </div>
                             </div>
                             <!-- end-of .card -->
@@ -243,24 +259,27 @@ Fonts
                         <div id="col-card-4" class="col-lg-6 mb-4">
                             <!-- .card -->
                             <div class="card h-100">
-                                <img class="card-img-top" id="card-4-img" src="./assets/img/streetart_4.jpg" alt="Card
-                    image cap">
+                                <img class="card-img-top" id="card-4-img" src="./img/streetart_4.jpg" alt="Card image cap">
                                 <div class="card-img-overlay">
-                                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" data-image-title="Madrid Master">Share&NonBreakingSpace;
+                                    <button type="button" id="button-share-4" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal"
+                                        data-image-title="Madrid Master">Share&NonBreakingSpace;
                                         <i class="fa fa-share-alt" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title" id="card-4-name">Madrid Master</h4>
+                                    <p class="card-text">
+                                        <span class="badge badge-secondary" id="card-4-location">Madrid, Spain</span>
+                                        <span class="badge badge-info" id="card-4-hashtag">#Building #Colours</span>
+                                    </p>
                                     <p class="card-text" id="card-4-description">I'm a monster. I don't understand the question, and I won't respond to it. As you may
                                         or may not know, Lindsay and I have hit a bit of a rough patch. There's only one
                                         man I've ever called a coward, and that's Brian Doyle Murray.</p>
                                 </div>
-                                <div class="card-footer">
-                                    <h5>
-                                        <span class="badge badge-secondary">Madrid, Spain</span>
-                                        <span class="badge badge-info" id="card-4-hashtag">#Building #Colours</span>
-                                    </h5>
+                                <div class="card-footer text-right">
+                                    <p class="card-text">
+                                        <small class="text-muted" id="card-4-date">Uploaded: Sun, 04 Mar 2018 13:33:28 GMT</small>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -294,7 +313,8 @@ Fonts
                                     But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood? I
                                     see you've wasted no time in filling my seat hole. I've been in the film business for
                                     a while but I just cant seem to get one in the can. God knows they're squinters. That's
-                                    how Tony Wonder lost a nut.
+                                    how Tony Wonder lost a nut. And the soup of the day is bread. I've always been deeply
+                                    passionate about nature. Perhaps you remember Neuterfest?
                                 </p>
                             </div>
                         </div>
@@ -323,7 +343,7 @@ Fonts
                                     </div>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="photo-file" accept="image/*" required="true">
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                        <label class="custom-file-label" for="customFile" id="choose-file-label">Choose file</label>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-lg text-light mt-3 w-100">Upload</button>
@@ -349,14 +369,14 @@ Fonts
             Copyright &copy; 2018 Street Art Finder
         </div>
         <div>
-            <img src="./assets/img/streetart-logo_orig_trans.png" class="cons-footer-logo">
+            <img src="./img/streetart-logo_orig_trans.png" class="cons-footer-logo">
         </div>
     </footer>
     <!-- end-of footer -->
 
+    <!-- ADDITIONAL HTML content -->
     <!--"MODAL SHARE DIALOG" -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel
-                   " aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -406,7 +426,9 @@ Fonts
             </div>
         </div>
     </div>
+    <!-- end-of ADDITIONAL HTML content -->
 
+    <!-- SCRIPTS -->
     <script src="./js/jquery.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
@@ -414,17 +436,17 @@ Fonts
         // getLocation();
         setInterval(getLocation, 10000);
 
+        // Local Forage wrapper for IndexedDB
         var imagesStore = localforage.createInstance({
             name: "StreetArtImages"
         });
-
         var locationStore = localforage.createInstance({
             name: "StreetArtLocation"
         });
 
-        //
-        // JS: Get current location and store if different to last known location
-        //
+        /*
+         * Get current location and store it in client-side storage (if location has changed)
+         */
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
@@ -444,9 +466,9 @@ Fonts
             }
         }
 
-        //
-        // JS: Given a location, perform a geocoder reverse lookup to store name of location
-        //
+        /*
+         * Given a location, perform a geocoder reverse lookup to store name of location
+         */
         function doReverseLookup(location) {
             var split = location.split(",");
             var latlng = {
@@ -483,19 +505,18 @@ Fonts
             });
         }
 
-        //
-        // jQuery: event handlers
-        //
+        // will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute
         $(document).ready(function () {
 
-            // Handler for showing modal dialog for "Share" buttons
-            //
+            /*
+             * Event handler for showing modal dialog for "Share" buttons
+             */
             $('#exampleModal').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
                 var imageTitle = button.data('image-title') // Extract info from data-* attributes
                 // Update the modal's content.
                 var modal = $(this)
-                modal.find('.modal-title').text('Share" ' + imageTitle + '"')
+                modal.find('.modal-title').text('Share "' + imageTitle + '"')
                 // get current location from local storage
                 locationStore.getItem('shortLocationText').then(function (value) {
                     modal.find('.modal-body').text('Found this in ' + value +
@@ -503,9 +524,12 @@ Fonts
                 });
             });
 
-            // Handler for upload form submit event
-            //
-            // prevent the form being submitted and handle it locally
+
+            /*
+             * Event Handler for upload form submit event - prevent the form being submitted and handle it locally
+             *
+             * We just mimic the file upload and store the data locally, adding the image to the DOM via jQuery
+             */
             $('#uploadForm').on('submit', function (event) {
                 event.preventDefault();
                 var photoName = $('#photo-name').val();
@@ -515,32 +539,98 @@ Fonts
                 var reader = new FileReader();
                 reader.readAsDataURL(photoFile);
                 reader.onload = function () {
-                    var uploadedPhoto = {
-                        name: photoName,
-                        description: photoDescription,
-                        hashtag: photoHashtag,
-                        dataURL: reader.result
-                    };
-                    imagesStore.setItem(photoName, uploadedPhoto, function (err, result) {
-                        putImageInCarousel(uploadedPhoto);
-                        $('#exampleModalCenter').modal('show');
+                    locationStore.getItem('shortLocationText').then(function (location) {
+                        var date = new Date();
+                        var uploadedPhoto = {
+                            name: photoName,
+                            description: photoDescription,
+                            hashtag: photoHashtag,
+                            location: location,
+                            date: date.toUTCString(),
+                            dataURL: reader.result
+                        };
+                        // store data in IndexDB
+                        imagesStore.setItem(photoName, uploadedPhoto, function (err, result) {
+                            updateCarouselAndAlbum(uploadedPhoto);
+                            $('#exampleModalCenter').modal('show');
+                        });
                     });
-                }
+                };
+            });
+
+            /*
+             * Handler for file input 
+             *
+             * display selected file in the form
+             */
+            $(function () {
+                $("input:file").change(function () {
+                    var fileName = $(this).val();
+                    $("#choose-file-label").html(fileName);
+                });
             });
         });
 
-        function putImageInCarousel(uploadedPhoto) {
+        /* TODO FIX ME!!! */
+        function updateCarouselAndAlbum(uploadedPhoto) {
+            // assuming 3 carousel images - show the new uploaded one and shove on the rest, dropping the last one
+            $('#carousel-item-3-img').attr('src', $('#carousel-item-2-img').attr('src'));
+            $('#carousel-item-2-img').attr('src', $('#carousel-item-1-img').attr('src'));
             $('#carousel-item-1-img').attr('src', uploadedPhoto.dataURL);
+
+            // get the last one and update it, and change the ordering...
             $('#card-4-img').attr('src', uploadedPhoto.dataURL);
             $('#card-4-name').text(uploadedPhoto.name);
             $('#card-4-description').text(uploadedPhoto.description);
+            $('#card-4-location').text(uploadedPhoto.location);
             $('#card-4-hashtag').text(uploadedPhoto.hashtag);
-            $('#col-card-4').addClass("order-1");
-            $('#col-card-1').addClass("order-2");
-            $('#col-card-2').addClass("order-3");
-            $('#col-card-3').addClass("order-4");
+            $('#card-4-date').text("Uploaded: " + uploadedPhoto.date);
+            $('#button-share-4').attr("data-image-title", uploadedPhoto.name);
+            // $('#col-card-4').addClass("order-1");
+            // $('#col-card-1').addClass("order-2");
+            // $('#col-card-2').addClass("order-3");
+            // $('#col-card-3').addClass("order-4");
+        }
+
+
+        /* Normalises the image heights in the carousel
+         *
+         * see - http://ryanringler.com/blog/2014/08/24/fixed-height-carousel-for-twitter-bootstrap
+         */
+        function carouselNormalization() {
+            var items = $('#myCarousel .carousel-item'), // grab all the slides
+                heights = [], // array to store heights
+                tallest, shortest; // tallest slide
+
+            if (items.length) {
+                function normalizeHeights() {
+                    items.each(function () {
+                        heights.push($(this).height()); // add each slide's height
+                    }); // to the array
+
+                    tallest = Math.max.apply(null, heights); // find the largest height
+                    items.each(function () {
+                        $(this).css('min-height', tallest + 'px'); // set each slide's minimum
+                    }); // height to the largest
+                };
+
+                normalizeHeights();
+
+                $(window).on('resize orientationchange', function () {
+                    tallest = 0, smallest = 0, heights.length = 0; // reset the variables
+                    items.each(function () {
+                        $(this).css('min-height', '0'); // reset each slide's height
+                    });
+                    normalizeHeights(); // run it again
+                });
+            }
+        }
+        window.onload = function () {
+            carouselNormalization();
         }
     </script>
+
+    <!-- For Reverse Geocoding lookup -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiBf9WrNYKOB-klGNa_HRZRfqu1hSh_Bw">
     </script>
 </body>
