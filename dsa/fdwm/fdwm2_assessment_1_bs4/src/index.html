@@ -4,31 +4,7 @@
 * Student ID: STU-00001490
 * Date: 2018/02/26 
 
-REFERENCES:
-Development folder setup (including Bootstrap, SASS and CSS setup)
-- https://www.youtube.com/watch?v=Mu74UmFBAq8&t=3s
-
-Bootstrap 4
-- https://coursetro.com/posts/code/130/Learn-Bootstrap-4-Final-in-2018-with-our-Free-Crash-Course
-- https://getbootstrap.com/docs/4.0/getting-started/introduction/
-
-Bootstrap Carousel
-- http://ryanringler.com/blog/2014/08/24/fixed-height-carousel-for-twitter-bootstrap
-
-jQuery
-- https://www.youtube.com/playlist?list=PLillGF-RfqbYJVXBgZ_nA7FTAAEpp_IAc
-
-localForage (Wrapper for local storage and IndexedDB)
-- https://localforage.github.io/localForage/
-
-Google Maps API
-- https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse
-
-Fonts
-- https://fontawesome.com/
-- https://fonts.google.com/specimen/Roboto
-- https://www.graphicpear.com/humger-free-font/
-
+* References: see readme.md
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +14,9 @@ Fonts
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Street Art Finder!</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
@@ -172,12 +151,11 @@ Fonts
                 <div class="container-fluid text-dark">
                     <div class="row">
                         <!-- .card -->
-                        <div id="col-card-1" class="col-lg-6 mb-4">
+                        <div id="col-card-1" class="col-lg-6 mb-4 order-1">
                             <div class="card h-100">
                                 <img class="card-img-top" src="./img/streetart_1.jpg" alt="Card image cap">
                                 <div class="card-img-overlay">
-                                    <button type="button" id="button-share-1" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal"
-                                        data-image-title="Cool Vista">Share&NonBreakingSpace;
+                                    <button type="button" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal" data-image-title="Cool Vista">Share&NonBreakingSpace;
                                         <i class="fas fa-share-alt" aria-hidden="true"></i>
                                     </button>
                                 </div>
@@ -199,13 +177,12 @@ Fonts
                             </div>
                             <!-- end-of .card -->
                         </div>
-                        <div id="col-card-2" class="col-lg-6 mb-4">
+                        <div id="col-card-2" class="col-lg-6 mb-4 order-2">
                             <!-- .card -->
                             <div class="card h-100">
                                 <img class="card-img-top" src="./img/streetart_2.jpg" alt="Card image cap">
                                 <div class="card-img-overlay">
-                                    <button type="button" id="button-share-2" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal"
-                                        data-image-title="Political Satire">Share&NonBreakingSpace;
+                                    <button type="button" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal" data-image-title="Political Satire">Share&NonBreakingSpace;
                                         <i class="fa fa-share-alt" aria-hidden="true"></i>
                                     </button>
                                 </div>
@@ -228,13 +205,12 @@ Fonts
                             </div>
                             <!-- end-of .card -->
                         </div>
-                        <div id="col-card-3" class="col-lg-6 mb-4">
+                        <div id="col-card-3" class="col-lg-6 mb-4 order-3">
                             <!-- .card -->
                             <div class="card h-100">
                                 <img class="card-img-top" src="./img/streetart_3.jpg" alt="Card image cap">
                                 <div class="card-img-overlay">
-                                    <button type="button" id="button-share-3" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal"
-                                        data-image-title="Buenos Aires Bunny">Share&NonBreakingSpace;
+                                    <button type="button" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal" data-image-title="Buenos Aires Bunny">Share&NonBreakingSpace;
                                         <i class="fa fa-share-alt" aria-hidden="true"></i>
                                     </button>
                                 </div>
@@ -256,29 +232,28 @@ Fonts
                             </div>
                             <!-- end-of .card -->
                         </div>
-                        <div id="col-card-4" class="col-lg-6 mb-4">
+                        <div class="col-lg-6 mb-4 order-4">
                             <!-- .card -->
                             <div class="card h-100">
-                                <img class="card-img-top" id="card-4-img" src="./img/streetart_4.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="./img/streetart_4.jpg" alt="Card image cap">
                                 <div class="card-img-overlay">
-                                    <button type="button" id="button-share-4" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal"
-                                        data-image-title="Madrid Master">Share&NonBreakingSpace;
+                                    <button type="button" class="btn btn-primary border" data-toggle="modal" data-target="#exampleModal" data-image-title="Madrid Master">Share&NonBreakingSpace;
                                         <i class="fa fa-share-alt" aria-hidden="true"></i>
                                     </button>
                                 </div>
                                 <div class="card-body">
-                                    <h4 class="card-title" id="card-4-name">Madrid Master</h4>
+                                    <h4 class="card-title">Madrid Master</h4>
                                     <p class="card-text">
-                                        <span class="badge badge-secondary" id="card-4-location">Madrid, Spain</span>
-                                        <span class="badge badge-info" id="card-4-hashtag">#Building #Colours</span>
+                                        <span class="badge badge-secondary">Madrid, Spain</span>
+                                        <span class="badge badge-info">#Building #Colours</span>
                                     </p>
-                                    <p class="card-text" id="card-4-description">I'm a monster. I don't understand the question, and I won't respond to it. As you may
+                                    <p class="card-text">I'm a monster. I don't understand the question, and I won't respond to it. As you may
                                         or may not know, Lindsay and I have hit a bit of a rough patch. There's only one
                                         man I've ever called a coward, and that's Brian Doyle Murray.</p>
                                 </div>
                                 <div class="card-footer text-right">
                                     <p class="card-text">
-                                        <small class="text-muted" id="card-4-date">Uploaded: Sun, 04 Mar 2018 13:33:28 GMT</small>
+                                        <small class="text-muted">Uploaded: Sun, 04 Mar 2018 13:33:28 GMT</small>
                                     </p>
                                 </div>
                             </div>
@@ -407,8 +382,7 @@ Fonts
     <!-- end-of "MODAL SHARE DIALOG" -->
 
     <!--"MODAL UPLOAD COMPLETE" -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle
-                   " aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -444,6 +418,9 @@ Fonts
             name: "StreetArtLocation"
         });
 
+        const ALBUM_SIZE = 4;
+        const CAROUSEL_SIZE = 3;
+
         /*
          * Get current location and store it in client-side storage (if location has changed)
          */
@@ -451,12 +428,11 @@ Fonts
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     locationStore.getItem("lastLocation", function (err, lastLocation) {
-                        console.log("lastLocation:" + lastLocation);
                         var location = position.coords.latitude + "," + position.coords.longitude;
-                        console.log("location:" + location);
+                        // console.log("lastLocation:" + lastLocation);
+                        // console.log("location:" + location);
                         if (lastLocation != location) {
                             locationStore.setItem("lastLocation", location);
-                            console.log("location:" + location);
                             doReverseLookup(location);
                         }
                     });
@@ -509,7 +485,7 @@ Fonts
         $(document).ready(function () {
 
             /*
-             * Event handler for showing modal dialog for "Share" buttons
+             * Event handler for showing modal dialog for "Share" buttons.
              */
             $('#exampleModal').on('show.bs.modal', function (event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
@@ -526,9 +502,10 @@ Fonts
 
 
             /*
-             * Event Handler for upload form submit event - prevent the form being submitted and handle it locally
+             * Event handler for upload form submit event.
              *
-             * We just mimic the file upload and store the data locally, adding the image to the DOM via jQuery
+             * Prevent the form being submitted and handle it locally
+             * Mimic a file upload and store the data locally, adding the image to the carousel and album via jQuery
              */
             $('#uploadForm').on('submit', function (event) {
                 event.preventDefault();
@@ -549,9 +526,12 @@ Fonts
                             date: date.toUTCString(),
                             dataURL: reader.result
                         };
-                        // store data in IndexDB
+                        // store data in IndexedDB 
+                        // (we don't necessarily use this for anything now, but could load stored images on page load,
+                        // rather than the defaults)
                         imagesStore.setItem(photoName, uploadedPhoto, function (err, result) {
-                            updateCarouselAndAlbum(uploadedPhoto);
+                            updateCarousel(uploadedPhoto);
+                            updateAlbum(uploadedPhoto);
                             $('#exampleModalCenter').modal('show');
                         });
                     });
@@ -559,7 +539,7 @@ Fonts
             });
 
             /*
-             * Handler for file input 
+             * Event handler for file input.
              *
              * display selected file in the form
              */
@@ -569,31 +549,62 @@ Fonts
                     $("#choose-file-label").html(fileName);
                 });
             });
+
+            carouselNormalization();
         });
 
-        /* TODO FIX ME!!! */
-        function updateCarouselAndAlbum(uploadedPhoto) {
-            // assuming 3 carousel images - show the new uploaded one and shove on the rest, dropping the last one
-            $('#carousel-item-3-img').attr('src', $('#carousel-item-2-img').attr('src'));
-            $('#carousel-item-2-img').attr('src', $('#carousel-item-1-img').attr('src'));
+        /* 
+         * Given the new uploaded photo, add it to the start of the carousel, and shove on the other ones.
+         */
+        function updateCarousel(uploadedPhoto) {
+            // shove on all the other photos first
+            for (var i = CAROUSEL_SIZE; i > 1; i--) {
+                $('#carousel-item-' + i + '-img').attr('src', $('#carousel-item-' + (i - 1) +
+                    '-img').attr('src'));
+            }
+            // put the new photo in the first carousel item
             $('#carousel-item-1-img').attr('src', uploadedPhoto.dataURL);
-
-            // get the last one and update it, and change the ordering...
-            $('#card-4-img').attr('src', uploadedPhoto.dataURL);
-            $('#card-4-name').text(uploadedPhoto.name);
-            $('#card-4-description').text(uploadedPhoto.description);
-            $('#card-4-location').text(uploadedPhoto.location);
-            $('#card-4-hashtag').text(uploadedPhoto.hashtag);
-            $('#card-4-date').text("Uploaded: " + uploadedPhoto.date);
-            $('#button-share-4').attr("data-image-title", uploadedPhoto.name);
-            // $('#col-card-4').addClass("order-1");
-            // $('#col-card-1').addClass("order-2");
-            // $('#col-card-2').addClass("order-3");
-            // $('#col-card-3').addClass("order-4");
         }
 
+        /*
+         * Given the new uploaded photo, update the album with the new photo and data.
+         */
+        function updateAlbum(uploadedPhoto) {
+            updateLastCard(uploadedPhoto);
+            reorderCards();
+        }
 
-        /* Normalises the image heights in the carousel
+        /*
+         * Given the new uploaded photo, replace the photo and data in the last (oldest) card with the new photo and data.
+         */
+        function updateLastCard(uploadedPhoto) {
+            var lastCard = $('div.order-4 div.card');
+            lastCard.find("img").attr('src', uploadedPhoto.dataURL);
+            lastCard.find(".card-title").text(uploadedPhoto.name);
+            lastCard.find(".badge-secondary").text(uploadedPhoto.location);
+            lastCard.find(".badge-info").text(uploadedPhoto.hashtag);
+            lastCard.find(".card-body p.card-text:nth-of-type(2)").text(uploadedPhoto.description);
+            lastCard.find(".card-footer .text-muted").text(uploadedPhoto.date);
+            lastCard.find(".card-img-overlay button").attr("data-image-title", uploadedPhoto.name);
+        }
+
+        /*
+         * Re-order our album cards with the new uploaded photo first.
+         *
+         * Take advantage of bootstrap and flex "order-x" classes to do this.
+         * (Note: this probably won't work if our displayed album is bigger than 12, but we are assuming 4 cards)
+         * see - https://getbootstrap.com/docs/4.0/utilities/flex/
+         */
+        function reorderCards() {
+            $('.order-' + ALBUM_SIZE).removeClass('order-' + ALBUM_SIZE).addClass('order-temp');
+            for (var i = ALBUM_SIZE - 1; i > 0; i--) {
+                $('.order-' + i).removeClass('order-' + i).addClass('order-' + (i + 1));
+            }
+            $('.order-temp').removeClass('order-temp').addClass('order-1');
+        }
+
+        /* 
+         * Normalises the image heights in the carousel.
          *
          * see - http://ryanringler.com/blog/2014/08/24/fixed-height-carousel-for-twitter-bootstrap
          */
@@ -624,9 +635,6 @@ Fonts
                     normalizeHeights(); // run it again
                 });
             }
-        }
-        window.onload = function () {
-            carouselNormalization();
         }
     </script>
 
