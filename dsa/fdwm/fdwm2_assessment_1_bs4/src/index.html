@@ -34,12 +34,12 @@
 
 <body>
     <!-- header -->
-    <header role="navigation">
+    <header>
         <!-- nav -->
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark" role="navigation">
             <div class="grow">
                 <a class="navbar-brand" href="#">
-                    <img src="./img/streetart-logo_orig_trans.png" class="cons-nav-logo">
+                    <img src="./img/streetart-logo_orig_trans.png" class="cons-nav-logo" alt="Street Art Logo">
                 </a>
             </div>
             <!-- toggle -->
@@ -48,7 +48,7 @@
                 <i class="fas fa-bars fa-2x"></i>
             </button>
 
-            <div class="collapse navbar-collapse" id="account">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item ml-auto order-1 order-sm-2 px-2">
                         <img id="userimage" class="cons-user-img" style="height:2.5em" src="./img/fa_user.png" alt="">
@@ -315,19 +315,19 @@
                                 <form id="uploadForm">
                                     <div class="form-group">
                                         <label for="photo-name">Photo Name</label>
-                                        <input type="text" class="form-control" id="photo-name" placeholder="Photo Name" required="true">
+                                        <input type="text" class="form-control" id="photo-name" placeholder="Photo Name" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="photo-hashtag">Hashtag</label>
-                                        <input type="text" class="form-control" id="photo-hashtag" placeholder="#" required="true">
+                                        <input type="text" class="form-control" id="photo-hashtag" placeholder="#" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="photo-description">Description</label>
-                                        <textarea class="form-control" id="photo-description" rows="3" placeholder="Description" required="true" maxlength="280"></textarea>
+                                        <textarea class="form-control" id="photo-description" rows="3" placeholder="Description" required maxlength="280"></textarea>
                                     </div>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="photo-file" accept="image/*" required="true">
-                                        <label class="custom-file-label" for="customFile" id="choose-file-label">Choose file</label>
+                                        <input type="file" class="custom-file-input" id="photo-file" accept="image/*" required>
+                                        <label class="custom-file-label" for="photo-file" id="choose-file-label">Choose file</label>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-lg text-light mt-3 w-100">Upload</button>
@@ -353,7 +353,7 @@
             Copyright &copy; 2018 Street Art Finder
         </div>
         <div>
-            <img src="./img/streetart-logo_orig_trans.png" class="cons-footer-logo">
+            <img src="./img/streetart-logo_orig_trans.png" class="cons-footer-logo" alt="Street Art Logo">
         </div>
     </footer>
     <!-- end-of footer -->
@@ -395,7 +395,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-info text-light">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Upload complete!</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Upload complete!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span class="text-light" aria-hidden="true">&times;</span>
                     </button>
