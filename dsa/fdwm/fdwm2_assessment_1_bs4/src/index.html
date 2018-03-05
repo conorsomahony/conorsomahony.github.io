@@ -654,7 +654,7 @@
             lastCard.find(".badge-secondary").text(uploadedPhoto.location);
             lastCard.find(".badge-info").text(uploadedPhoto.hashtag);
             lastCard.find(".card-body p.card-text:nth-of-type(2)").text(uploadedPhoto.description);
-            lastCard.find(".card-footer .text-muted").text(uploadedPhoto.date);
+            lastCard.find(".card-footer .text-muted").text("Uploaded:" + uploadedPhoto.date);
             lastCard.find(".card-img-overlay button").attr("data-image-title", uploadedPhoto.name);
         }
 
