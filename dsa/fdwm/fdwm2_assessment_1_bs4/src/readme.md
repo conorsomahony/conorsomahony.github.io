@@ -1,3 +1,9 @@
+# Submission
+* Author: Conor O'Mahony
+* Assignment: FDWM2 Assessment 1 - Street Art Finder
+* Student ID: STU-00001490
+* Date: 2018/02/26 
+
 # REFERENCES:
 ## Development folder setup (including Bootstrap, SASS and CSS setup)
 * https://www.youtube.com/watch?v=Mu74UmFBAq8&t=3s
