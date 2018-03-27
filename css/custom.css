@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5, h6, .navbar-brand, footer {
+    font-family: 'Abel', sans-serif;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+#profile-image {
+    width: 200px;
+    border-radius: 50%;
+    border: 8px solid white;
+}
