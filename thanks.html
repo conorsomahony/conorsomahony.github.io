@@ -14,9 +14,6 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="./css/custom.css">
 
-    <!-- animate.css -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
-
     <!-- Font Awesome JavaScript-->
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
         crossorigin="anonymous"></script>
@@ -31,7 +28,7 @@
     <!-- header with brand, simple responsive navigation (COMMON)-->
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark bg-info">
-            <a class="navbar-brand" href="#">conorsomahony</a>
+            <a class="navbar-brand" href="#">conorsomahony.net</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,8 +36,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.html">Home
-                        </a>
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./projects.html">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./contact.html">Contact</a>
@@ -84,31 +83,6 @@
         crossorigin="anonymous "></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
         crossorigin="anonymous "></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-url/2.5.2/url.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            // $('.btn').each(function () {
-            // animationHover(this, 'pulse');
-            // });
-            console.log(url(window.location, "submit"));
-        });
-
-        function animationHover(element, animation) {
-            element = $(element);
-            element.hover(
-                function () {
-                    element.addClass('animated ' + animation);
-                },
-                function () {
-                    //wait for animation to finish before removing classes
-                    window.setTimeout(function () {
-                        element.removeClass('animated ' + animation);
-                    }, 2000);
-                });
-        }
-    </script>
 
 </body>
 
