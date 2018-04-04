@@ -15,6 +15,7 @@ body {
 
 .jumbotron {
     text-align: center;
+    background-image: radial-gradient(circle, #ffffff, #E9ECEF);
 }
 
 #profile-image {
