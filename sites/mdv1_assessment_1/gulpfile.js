@@ -13,8 +13,8 @@ gulp.task("sass", function () {
         .pipe(gulp.dest("app/css"))
         .pipe(browserSync.reload({
             stream: true
-        }))
-})
+        }));
+});
 
 // Static Server + watching scss/html files
 gulp.task('watch', ['sass'], function () {
@@ -25,6 +25,6 @@ gulp.task('watch', ['sass'], function () {
     });
     gulp.watch(['app/sass/**/*.sass'], ['sass']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
-})
+});
 
 gulp.task('default', ['watch']);
