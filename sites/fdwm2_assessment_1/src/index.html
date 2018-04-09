@@ -559,8 +559,10 @@
                 modal.find('.modal-title').text('Share "' + imageTitle + '"')
                 // get current location from local storage
                 locationStore.getItem('shortLocationText').then(function (value) {
-                    modal.find('.modal-body').text('Found this in ' + value +
-                        ' with StreetArt Finder!')
+                    var message = value == null ? 'Found this picture using StreetArt Finder!' :
+                        'Found this in ' + value +
+                        ' with StreetArt Finder!';
+                    modal.find('.modal-body').text(message);
                 });
             });
 
