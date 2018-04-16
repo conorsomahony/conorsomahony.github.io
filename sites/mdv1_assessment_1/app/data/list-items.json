@@ -1,0 +1,153 @@
+{
+    "items": [{
+            "id": 1,
+            "animal_name": "Hottentot teal",
+            "avatar": "https://robohash.org/quisquamabvel.bmp?size=50x50&set=set1",
+            "catchphrase": "Stand-alone transitional architecture"
+        },
+        {
+            "id": 2,
+            "animal_name": "Galapagos penguin",
+            "avatar": "https://robohash.org/quasidoloremrem.jpg?size=50x50&set=set1",
+            "catchphrase": "Public-key hybrid middleware"
+        },
+        {
+            "id": 3,
+            "animal_name": "Deer, roe",
+            "avatar": "https://robohash.org/rerumquianumquam.bmp?size=50x50&set=set1",
+            "catchphrase": "Function-based dedicated encryption"
+        },
+        {
+            "id": 4,
+            "animal_name": "African clawless otter",
+            "avatar": "https://robohash.org/autnesciuntnon.png?size=50x50&set=set1",
+            "catchphrase": "Re-engineered 6th generation installation"
+        },
+        {
+            "id": 5,
+            "animal_name": "Long-necked turtle",
+            "avatar": "https://robohash.org/facilisestid.jpg?size=50x50&set=set1",
+            "catchphrase": "Decentralized heuristic extranet"
+        },
+        {
+            "id": 6,
+            "animal_name": "Purple moorhen",
+            "avatar": "https://robohash.org/minimasedimpedit.png?size=50x50&set=set1",
+            "catchphrase": "Robust zero administration instruction set"
+        },
+        {
+            "id": 7,
+            "animal_name": "Blue waxbill",
+            "avatar": "https://robohash.org/essevoluptatevel.bmp?size=50x50&set=set1",
+            "catchphrase": "Visionary dynamic circuit"
+        },
+        {
+            "id": 8,
+            "animal_name": "Crested bunting",
+            "avatar": "https://robohash.org/etsitdolore.png?size=50x50&set=set1",
+            "catchphrase": "Fully-configurable optimizing artificial intelligence"
+        },
+        {
+            "id": 9,
+            "animal_name": "Zorilla",
+            "avatar": "https://robohash.org/mollitiavoluptateut.bmp?size=50x50&set=set1",
+            "catchphrase": "Cross-group neutral knowledge user"
+        },
+        {
+            "id": 10,
+            "animal_name": "Barbet, levaillant's",
+            "avatar": "https://robohash.org/sedfugaomnis.png?size=50x50&set=set1",
+            "catchphrase": "Object-based demand-driven system engine"
+        },
+        {
+            "id": 11,
+            "animal_name": "Roseate cockatoo",
+            "avatar": "https://robohash.org/temporibusquocumque.bmp?size=50x50&set=set1",
+            "catchphrase": "Operative non-volatile hierarchy"
+        },
+        {
+            "id": 12,
+            "animal_name": "Baleen whale",
+            "avatar": "https://robohash.org/etcupiditatererum.png?size=50x50&set=set1",
+            "catchphrase": "Visionary logistical task-force"
+        },
+        {
+            "id": 13,
+            "animal_name": "Squirrel, arctic ground",
+            "avatar": "https://robohash.org/suscipitetdeserunt.png?size=50x50&set=set1",
+            "catchphrase": "Organized modular infrastructure"
+        },
+        {
+            "id": 14,
+            "animal_name": "Red phalarope",
+            "avatar": "https://robohash.org/numquamautducimus.bmp?size=50x50&set=set1",
+            "catchphrase": "Reverse-engineered holistic leverage"
+        },
+        {
+            "id": 15,
+            "animal_name": "Levaillant's barbet",
+            "avatar": "https://robohash.org/placeatetea.jpg?size=50x50&set=set1",
+            "catchphrase": "Vision-oriented 5th generation hardware"
+        },
+        {
+            "id": 16,
+            "animal_name": "Red-necked phalarope",
+            "avatar": "https://robohash.org/autvoluptasdoloremque.jpg?size=50x50&set=set1",
+            "catchphrase": "Organic bandwidth-monitored support"
+        },
+        {
+            "id": 17,
+            "animal_name": "Stork, greater adjutant",
+            "avatar": "https://robohash.org/temporenostrumqui.png?size=50x50&set=set1",
+            "catchphrase": "Organic homogeneous approach"
+        },
+        {
+            "id": 18,
+            "animal_name": "Stork, painted",
+            "avatar": "https://robohash.org/rerummagnamet.png?size=50x50&set=set1",
+            "catchphrase": "Pre-emptive fault-tolerant portal"
+        },
+        {
+            "id": 19,
+            "animal_name": "Giant armadillo",
+            "avatar": "https://robohash.org/consequaturipsased.bmp?size=50x50&set=set1",
+            "catchphrase": "Customer-focused radical middleware"
+        },
+        {
+            "id": 20,
+            "animal_name": "Wagtail, african pied",
+            "avatar": "https://robohash.org/nesciuntpariaturanimi.png?size=50x50&set=set1",
+            "catchphrase": "Object-based responsive interface"
+        },
+        {
+            "id": 21,
+            "animal_name": "Indian jackal",
+            "avatar": "https://robohash.org/sedquoincidunt.bmp?size=50x50&set=set1",
+            "catchphrase": "Streamlined multi-state success"
+        },
+        {
+            "id": 22,
+            "animal_name": "Sloth bear",
+            "avatar": "https://robohash.org/odiolaudantiumsit.bmp?size=50x50&set=set1",
+            "catchphrase": "Decentralized heuristic benchmark"
+        },
+        {
+            "id": 23,
+            "animal_name": "Antelope ground squirrel",
+            "avatar": "https://robohash.org/doloremquiut.bmp?size=50x50&set=set1",
+            "catchphrase": "Progressive solution-oriented groupware"
+        },
+        {
+            "id": 24,
+            "animal_name": "Squirrel, palm",
+            "avatar": "https://robohash.org/numquamquialaboriosam.bmp?size=50x50&set=set1",
+            "catchphrase": "User-centric content-based emulation"
+        },
+        {
+            "id": 25,
+            "animal_name": "Bird, magnificent frigate",
+            "avatar": "https://robohash.org/temporibusinet.jpg?size=50x50&set=set1",
+            "catchphrase": "Monitored well-modulated attitude"
+        }
+    ]
+}

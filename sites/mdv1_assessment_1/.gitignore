@@ -3,3 +3,4 @@ node_modules/
 clipboard
 *.zip
 resources/
+static_index.html

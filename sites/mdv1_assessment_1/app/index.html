@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./css/themes/cons-custom-theme.css" />
     <link rel="stylesheet" href="./css/themes/jquery.mobile.icons.min.css" />
 
-    <!-- CDN hosted CSS and JS files -->
+    <!-- CDN hosted CSS and JS files (Not used)-->
     <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
@@ -38,39 +38,44 @@
 
 <body>
     <!-- Main Page -->
-    <div data-role="page" data-theme="a">
+    <div data-role="page" data-theme="b">
 
         <div data-role="header">
-            <h1>List-eeze</h1>
+            <h1>AnimaList</h1>
+
         </div>
         <!-- /header -->
         <div role="main" class="ui-content">
-            <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-autodividers="true">
-                <li>
-                    <a href="#">Acura</a>
-                </li>
-                <li>
-                    <a href="#">Audi</a>
-                </li>
-                <li>
-                    <a href="#">BMW</a>
-                </li>
-                <li>
-                    <a href="#">Cadillac</a>
-                </li>
-                <li>
-                    <a href="#">Ferrari</a>
-                </li>
+            <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-autodividers="true" data-divider-theme="a">
+
             </ul>
         </div>
         <!-- /content -->
         <div data-role="footer">
-            <h4>Copyright&copy; List-eeze 2018</h4>
+            <h4>Copyright&copy; AnimaList 2018</h4>
         </div>
         <!-- /footer -->
-
     </div>
     <!-- /page Main Page -->
+
+    <script>
+        $(document).on("pageinit", function () {
+
+            console.log("pageinit");
+            // Load JSON data
+            // use Promise Interface .done() method to process
+            $.getJSON("./data/list-items.json").done(function (data) {
+                console.log("Done");
+                console.log(data);
+                $.each(data.items, function (i, item) {
+                    console.log(item.id);
+                    console.log(item.animal_name);
+                    console.log(item.avatar);
+                    console.log('"' + item.catchphrase + '"');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
