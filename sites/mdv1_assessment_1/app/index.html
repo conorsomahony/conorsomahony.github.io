@@ -41,8 +41,8 @@
     <div data-role="page" data-theme="b">
 
         <div data-role="header">
-            <h1>AnimaList</h1>
-
+            <h1>Adopt-an-Animal</h1>
+            <img src="./img/my_logo.png" class="ui-btn-left" />
         </div>
         <!-- /header -->
         <div role="main" class="ui-content">
@@ -60,20 +60,16 @@
 
     <script>
         $(document).on("pageinit", function () {
-
-            console.log("pageinit");
             // Load JSON data
             // use Promise Interface .done() method to process
             $.getJSON("./data/list-items.json").done(function (data) {
-                console.log("Done");
-                // console.log(data);
                 var listItems = data.items;
                 listItems.sort(sortByName);
-                console.log(listItems);
                 var listhtml = "";
+                // create <li> for each object
                 $.each(listItems, function (i, item) {
                     listhtml += '<li><a href="#"><img src="' + item.avatar + '"/>' + item.animal_name +
-                        "</a></li>";
+                        ' - ' + item.name + ' the ' + item.animal_name + '</a></li>';
                 });
                 $('#main-list').html(listhtml);
                 // https://api.jquerymobile.com/listview/#method-refresh 
