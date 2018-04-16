@@ -1,3 +1,5 @@
 node_modules/
 .sass-cache/
 clipboard
+*.zip
+theme_roller/
