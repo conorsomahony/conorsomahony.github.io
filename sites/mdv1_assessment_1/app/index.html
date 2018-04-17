@@ -6,7 +6,6 @@
 * Refs: 
 -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,9 +24,11 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
 
-    <!-- Local CSS files -->
+    <!-- Local JQuery CSS files -->
     <!-- jquery.mobile.structure css is for use with Themeroller custom theme -->
     <link rel="stylesheet" href="./css/jquery.mobile.structure-1.4.5.min.css">
+
+    <!-- Custom CSS (generated from SASS) -->
     <link rel="stylesheet" href="./css/custom.css">
 
     <!-- Local JS files -->
@@ -38,25 +39,107 @@
 
 <body>
     <!-- Main Page -->
-    <div data-role="page" data-theme="b">
+    <div id="main-page" data-role="page" data-theme="b">
 
+        <!-- header -->
         <div data-role="header">
             <h1>Adopt-an-Animal</h1>
             <img src="./img/my_logo.png" class="ui-btn-left" />
+            <img src="./img/my_logo.png" class="ui-btn-right" />
         </div>
         <!-- /header -->
+        <!-- content -->
         <div role="main" class="ui-content">
+            <div class="cons-center">
+                <h2>Welcome to Adopt-an-Animal</h2>
+                <p>Please search below for an animal to adopt</p>
+            </div>
             <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-autodividers="true" data-divider-theme="b">
 
             </ul>
         </div>
         <!-- /content -->
+
+        <!-- footer -->
         <div data-role="footer">
-            <h4>Copyright&copy; AnimaList 2018</h4>
+            <h4>Copyright &copy; 2018 Adopt-an-Animal
+                <br> by AnimaList </h4>
         </div>
         <!-- /footer -->
     </div>
     <!-- /page Main Page -->
+
+    <!-- Animal Page - This serves as a template for each animal page -->
+    <div data-role="page" id="animal-template" data-theme="b">
+
+        <!-- header -->
+        <div data-role="header">
+            <h1>Adopt-an-Animal</h1>
+            <img src="./img/my_logo.png" class="ui-btn-left" />
+            <img src="./img/my_logo.png" class="ui-btn-right" />
+        </div>
+        <!-- /header -->
+
+        <!-- content -->
+        <div role="main" class="ui-content cons-center">
+            <!-- animal name -->
+            <h2 class="ui-bar ui-bar-b ui-corner-all animal-name">Heading</h2>
+            <!-- animal image -->
+            <div>
+                <img class="animal-image" src="" alt="">
+            </div>
+
+            <!-- animal information -->
+            <div>
+                <div class="ui-bar ui-bar-b">Country of Origin</div>
+                <div class="animal-country ui-body"></div>
+
+                <div class="ui-bar ui-bar-b">Endangered Species?</div>
+                <div class="animal-endangered ui-body"></div>
+
+                <div class="ui-bar ui-bar-b">Colour</div>
+                <div class="animal-colour ui-body"></div>
+
+                <div class="ui-bar ui-bar-b">Diet</div>
+                <div class="animal-diet ui-body"></div>
+
+                <div class="ui-bar ui-bar-b">Breeding Frequency</div>
+                <div class="animal-frequency ui-body"></div>
+
+                <div class="ui-bar ui-bar-b">Catchphrase</div>
+                <div class="animal-noise ui-body"></div>
+
+                <div class="ui-bar ui-bar-b">Information</div>
+                <div class="animal-info ui-body"></div>
+            </div>
+
+            <!-- Attempt at popup - this won't work as is   -->
+            <!-- <a class="animal-image" href="" data-rel="popup" data-position-to="window" data-transition="fade">
+                <img class="popphoto" src="" alt="" style="width:30%">
+            </a> -->
+
+            <!-- Back Button -->
+            <p>
+                <a href="#main-page" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-back ui-btn-inline">Back to List</a>
+            </p>
+        </div>
+        <!-- /content -->
+
+        <!-- footer -->
+        <div data-role="footer">
+            <h4>Copyright &copy; 2018 Adopt-an-Animal
+                <br> by AnimaList </h4>
+        </div>
+        <!-- /footer -->
+
+        <!-- animal image popup -->
+        <div class="animal-pop" data-role="popup" id="" data-overlay-theme="b" data-theme="b" data-corners="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <img class="popphoto" src="" style="max-height:512px;" alt="">
+        </div>
+        <!-- /div animal image popup -->
+    </div>
+    <!-- /page Animal Page -->
 
     <script>
         $(document).on("pageinit", function () {
@@ -66,13 +149,35 @@
                 var listItems = data.items;
                 listItems.sort(sortByName);
                 var listhtml = "";
-                // create <li> for each object
+
                 $.each(listItems, function (i, item) {
-                    listhtml += '<li><a href="#"><img src="' + item.avatar + '"/>' + item.animal_name +
+                    // create <li> for each animal object in the main list
+                    listhtml += '<li><a data-transition="slide" href="#animal' + item.id +
+                        '"><img src="' + item.avatar + '"/>' + item.animal_name +
                         ' - ' + item.name + ' the ' + item.animal_name + '</a></li>';
+
+                    // clone template and customise for each animal
+                    var $animalPage = $('#animal-template').clone();
+                    $animalPage.attr('id', "animal" + item.id);
+                    $animalPage.find('.animal-name').html(item.name + ' the ' + item.animal_name);
+                    $animalPage.find('.animal-info').html(item.description);
+                    $animalPage.find('.animal-image').attr('src', item.avatar);
+                    $animalPage.find('.animal-country').html(item.country);
+                    $animalPage.find('.animal-colour').html(item.colour);
+                    $animalPage.find('.animal-diet').html(item.food);
+                    $animalPage.find('.animal-frequency').html(item.frequency_1);
+                    $animalPage.find('.animal-noise').html('"' + item.catchphrase + '"');
+                    $animalPage.find('.animal-endangered').html((item.boolean_1 ? 'Yes' : 'No'));
+                    // Attempt at popup - this won't work as is
+                    // $animalPage.find('.animal-image').attr('href', '#popup-pic' + item.id);
+                    // $animalPage.find('.popphoto').attr('src', item.avatar).attr('alt', item.animal_name);
+                    // $animalPage.find('.animal-pop').attr('id', 'popup-pic' + item.id);
+                    $('#main-page').after($animalPage);
                 });
+
+
                 $('#main-list').html(listhtml);
-                // https://api.jquerymobile.com/listview/#method-refresh 
+                // see https://api.jquerymobile.com/listview/#method-refresh 
                 $('#main-list').listview('refresh');
             });
         });
@@ -85,7 +190,5 @@
         }
     </script>
 </body>
-
-</html>
 
 </html>
