@@ -20,6 +20,7 @@
 
     <!-- ThemeRoller CSS -->
     <link rel="stylesheet" href="./css/themes/cons-custom-theme.css" />
+    <!-- <link rel="stylesheet" href="./css/themes/cons-custom-theme.min.css" /> -->
     <link rel="stylesheet" href="./css/themes/jquery.mobile.icons.min.css" />
 
     <!-- CDN hosted CSS and JS files (Not used)-->
@@ -47,30 +48,31 @@
         <!-- header -->
         <div data-role="header">
             <h1>Adopt-an-Animal</h1>
-            <img src="./img/my_logo.png" class="ui-btn-left" />
-            <img src="./img/my_logo.png" class="ui-btn-right" />
         </div>
         <!-- /header -->
         <!-- content -->
         <div role="main" class="ui-content">
             <div class="cons-center">
-                <h2>Welcome to Adopt-an-Animal</h2>
-                <p>Please search below for an animal to adopt</p>
+                <img src="./img/large_logo.png" width="50%" />
             </div>
-            <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-autodividers="true" data-divider-theme="b">
-
-            </ul>
+            <div class="ui-body ui-body-b">
+                <!-- list populated by script -->
+                <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-autodividers="true" data-divider-theme="b"
+                    data-theme="b" data-filter-placeholder="Search"></ul>
+            </div>
         </div>
         <!-- /content -->
-
         <!-- footer -->
         <div data-role="footer">
-            <h4>Copyright &copy; 2018 Adopt-an-Animal
-                <br> by AnimaList </h4>
+            <h4>Copyright &copy; 2018 Adopt-an-Animal</h4>
+            <div class="cons-center">
+                <a href='https://www.freepik.com/free-vector/collection-of-logos-with-animals_1719720.htm'>Logo vector created by Freepik</a>
+            </div>
         </div>
         <!-- /footer -->
     </div>
     <!-- /page Main Page -->
+
 
     <!-- Animal Page - This serves as a template for each animal page -->
     <div data-role="page" id="animal-template" data-theme="b">
@@ -78,69 +80,55 @@
         <!-- header -->
         <div data-role="header">
             <h1>Adopt-an-Animal</h1>
-            <img src="./img/my_logo.png" class="ui-btn-left" />
-            <img src="./img/my_logo.png" class="ui-btn-right" />
         </div>
         <!-- /header -->
-
         <!-- content -->
         <div role="main" class="ui-content cons-center">
-            <!-- animal name -->
-            <h2 class="ui-bar ui-bar-b ui-corner-all animal-name">Heading</h2>
+            <!-- Back Button -->
+            <div>
+                <a href="#main-page" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-back">Back to List</a>
+            </div>
             <!-- animal image -->
             <div>
                 <img class="animal-image" src="" alt="">
             </div>
-
-            <!-- animal information -->
-            <div>
+            <div class="ui-body ui-body-b">
+                <!-- animal name -->
+                <h2 class="ui-bar ui-bar-b ui-corner-all animal-name">Heading</h2>
+                <!-- animal information -->
                 <div class="ui-bar ui-bar-b">Country of Origin</div>
-                <div class="animal-country ui-body"></div>
+                <div class="animal-country ui-body ui-body-b"></div>
 
                 <div class="ui-bar ui-bar-b">Endangered Species?</div>
-                <div class="animal-endangered ui-body"></div>
+                <div class="animal-endangered ui-body ui-body-b"></div>
 
                 <div class="ui-bar ui-bar-b">Colour</div>
-                <div class="animal-colour ui-body"></div>
+                <div class="animal-colour ui-body ui-body-b"></div>
 
                 <div class="ui-bar ui-bar-b">Diet</div>
-                <div class="animal-diet ui-body"></div>
+                <div class="animal-diet ui-body ui-body-b"></div>
 
                 <div class="ui-bar ui-bar-b">Breeding Frequency</div>
-                <div class="animal-frequency ui-body"></div>
+                <div class="animal-frequency ui-body ui-body-b"></div>
 
                 <div class="ui-bar ui-bar-b">Catchphrase</div>
-                <div class="animal-noise ui-body"></div>
+                <div class="animal-noise ui-body ui-body-b"></div>
 
                 <div class="ui-bar ui-bar-b">Information</div>
-                <div class="animal-info ui-body"></div>
+                <div class="animal-info ui-body ui-body-b"></div>
             </div>
-
-            <!-- Attempt at popup - this won't work as is   -->
-            <!-- <a class="animal-image" href="" data-rel="popup" data-position-to="window" data-transition="fade">
-                <img class="popphoto" src="" alt="" style="width:30%">
-            </a> -->
 
             <!-- Back Button -->
             <p>
-                <a href="#main-page" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-back ui-btn-inline">Back to List</a>
+                <a href="#main-page" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-back">Back to List</a>
             </p>
         </div>
         <!-- /content -->
-
         <!-- footer -->
         <div data-role="footer">
-            <h4>Copyright &copy; 2018 Adopt-an-Animal
-                <br> by AnimaList </h4>
+            <h4>Copyright &copy; 2018 Adopt-an-Animal</h4>
         </div>
         <!-- /footer -->
-
-        <!-- animal image popup -->
-        <div class="animal-pop" data-role="popup" id="" data-overlay-theme="b" data-theme="b" data-corners="false">
-            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-            <img class="popphoto" src="" style="max-height:512px;" alt="">
-        </div>
-        <!-- /div animal image popup -->
     </div>
     <!-- /page Animal Page -->
 
