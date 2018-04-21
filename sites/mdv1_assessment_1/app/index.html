@@ -5,7 +5,7 @@
 * Date: 2018/04/04
 
 * Refs: 
-* Code Reuse - inspiration for using autodividers and making them collapsible 
+* Inspiration for using autodividers and making them collapsible 
     - https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
 * JSON data initially generated using mockaroo 
     - https://mockaroo.com
@@ -203,7 +203,7 @@
                 $('#main-list').listview('refresh');
                 $('#main-list').enhanceWithin();
 
-                // Code Reuse - see https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
+                // Code Reuse - Ref https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
                 // add a +/- icon to the autodivider (class .ul-li-divider)
                 var ic = '<span class="ui-icon-minus ui-btn-icon-notext inlineIcon"></span>';
                 $(".ui-li-divider").prepend(ic);
@@ -211,7 +211,7 @@
         });
 
         //
-        // Code Reuse: see https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
+        // Code Reuse - Ref https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
         //
         $(document).on("click", '.ui-li-divider', function (e) {
             var IsCollapsed = false;
