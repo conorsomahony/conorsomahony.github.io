@@ -5,8 +5,12 @@
 * Date: 2018/04/04
 
 * Refs: 
-* JSON data initially generated using mockaroo - https://mockaroo.com
-* Animal names and images - https://www.randomlists.com/random-animals
+* Code Reuse - inspiration for using autodividers and making them collapsible 
+    - https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
+* JSON data initially generated using mockaroo 
+    - https://mockaroo.com
+* Animal names and images 
+    - https://www.randomlists.com/random-animals
 -->
 
 <!DOCTYPE html>
@@ -19,14 +23,9 @@
     <title>Page Title</title>
 
     <!-- ThemeRoller CSS -->
-    <link rel="stylesheet" href="./css/themes/cons-custom-theme.css" />
-    <!-- <link rel="stylesheet" href="./css/themes/cons-custom-theme.min.css" /> -->
+    <!-- <link rel="stylesheet" href="./css/themes/cons-custom-theme.css" /> -->
+    <link rel="stylesheet" href="./css/themes/cons-custom-theme.min.css" />
     <link rel="stylesheet" href="./css/themes/jquery.mobile.icons.min.css" />
-
-    <!-- CDN hosted CSS and JS files (Not used)-->
-    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
 
     <!-- Local JQuery CSS files -->
     <!-- jquery.mobile.structure css is for use with Themeroller custom theme -->
@@ -54,7 +53,7 @@
         <!-- content -->
         <div role="main" class="ui-content">
             <div class="cons-center">
-                <img id="large-logo" src="./img/large_logo.png" alt="Adopt an Animal Logo" />
+                <img id="large-logo" src="./img/large_logo.png" alt="Adopt an Animal Logo" class="grit"/>
             </div>
             <div class="main-text cons-center ui-bar-b ui-bar">
                 <p class="cons-center">
@@ -67,7 +66,7 @@
             </div>
             <!-- <div class="ui-body ui-body-b"> -->
                 <!-- list populated by script -->
-                <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-autodividers="true" data-divider-theme="b"
+                <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-autodividers="true" data-divider-theme="a"
                     data-theme="a" data-filter-placeholder="Search"></ul>
             <!-- </div> -->
         </div>
@@ -94,37 +93,30 @@
         </div>
         <!-- /header -->
         <!-- content -->
-        <div role="main" class="ui-content cons-center">
-            <!-- Back Button -->
-            <div class="cons-center">
-                <a href="#main-page" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-top ui-icon-back">Back to List</a>
-            </div>
+        <div role="main" class="ui-content cons-center" class="grit">
+
             <!-- animal name -->
             <h2 class="ui-bar ui-bar-b ui-corner-all animal-name">Heading</h2>
+
             <!-- animal image -->
             <div class="ui-body-b">
                 <img class="animal-image" src="" alt="">
             </div>
+            
             <!-- animal information -->
             <div>
                 <div class="ui-bar ui-bar-b">Country of Origin</div>
                 <div class="animal-country ui-body ui-body-b"></div>
-
                 <div class="ui-bar ui-bar-b">Endangered Species?</div>
                 <div class="animal-endangered ui-body ui-body-b"></div>
-
                 <div class="ui-bar ui-bar-b">Colour</div>
                 <div class="animal-colour ui-body ui-body-b"></div>
-
                 <div class="ui-bar ui-bar-b">Diet</div>
                 <div class="animal-diet ui-body ui-body-b"></div>
-
                 <div class="ui-bar ui-bar-b">Breeding Frequency</div>
                 <div class="animal-frequency ui-body ui-body-b"></div>
-
                 <div class="ui-bar ui-bar-b">Catchphrase</div>
                 <div class="animal-noise ui-body ui-body-b"></div>
-
                 <div class="ui-bar ui-bar-b">Information</div>
                 <div class="animal-info ui-body ui-body-b"></div>
             </div>
@@ -143,9 +135,9 @@
     <!-- /page Animal Page -->
 
     <script>
-        $(document).on("pageinit", function () {
+        $(document).on("pagebeforecreate", function () {
 
-            // Load JSON data
+            // Load JSON data from our data file 
             // use Promise Interface .done() method to process
             $.getJSON("./data/list-items.json").done(function (data) {
                 var listItems = data.items;
@@ -154,15 +146,15 @@
                 var listhtml = ""; // for creating our list
                 $.each(listItems, function (i, item) {
 
-                    // here we construct our html list item markup
-                    // create <li> for each animal object in the main list
+                    // here we construct our html list markup in one string
+                    // - create <li> for each animal object in the main list
                     var animalName = item.name + ' the ' + item.breed;
                     listhtml += '<li><a data-transition="slide" href="#animal' + item.id +
                         '"><img src="' + item.avatar + '" alt ="' + animalName + '"/>' + item.breed +
-                        ' - ' + animalName+ '</a></li>';
+                        ' - ' + animalName + '</a></li>';
 
                     // different approach here
-                    // clone our existing template html page and customise for each animal
+                    // clone our animal-template html page and customise for each animal
                     var $animalPage = $('#animal-template').clone();
                     $animalPage.attr('id', "animal" + item.id);
                     $animalPage.find('.animal-name').html(item.name + ' the ' + item.breed);
@@ -175,12 +167,19 @@
                     $animalPage.find('.animal-noise').html('"' + item.catchphrase + '"');
                     $animalPage.find('.animal-endangered').html((item.boolean_1 ? 'Yes' : 'No'));
 
+                    // add our animal page
                     $('#main-page').after($animalPage);
                 });
 
                 $('#main-list').html(listhtml);
                 // see https://api.jquerymobile.com/listview/#method-refresh 
                 $('#main-list').listview('refresh');
+                $('#main-list').enhanceWithin();
+
+                // Code Reuse - see https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
+                // add a +/- icon to the autodivider (class .ul-li-divider)
+                var ic = '<span class="ui-icon-minus ui-btn-icon-notext inlineIcon"></span>';
+                $(".ui-li-divider").prepend(ic);
             });
         });
 
@@ -190,6 +189,32 @@
             var bName = b.breed.toLowerCase();
             return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
         }
+
+        //
+        // Code Reuse: see https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
+        //
+        $(document).on("click", '.ui-li-divider', function (e) {
+            var IsCollapsed = false;
+            var TheDivider = $(this);
+            var li = TheDivider.next(':not(.ui-li-divider)');
+            
+            // collapse/expand all list items for clicked divider
+            while (li.length > 0) {
+                IsCollapsed = li.css('display') == 'none';
+                li.slideToggle(300);
+                li = li.next(':not(.ui-li-divider)');
+            }
+
+            // change the icon on the divider
+            var $icon = TheDivider.find('.inlineIcon');
+            if (!IsCollapsed) {
+                $icon.removeClass('ui-icon-minus').addClass('ui-icon-plus');
+            } else {
+                $icon.removeClass('ui-icon-plus').addClass('ui-icon-minus');
+            }
+            e.stopPropagation();
+            return false;
+        });
     </script>
 </body>
 

@@ -3,8 +3,15 @@
 // Assignment: Mobile and Device Development I - Assessment 1
 // Student ID: STU-00001490
 // Date: 2018/04/04
-// Refs:
 //
+// Refs:
+// CSS Masks - https://www.viget.com/articles/easy-textures-with-css-masks/
+
+@font-face
+	font-family: 'oswaldregular'
+	src: url('./fonts/oswald-regular-webfont.woff2') format('woff2'), url('./fonts/oswald-regular-webfont.woff') format('woff')
+	font-weight: normal
+	font-style: normal
 
 .cons-center
     text-align: center
@@ -20,4 +27,24 @@
 .main-text
     max-width: 80%
     margin: auto
-    margin-bottom: 0.5em    
+    margin-bottom: 0.5em 
+
+.inlineIcon
+    display: inline-block
+    position: relative
+    vertical-align: bottom
+    margin-right: 6px
+
+.grit 
+    -webkit-mask-image: url("../img/grit.png")
+    mask-image: url("../img/grit.png")
+
+body,
+input,
+select,
+textarea,
+button,
+.ui-btn
+	font-size: 1em
+	line-height: 1.3
+	font-family: 'oswaldregular', sans-serif
