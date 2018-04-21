@@ -1,3 +1,4 @@
 *.code-workspace
 clipboard
 node_modules
+*.afdesign

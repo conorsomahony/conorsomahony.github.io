@@ -6,24 +6,24 @@ h5,
 h6,
 .navbar-brand,
 footer {
-    font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
 }
 
 body {
-    font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .jumbotron {
-    text-align: center;
-    background-image: radial-gradient(circle, #ffffff, #E9ECEF);
+  text-align: center;
+  background-image: radial-gradient(circle, #ffffff, #e9ecef);
 }
 
 #profile-image {
-    width: 200px;
-    border-radius: 50%;
-    border: 8px solid white;
+  width: 200px;
+  border-radius: 50%;
+  border: 8px solid white;
 }
 
-.card .btn {
-    max-width: 180px;
+.card {
+  min-width: 200px;
 }
