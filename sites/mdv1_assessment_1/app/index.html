@@ -42,31 +42,41 @@
 </head>
 
 <body>
-    <!-- Main Page -->
+    <!-- 
+        Main Page 
+    -->
     <div id="main-page" data-role="page" data-theme="b">
-
         <!-- header -->
         <div data-role="header">
-            <h1>Adopt-an-Animal</h1>
+            <h1>Adopt-An-Animal</h1>
         </div>
         <!-- /header -->
         <!-- content -->
         <div role="main" class="ui-content">
             <div class="cons-center">
-                <img src="./img/large_logo.png" width="50%" />
+                <img id="large-logo" src="./img/large_logo.png" alt="Adopt an Animal Logo" />
             </div>
-            <div class="ui-body ui-body-b">
+            <div class="main-text cons-center ui-bar-b ui-bar">
+                <p class="cons-center">
+                    If you would like to help save the world, please consider adopting one of our animals below, they are all looking for a good
+                    home, and we promise that they won't eat you.<sup>*</sup>
+                </p>
+                <p class="cons-center">
+                    <small>* Warning- Animals may actually eat you.</small>
+                </p>
+            </div>
+            <!-- <div class="ui-body ui-body-b"> -->
                 <!-- list populated by script -->
                 <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-autodividers="true" data-divider-theme="b"
-                    data-theme="b" data-filter-placeholder="Search"></ul>
-            </div>
+                    data-theme="a" data-filter-placeholder="Search"></ul>
+            <!-- </div> -->
         </div>
         <!-- /content -->
         <!-- footer -->
         <div data-role="footer">
-            <h4>Copyright &copy; 2018 Adopt-an-Animal</h4>
+            <h4>Copyright &copy; 2018 Adopt-An-Animal</h4>
             <div class="cons-center">
-                <a href='https://www.freepik.com/free-vector/collection-of-logos-with-animals_1719720.htm'>Logo vector created by Freepik</a>
+                <a href='https://www.freepik.com/free-vector/collection-of-logos-with-animals_1719720.htm'><small>Logo vector created by Freepik</small></a>
             </div>
         </div>
         <!-- /footer -->
@@ -74,28 +84,29 @@
     <!-- /page Main Page -->
 
 
-    <!-- Animal Page - This serves as a template for each animal page -->
+    <!-- 
+        Animal Page - This serves as a template for each animal page 
+    -->
     <div data-role="page" id="animal-template" data-theme="b">
-
         <!-- header -->
         <div data-role="header">
-            <h1>Adopt-an-Animal</h1>
+            <h1>Adopt-An-Animal</h1>
         </div>
         <!-- /header -->
         <!-- content -->
         <div role="main" class="ui-content cons-center">
             <!-- Back Button -->
-            <div>
-                <a href="#main-page" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-back">Back to List</a>
+            <div class="cons-center">
+                <a href="#main-page" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-top ui-icon-back">Back to List</a>
             </div>
+            <!-- animal name -->
+            <h2 class="ui-bar ui-bar-b ui-corner-all animal-name">Heading</h2>
             <!-- animal image -->
-            <div>
+            <div class="ui-body-b">
                 <img class="animal-image" src="" alt="">
             </div>
-            <div class="ui-body ui-body-b">
-                <!-- animal name -->
-                <h2 class="ui-bar ui-bar-b ui-corner-all animal-name">Heading</h2>
-                <!-- animal information -->
+            <!-- animal information -->
+            <div>
                 <div class="ui-bar ui-bar-b">Country of Origin</div>
                 <div class="animal-country ui-body ui-body-b"></div>
 
@@ -117,16 +128,15 @@
                 <div class="ui-bar ui-bar-b">Information</div>
                 <div class="animal-info ui-body ui-body-b"></div>
             </div>
-
             <!-- Back Button -->
             <p>
-                <a href="#main-page" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-back">Back to List</a>
+                <a href="#main-page" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-top ui-icon-back">Back to List</a>
             </p>
         </div>
         <!-- /content -->
         <!-- footer -->
         <div data-role="footer">
-            <h4>Copyright &copy; 2018 Adopt-an-Animal</h4>
+            <h4>Copyright &copy; 2018 Adopt-An-Animal</h4>
         </div>
         <!-- /footer -->
     </div>
@@ -134,38 +144,39 @@
 
     <script>
         $(document).on("pageinit", function () {
+
             // Load JSON data
             // use Promise Interface .done() method to process
             $.getJSON("./data/list-items.json").done(function (data) {
                 var listItems = data.items;
                 listItems.sort(sortByName);
-                var listhtml = "";
 
+                var listhtml = ""; // for creating our list
                 $.each(listItems, function (i, item) {
-                    // create <li> for each animal object in the main list
-                    listhtml += '<li><a data-transition="slide" href="#animal' + item.id +
-                        '"><img src="' + item.avatar + '"/>' + item.animal_name +
-                        ' - ' + item.name + ' the ' + item.animal_name + '</a></li>';
 
-                    // clone template and customise for each animal
+                    // here we construct our html list item markup
+                    // create <li> for each animal object in the main list
+                    var animalName = item.name + ' the ' + item.breed;
+                    listhtml += '<li><a data-transition="slide" href="#animal' + item.id +
+                        '"><img src="' + item.avatar + '" alt ="' + animalName + '"/>' + item.breed +
+                        ' - ' + animalName+ '</a></li>';
+
+                    // different approach here
+                    // clone our existing template html page and customise for each animal
                     var $animalPage = $('#animal-template').clone();
                     $animalPage.attr('id', "animal" + item.id);
-                    $animalPage.find('.animal-name').html(item.name + ' the ' + item.animal_name);
+                    $animalPage.find('.animal-name').html(item.name + ' the ' + item.breed);
                     $animalPage.find('.animal-info').html(item.description);
-                    $animalPage.find('.animal-image').attr('src', item.avatar);
+                    $animalPage.find('.animal-image').attr('src', item.avatar).attr('alt', animalName);
                     $animalPage.find('.animal-country').html(item.country);
                     $animalPage.find('.animal-colour').html(item.colour);
                     $animalPage.find('.animal-diet').html(item.food);
                     $animalPage.find('.animal-frequency').html(item.frequency_1);
                     $animalPage.find('.animal-noise').html('"' + item.catchphrase + '"');
                     $animalPage.find('.animal-endangered').html((item.boolean_1 ? 'Yes' : 'No'));
-                    // Attempt at popup - this won't work as is
-                    // $animalPage.find('.animal-image').attr('href', '#popup-pic' + item.id);
-                    // $animalPage.find('.popphoto').attr('src', item.avatar).attr('alt', item.animal_name);
-                    // $animalPage.find('.animal-pop').attr('id', 'popup-pic' + item.id);
+
                     $('#main-page').after($animalPage);
                 });
-
 
                 $('#main-list').html(listhtml);
                 // see https://api.jquerymobile.com/listview/#method-refresh 
@@ -175,8 +186,8 @@
 
         // sort my list items
         function sortByName(a, b) {
-            var aName = a.animal_name.toLowerCase();
-            var bName = b.animal_name.toLowerCase();
+            var aName = a.breed.toLowerCase();
+            var bName = b.breed.toLowerCase();
             return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
         }
     </script>

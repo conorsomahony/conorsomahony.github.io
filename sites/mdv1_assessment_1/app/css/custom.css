@@ -1,2 +1,15 @@
 .cons-center {
   text-align: center; }
+
+#large-logo {
+  max-width: 100%;
+  height: auto; }
+
+.animal-image {
+  max-width: 100%;
+  height: auto; }
+
+.main-text {
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 0.5em; }

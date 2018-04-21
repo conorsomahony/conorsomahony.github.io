@@ -1,7 +1,7 @@
 {
     "items": [{
         "id": 1,
-        "animal_name": "Addax",
+        "breed": "Addax",
         "avatar": "./data/img/addax.jpg",
         "name": "Eugine",
         "country": "Brazil",
@@ -16,7 +16,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 2,
-        "animal_name": "Alpaca",
+        "breed": "Alpaca",
         "avatar": "./data/img/alpaca.jpg",
         "name": "Eb",
         "country": "Portugal",
@@ -31,7 +31,7 @@
         "frequency_2": "Never"
     }, {
         "id": 3,
-        "animal_name": "Anteater",
+        "breed": "Anteater",
         "avatar": "./data/img/anteater.jpg",
         "name": "Jabez",
         "country": "Russia",
@@ -46,7 +46,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 4,
-        "animal_name": "Argali",
+        "breed": "Argali",
         "avatar": "./data/img/argali.jpg",
         "name": "Elise",
         "country": "Mexico",
@@ -61,7 +61,7 @@
         "frequency_2": "Yearly"
     }, {
         "id": 5,
-        "animal_name": "Basilisk",
+        "breed": "Basilisk",
         "avatar": "./data/img/basilisk.jpg",
         "name": "Justus",
         "country": "China",
@@ -76,7 +76,7 @@
         "frequency_2": "Daily"
     }, {
         "id": 6,
-        "animal_name": "Bighorn",
+        "breed": "Bighorn",
         "avatar": "./data/img/bighorn.jpg",
         "name": "Lorin",
         "country": "Ecuador",
@@ -91,7 +91,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 7,
-        "animal_name": "Budgerigar",
+        "breed": "Budgerigar",
         "avatar": "./data/img/budgerigar.jpg",
         "name": "Kendre",
         "country": "Indonesia",
@@ -106,7 +106,7 @@
         "frequency_2": "Weekly"
     }, {
         "id": 8,
-        "animal_name": "Bumble bee",
+        "breed": "Bumble bee",
         "avatar": "./data/img/bumble_bee.jpg",
         "name": "Roxane",
         "country": "France",
@@ -121,7 +121,7 @@
         "frequency_2": "Yearly"
     }, {
         "id": 9,
-        "animal_name": "Bunny",
+        "breed": "Bunny",
         "avatar": "./data/img/bunny.jpg",
         "name": "Lydon",
         "country": "Russia",
@@ -136,7 +136,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 10,
-        "animal_name": "Chimpanzee",
+        "breed": "Chimpanzee",
         "avatar": "./data/img/chimpanzee.jpg",
         "name": "Vladimir",
         "country": "Brazil",
@@ -151,7 +151,7 @@
         "frequency_2": "Monthly"
     }, {
         "id": 11,
-        "animal_name": "Civet",
+        "breed": "Civet",
         "avatar": "./data/img/civet.jpg",
         "name": "Andrea",
         "country": "France",
@@ -166,7 +166,7 @@
         "frequency_2": "Never"
     }, {
         "id": 12,
-        "animal_name": "Deer",
+        "breed": "Deer",
         "avatar": "./data/img/deer.jpg",
         "name": "Calida",
         "country": "Greece",
@@ -181,7 +181,7 @@
         "frequency_2": "Once"
     }, {
         "id": 13,
-        "animal_name": "Dormouse",
+        "breed": "Dormouse",
         "avatar": "./data/img/dormouse.jpg",
         "name": "Tisha",
         "country": "Tajikistan",
@@ -196,7 +196,7 @@
         "frequency_2": "Monthly"
     }, {
         "id": 14,
-        "animal_name": "Duckbill Platypus",
+        "breed": "Duckbill Platypus",
         "avatar": "./data/img/duckbill_platypus.jpg",
         "name": "Felipe",
         "country": "Kosovo",
@@ -211,7 +211,7 @@
         "frequency_2": "Weekly"
     }, {
         "id": 15,
-        "animal_name": "Eagle Owl",
+        "breed": "Eagle Owl",
         "avatar": "./data/img/eagle_owl.jpg",
         "name": "Catrina",
         "country": "Iran",
@@ -226,7 +226,7 @@
         "frequency_2": "Often"
     }, {
         "id": 16,
-        "animal_name": "Elephant",
+        "breed": "Elephant",
         "avatar": "./data/img/elephant.jpg",
         "name": "Merrielle",
         "country": "Greece",
@@ -241,7 +241,7 @@
         "frequency_2": "Monthly"
     }, {
         "id": 17,
-        "animal_name": "Finch",
+        "breed": "Finch",
         "avatar": "./data/img/finch.jpg",
         "name": "Larine",
         "country": "China",
@@ -256,7 +256,7 @@
         "frequency_2": "Yearly"
     }, {
         "id": 18,
-        "animal_name": "Frog",
+        "breed": "Frog",
         "avatar": "./data/img/frog.jpg",
         "name": "Hadleigh",
         "country": "Japan",
@@ -271,7 +271,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 19,
-        "animal_name": "Gazelle",
+        "breed": "Gazelle",
         "avatar": "./data/img/gazelle.jpg",
         "name": "Carmela",
         "country": "China",
@@ -286,7 +286,7 @@
         "frequency_2": "Often"
     }, {
         "id": 20,
-        "animal_name": "Gila Monster",
+        "breed": "Gila Monster",
         "avatar": "./data/img/gila_monster.jpg",
         "name": "De",
         "country": "Japan",
@@ -301,7 +301,7 @@
         "frequency_2": "Once"
     }, {
         "id": 21,
-        "animal_name": "Gnu",
+        "breed": "Gnu",
         "avatar": "./data/img/gnu.jpg",
         "name": "Desdemona",
         "country": "Japan",
@@ -316,7 +316,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 22,
-        "animal_name": "Gorilla",
+        "breed": "Gorilla",
         "avatar": "./data/img/gorilla.jpg",
         "name": "Aube",
         "country": "Philippines",
@@ -331,7 +331,7 @@
         "frequency_2": "Yearly"
     }, {
         "id": 23,
-        "animal_name": "Ground Hog",
+        "breed": "Ground Hog",
         "avatar": "./data/img/ground_hog.jpg",
         "name": "Sinclare",
         "country": "Venezuela",
@@ -346,7 +346,7 @@
         "frequency_2": "Weekly"
     }, {
         "id": 24,
-        "animal_name": "Hamster",
+        "breed": "Hamster",
         "avatar": "./data/img/hamster.jpg",
         "name": "Gideon",
         "country": "China",
@@ -361,7 +361,7 @@
         "frequency_2": "Weekly"
     }, {
         "id": 25,
-        "animal_name": "Hedgehog",
+        "breed": "Hedgehog",
         "avatar": "./data/img/hedgehog.jpg",
         "name": "Matteo",
         "country": "Tajikistan",
@@ -376,7 +376,7 @@
         "frequency_2": "Once"
     }, {
         "id": 26,
-        "animal_name": "Horse",
+        "breed": "Horse",
         "avatar": "./data/img/horse.jpg",
         "name": "Aeriela",
         "country": "Ireland",
@@ -391,7 +391,7 @@
         "frequency_2": "Yearly"
     }, {
         "id": 27,
-        "animal_name": "Impala",
+        "breed": "Impala",
         "avatar": "./data/img/impala.jpg",
         "name": "Joellyn",
         "country": "Marshall Islands",
@@ -406,7 +406,7 @@
         "frequency_2": "Once"
     }, {
         "id": 28,
-        "animal_name": "Jerboa",
+        "breed": "Jerboa",
         "avatar": "./data/img/jerboa.jpg",
         "name": "Abbe",
         "country": "Japan",
@@ -421,7 +421,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 29,
-        "animal_name": "Koala",
+        "breed": "Koala",
         "avatar": "./data/img/koala.jpg",
         "name": "Julissa",
         "country": "Dominican Republic",
@@ -436,7 +436,7 @@
         "frequency_2": "Yearly"
     }, {
         "id": 30,
-        "animal_name": "Lion",
+        "breed": "Lion",
         "avatar": "./data/img/lion.jpg",
         "name": "Merl",
         "country": "Norway",
@@ -451,7 +451,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 31,
-        "animal_name": "Lizard",
+        "breed": "Lizard",
         "avatar": "./data/img/lizard.jpg",
         "name": "Francklyn",
         "country": "Indonesia",
@@ -466,7 +466,7 @@
         "frequency_2": "Yearly"
     }, {
         "id": 32,
-        "animal_name": "Llama",
+        "breed": "Llama",
         "avatar": "./data/img/llama.jpg",
         "name": "Kory",
         "country": "Comoros",
@@ -481,7 +481,7 @@
         "frequency_2": "Never"
     }, {
         "id": 33,
-        "animal_name": "Lovebird",
+        "breed": "Lovebird",
         "avatar": "./data/img/lovebird.jpg",
         "name": "Misty",
         "country": "Vietnam",
@@ -496,7 +496,7 @@
         "frequency_2": "Often"
     }, {
         "id": 34,
-        "animal_name": "Muskrat",
+        "breed": "Muskrat",
         "avatar": "./data/img/muskrat.jpg",
         "name": "Paton",
         "country": "Poland",
@@ -511,7 +511,7 @@
         "frequency_2": "Weekly"
     }, {
         "id": 35,
-        "animal_name": "Panda",
+        "breed": "Panda",
         "avatar": "./data/img/panda.jpg",
         "name": "Milton",
         "country": "Indonesia",
@@ -526,7 +526,7 @@
         "frequency_2": "Often"
     }, {
         "id": 36,
-        "animal_name": "Parakeet",
+        "breed": "Parakeet",
         "avatar": "./data/img/parakeet.jpg",
         "name": "Elise",
         "country": "France",
@@ -541,7 +541,7 @@
         "frequency_2": "Yearly"
     }, {
         "id": 37,
-        "animal_name": "Parrot",
+        "breed": "Parrot",
         "avatar": "./data/img/parrot.jpg",
         "name": "Gail",
         "country": "Brazil",
@@ -556,7 +556,7 @@
         "frequency_2": "Daily"
     }, {
         "id": 38,
-        "animal_name": "Peccary",
+        "breed": "Peccary",
         "avatar": "./data/img/peccary.jpg",
         "name": "Massimiliano",
         "country": "Sweden",
@@ -571,7 +571,7 @@
         "frequency_2": "Monthly"
     }, {
         "id": 39,
-        "animal_name": "Polar Bear",
+        "breed": "Polar Bear",
         "avatar": "./data/img/polar_bear.jpg",
         "name": "Hasty",
         "country": "China",
@@ -586,7 +586,7 @@
         "frequency_2": "Never"
     }, {
         "id": 40,
-        "animal_name": "Pronghorn",
+        "breed": "Pronghorn",
         "avatar": "./data/img/pronghorn.jpg",
         "name": "Amabel",
         "country": "China",
@@ -601,7 +601,7 @@
         "frequency_2": "Weekly"
     }, {
         "id": 41,
-        "animal_name": "Puppy",
+        "breed": "Puppy",
         "avatar": "./data/img/puppy.jpg",
         "name": "Penn",
         "country": "Argentina",
@@ -616,7 +616,7 @@
         "frequency_2": "Daily"
     }, {
         "id": 42,
-        "animal_name": "Rat",
+        "breed": "Rat",
         "avatar": "./data/img/rat.jpg",
         "name": "Jewel",
         "country": "China",
@@ -631,7 +631,7 @@
         "frequency_2": "Daily"
     }, {
         "id": 43,
-        "animal_name": "Reindeer",
+        "breed": "Reindeer",
         "avatar": "./data/img/reindeer.jpg",
         "name": "Dora",
         "country": "Russia",
@@ -646,7 +646,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 44,
-        "animal_name": "Rhinoceros",
+        "breed": "Rhinoceros",
         "avatar": "./data/img/rhinoceros.jpg",
         "name": "Fidelity",
         "country": "France",
@@ -661,7 +661,7 @@
         "frequency_2": "Once"
     }, {
         "id": 45,
-        "animal_name": "Seal",
+        "breed": "Seal",
         "avatar": "./data/img/seal.jpg",
         "name": "Hedvige",
         "country": "Portugal",
@@ -676,7 +676,7 @@
         "frequency_2": "Once"
     }, {
         "id": 46,
-        "animal_name": "Sloth",
+        "breed": "Sloth",
         "avatar": "./data/img/sloth.jpg",
         "name": "Neda",
         "country": "Russia",
@@ -691,7 +691,7 @@
         "frequency_2": "Weekly"
     }, {
         "id": 47,
-        "animal_name": "Snowy Owl",
+        "breed": "Snowy Owl",
         "avatar": "./data/img/snowy_owl.jpg",
         "name": "Guss",
         "country": "China",
@@ -706,7 +706,7 @@
         "frequency_2": "Often"
     }, {
         "id": 48,
-        "animal_name": "Thorny Devil",
+        "breed": "Thorny Devil",
         "avatar": "./data/img/thorny_devil.jpg",
         "name": "Hunt",
         "country": "Palestinian Territory",
@@ -721,7 +721,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 49,
-        "animal_name": "Turtle",
+        "breed": "Turtle",
         "avatar": "./data/img/turtle.jpg",
         "name": "Troy",
         "country": "Georgia",
@@ -736,7 +736,7 @@
         "frequency_2": "Seldom"
     }, {
         "id": 50,
-        "animal_name": "Zebra",
+        "breed": "Zebra",
         "avatar": "./data/img/zebra.jpg",
         "name": "Burr",
         "country": "China",
