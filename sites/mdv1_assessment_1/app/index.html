@@ -50,6 +50,7 @@
             <h1>Adopt-An-Animal</h1>
         </div>
         <!-- /header -->
+
         <!-- content -->
         <div role="main" class="ui-content">
             <div class="cons-center">
@@ -71,6 +72,7 @@
             <!-- </div> -->
         </div>
         <!-- /content -->
+
         <!-- footer -->
         <div data-role="footer">
             <h4>Copyright &copy; 2018 Adopt-An-Animal</h4>
@@ -120,17 +122,29 @@
                 <div class="ui-bar ui-bar-b">Information</div>
                 <div class="animal-info ui-body ui-body-b"></div>
             </div>
+            <!-- Adopt button -->
+            <p>
+                <a href="#" data-rel="popup" id="foo" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-top ui-icon-shop">Adopt animal!</a>
+            </p>
             <!-- Back Button -->
             <p>
                 <a href="#main-page" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-top ui-icon-back">Back to List</a>
             </p>
         </div>
         <!-- /content -->
+        
         <!-- footer -->
         <div data-role="footer">
             <h4>Copyright &copy; 2018 Adopt-An-Animal</h4>
         </div>
         <!-- /footer -->
+
+        <!-- popup -->
+        <div data-role="popup" id="popup" data-theme="a" data-overlay-theme="b" data-position-to="window" class="ui-content cons-center">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <p>Congratulations! Your animal will be delivered in the post!</p>
+        </div>
+        <!-- /popup  -->
     </div>
     <!-- /page Animal Page -->
 
@@ -141,7 +155,13 @@
             // use Promise Interface .done() method to process
             $.getJSON("./data/list-items.json").done(function (data) {
                 var listItems = data.items;
-                listItems.sort(sortByName);
+
+                // sort list items alphabetically
+                listItems.sort(function (a, b) {
+                    var aName = a.breed.toLowerCase();
+                    var bName = b.breed.toLowerCase();
+                    return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+                });
 
                 var listhtml = ""; // for creating our list
                 $.each(listItems, function (i, item) {
@@ -167,6 +187,13 @@
                     $animalPage.find('.animal-noise').html('"' + item.catchphrase + '"');
                     $animalPage.find('.animal-endangered').html((item.boolean_1 ? 'Yes' : 'No'));
 
+                    // Change "Adopt" button and link to the popup
+                    $animalPage.find('#foo').attr('href', '#popup' + item.id).attr('id', "foo" + item.id).html("Adopt " + item.name + " now!");
+
+                    // Link popup to "Adopt" button
+                    $animalPage.find('#popup').attr("id", "popup" + item.id).find("p").html("Congratulations! You have adopted " + item.name
+                        + "! <br>Your animal will be delivered in the post, please keep an eye out for the postman.");
+
                     // add our animal page
                     $('#main-page').after($animalPage);
                 });
@@ -183,13 +210,6 @@
             });
         });
 
-        // sort my list items
-        function sortByName(a, b) {
-            var aName = a.breed.toLowerCase();
-            var bName = b.breed.toLowerCase();
-            return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
-        }
-
         //
         // Code Reuse: see https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
         //
@@ -197,7 +217,7 @@
             var IsCollapsed = false;
             var TheDivider = $(this);
             var li = TheDivider.next(':not(.ui-li-divider)');
-            
+
             // collapse/expand all list items for clicked divider
             while (li.length > 0) {
                 IsCollapsed = li.css('display') == 'none';
@@ -215,6 +235,7 @@
             e.stopPropagation();
             return false;
         });
+
     </script>
 </body>
 
