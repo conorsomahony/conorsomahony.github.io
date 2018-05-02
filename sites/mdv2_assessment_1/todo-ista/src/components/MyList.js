@@ -7,6 +7,10 @@
  */
 import React, { Component } from "react";
 
-class MyList extends React.Component {}
+class MyList extends React.Component {
+  render() {
+    return <div> Things To Do</div>;
+  }
+}
 
 export default MyList;

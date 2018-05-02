@@ -5,11 +5,19 @@
  * Date: 02/05/2018
  * Refs:
  */
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import MyList from "./MyList";
+import MyListForm from "./MyListForm";
 
 class TodoistaApp extends Component {
   render() {
-    return <p>Welcome to TodoistaApp</p>;
+    return (
+      <Fragment>
+        <p>Welcome to TodoistaApp</p>
+        <MyListForm />
+        <MyList />
+      </Fragment>
+    );
   }
 }
 
