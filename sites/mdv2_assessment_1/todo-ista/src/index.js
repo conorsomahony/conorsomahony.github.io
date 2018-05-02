@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import TodoistaApp from "./components/TodoistaApp";
 import registerServiceWorker from "./registerServiceWorker";
+import Router from "./components/Router";
 
-ReactDOM.render(<TodoistaApp />, document.getElementById("root"));
+ReactDOM.render(<Router />, document.getElementById("root"));
 registerServiceWorker();

@@ -1,20 +1,23 @@
-λ create-react-app todo-ista
+λ npx create-react-app todo-ista
+npx: installed 1 in 2.316s
+Path must be a string. Received undefined
+C:\Users\conor\AppData\Roaming\npm\node_modules\create-react-app\index.js
 
-Creating a new React app in c:\Users\conor\conorsomahony.github.io\sites\mdv2_assessment_1\todo-ista.
+Creating a new React app in C:\Users\conor\conorsomahony.github.io\sites\mdv2_assessment_1\todo-ista.
 
 Installing packages. This might take a couple of minutes.
 Installing react, react-dom, and react-scripts...
 
 
-> uglifyjs-webpack-plugin@0.4.6 postinstall c:\Users\conor\conorsomahony.github.io\sites\mdv2_assessment_1\todo-ista\node_modules\uglifyjs-webpack-plugin
+> uglifyjs-webpack-plugin@0.4.6 postinstall C:\Users\conor\conorsomahony.github.io\sites\mdv2_assessment_1\todo-ista\node_modules\uglifyjs-webpack-plugin
 > node lib/post_install.js
 
 + react-dom@16.3.2
-+ react@16.3.2
 + react-scripts@1.1.4
-added 1320 packages from 791 contributors in 122.345s
++ react@16.3.2
+added 1320 packages from 791 contributors in 93.135s
 
-Success! Created todo-ista at c:\Users\conor\conorsomahony.github.io\sites\mdv2_assessment_1\todo-ista
+Success! Created todo-ista at C:\Users\conor\conorsomahony.github.io\sites\mdv2_assessment_1\todo-ista
 Inside that directory, you can run several commands:
 
   npm start

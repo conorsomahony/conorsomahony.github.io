@@ -5,12 +5,12 @@
  * Date: 02/05/2018
  * Refs:
  */
-import React, { Component } from "react";
+import React from "react";
 
-class MyList extends Component {
-  render() {
-    return <div> Things To Do</div>;
-  }
-}
+const NotFound = () => (
+  <div>
+    <h1>Not FOUND!!</h1>
+  </div>
+);
 
-export default MyList;
+export default NotFound;
