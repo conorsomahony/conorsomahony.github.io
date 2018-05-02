@@ -1,0 +1,5 @@
+* Application created using React, create-react-app, react-router, 
+*
+* Refs:
+* create-react-app: https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md
+* React tutorial: https://reactjs.org/tutorial/tutorial.html
