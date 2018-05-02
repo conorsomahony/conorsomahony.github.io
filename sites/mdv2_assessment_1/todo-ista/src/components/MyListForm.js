@@ -5,24 +5,23 @@
  * Date: 02/05/2018
  * Refs:
  */
-import React, { Component, Fragment } from "react";
+import React, {Component, Fragment} from "react";
 
 class MyListForm extends Component {
   render() {
     return (
       <Fragment>
-        <form action="">
-          <input
-            type="text"
-            name=""
-            id=""
-            required
-            placeholder="Enter new item"
-          />
+        <form action="" onSubmit={this.handleClick}>
+          <input type="text" name="" id="" required placeholder="Enter new item"/>
           <button type="submit">+</button>
         </form>
       </Fragment>
     );
+  }
+
+  handleClick(event) {
+    event.preventDefault();
+    console.log("clicked!");
   }
 }
 

@@ -5,8 +5,14 @@
  * Date: 02/05/2018
  * Refs:
  */
-import React, { Component } from "react";
+import React, {Component} from "react";
 
-class MyListItem extends Component {}
+class MyListItem extends Component {
+    render() {
+        return (
+            <div>{this.props.todoTitle}</div>
+        )
+    }
+}
 
 export default MyListItem;

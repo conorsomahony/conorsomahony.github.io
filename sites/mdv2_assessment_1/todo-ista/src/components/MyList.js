@@ -5,11 +5,20 @@
  * Date: 02/05/2018
  * Refs:
  */
-import React, { Component } from "react";
+import React, {Component, Fragment} from "react";
+import MyListItem from "./MyListItem";
 
 class MyList extends Component {
   render() {
-    return <div> Things To Do</div>;
+    return (
+      <Fragment>
+        <h1>
+          Things to Do
+        </h1>
+        <MyListItem todoTitle="Feed the Dog"/>
+        <MyListItem todoTitle="Put out the Cat"/>
+      </Fragment>
+    )
   }
 }
 

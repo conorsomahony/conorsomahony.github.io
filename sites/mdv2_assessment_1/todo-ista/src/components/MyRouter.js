@@ -6,17 +6,17 @@
  * Refs:
  */
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 import TodoistaApp from "./TodoistaApp";
 import NotFound from "./NotFound";
 
-const Router = () => (
+const MyRouter = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={TodoistaApp} />
-      <Route component={NotFound} />
+      <Route exact path="/" component={TodoistaApp}/>
+      <Route component={NotFound}/>
     </Switch>
   </BrowserRouter>
 );
 
-export default Router;
+export default MyRouter;
