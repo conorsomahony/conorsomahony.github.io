@@ -18,7 +18,6 @@ import App from "grommet/components/App";
 import Box from "grommet/components/Box";
 import Header from "grommet/components/Header";
 import Footer from "grommet/components/Footer";
-import Heading from "grommet/components/Heading";
 import Section from "grommet/components/Section";
 import Title from "grommet/components/Title";
 import Paragraph from "grommet/components/Paragraph";
@@ -29,18 +28,18 @@ class TodoistaApp extends Component {
     return (
       <App>
         <Article>
-          <Header>
-            <Heading>Welcome to Todo-ista!</Heading>
+          <Header pad='medium' colorIndex='neutral-2-t'>
+            <Title>
+              Todo-ista
+            </Title>
           </Header>
-          <Section>
-            <Box colorIndex='neutral-1' justify='center' align='center' pad='medium'>
+          <Section margin='none' pad='none'>
+            <Box colorIndex='light-1' justify='center' align='center' pad='medium'>
               <MyListItemForm/>
-            </Box>
-            <Box colorIndex='neutral-2' justify='center' align='center' pad='medium'>
               <MyList/>
             </Box>
           </Section>
-          <Footer justify='between'>
+          <Footer justify='between' colorIndex='light-2'>
             <Title>
               Todo-ista
             </Title>

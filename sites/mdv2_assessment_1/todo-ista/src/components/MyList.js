@@ -5,19 +5,23 @@
  * Date: 02/05/2018
  * Refs:
  */
+
+// React components
 import React, {Component, Fragment} from "react";
+
+// My components
 import MyListItem from "./MyListItem";
+
+// Grommet components
+import Box from "grommet/components/Box";
 
 class MyList extends Component {
   render() {
     return (
-      <Fragment>
-        <h1>
-          Things to Do
-        </h1>
+      <Box>
         <MyListItem todoTitle="Feed the Dog"/>
         <MyListItem todoTitle="Put out the Cat"/>
-      </Fragment>
+      </Box>
     )
   }
 }

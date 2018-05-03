@@ -5,17 +5,37 @@
  * Date: 02/05/2018
  * Refs:
  */
-import React, {Component, Fragment} from "react";
+
+// React components
+import React, {Component} from "react";
+
+// Grommet components
+import Box from "grommet/components/Box";
+import Form from "grommet/components/Form";
+import FormFields from "grommet/components/FormFields";
+import Header from "grommet/components/Header";
+import Heading from "grommet/components/Heading";
+import TextInput from "grommet/components/TextInput";
+import Button from "grommet/components/Button";
+import Add from "grommet/components/icons/base/Add"
+import Split from "grommet/components/Split"
 
 class MyListItemForm extends Component {
   render() {
     return (
-      <Fragment>
-        <form onSubmit={this.handleClick}>
-          <input type="text" name="itemText" required placeholder="Enter new item"/>
-          <button type="submit">+</button>
-        </form>
-      </Fragment>
+      <Form onSubmit={this.handleClick}>
+        {/* <Header>
+            <Heading h2>
+              Add New Item
+            </Heading>
+          </Header> */}
+        {/* <Box direction='row' justify='start' align='center' appCentered> */}
+        <TextInput
+          required
+          fill={true}
+          suggestions={['Feed the dog', 'Put out the cat', 'Make a list']}/>
+        <Button type='submit' icon={< Add />} primary={true}/> {/* </Box> */}
+      </Form>
     );
   }
   handleClick(event) {
