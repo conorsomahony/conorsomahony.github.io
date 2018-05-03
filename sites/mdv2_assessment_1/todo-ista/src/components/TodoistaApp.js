@@ -23,16 +23,24 @@ import Title from "grommet/components/Title";
 import Paragraph from "grommet/components/Paragraph";
 import Split from "grommet/components/Split";
 import Sidebar from "grommet/components/Sidebar";
-import PlatformReactjsIcon from 'grommet/components/icons/base/PlatformReactjs';
+import CheckboxSelected from 'grommet/components/icons/base/CheckboxSelected';
 import Button from "grommet/components/Button";
+import Task from "grommet/components/icons/base/Task"
 
 class TodoistaApp extends Component {
+
   render() {
     return (
       <App centered={false}>
         <Box full={true} flex={false}>
           {/* Main Header */}
-          <Header pad='medium' colorIndex='neutral-2-t' primary={true} appCentered={true}>
+          <Header
+            pad='medium'
+            colorIndex='neutral-2'
+            primary={true}
+            appCentered={true}
+            size="large">
+            <CheckboxSelected/>&nbsp;
             <Title>
               Todo-ista
             </Title>
@@ -40,17 +48,17 @@ class TodoistaApp extends Component {
 
           {/* Main App Area */}
           <Box>
-            <Header pad='medium' justify='between' large={true}>
+            {/* <Header pad='medium'>
               <Title>
                 Add an item
               </Title>
-            </Header>
+            </Header> */}
             <Box pad='medium'>
               <MyListItemForm/>
             </Box>
           </Box>
           <Box flex='grow' colorIndex='light-2'>
-            <Header pad='medium' justify='between'>
+            <Header pad='medium'>
               <Title>
                 Things to Do
               </Title>
