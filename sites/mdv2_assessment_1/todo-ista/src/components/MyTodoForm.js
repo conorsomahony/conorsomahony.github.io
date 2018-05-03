@@ -21,28 +21,30 @@ import Add from "grommet/components/icons/base/Add"
 import Flag from "grommet/components/icons/base/Flag"
 
 /*
-* MyListItemFrom Component
+* My Todo Form Component
 */
-class MyListItemForm extends Component {
+class MyTodoForm extends Component {
 
-  listItemTitle = React.createRef();
-  listItemPriority = React.createRef();
+  // Refs
+  todoTitle = React.createRef();
 
   /**
-   * Process the list item form
+   * Process the item form, adding new todo item to the todo list.
    */
   handleClick = event => {
-    // stop the form submitting
+    // 1. stop the form submitting
     event.preventDefault();
-    // create list item from form data
+    // 2. create list item from form data
     const listItem = {
-      listItemTitle: this.listItemTitle.current.componentRef.value
+      todoTitle: this.todoTitle.current.componentRef.value,
+      priority: "1",
+      done: false
     }
-    // update the state via method passed down via props
+    // 3. update the state via method passed down via props
     this
       .props
       .addListItem(listItem);
-    // reset the form
+    // 4. reset the form
     event
       .currentTarget
       .reset();
@@ -62,11 +64,11 @@ class MyListItemForm extends Component {
           responsive={true}>
           <Box>
             <TextInput
-              ref={this.listItemTitle}
-              name="todoItem"
-              id=""
+              ref={this.todoTitle}
+              name="todoTitle"
+              id="todoFormTextInput"
               required
-              placeHolder="Add new item"/>
+              placeHolder="Add new todo"/>
           </Box>
           <Box direction='row' justify='between' align='center' responsive={false}>
             {/* <Label>Priority&nbsp;</Label> */}
@@ -76,7 +78,7 @@ class MyListItemForm extends Component {
               <input type="radio" name="priority" value="3"/>&nbsp;<Flag colorIndex="ok"/>
             </Box>
             <Box direction="row" align="center" responsive={false}>
-              <Button label="Add" icon={< Add />} type='submit'/>
+              <Button label="Add" icon={< Add />} type='submit' secondary={true}/>
             </Box>
           </Box>
         </Box>
@@ -85,4 +87,4 @@ class MyListItemForm extends Component {
   }
 }
 
-export default MyListItemForm;
+export default MyTodoForm;

@@ -5,12 +5,21 @@
  * Date: 02/05/2018
  * Refs:
  */
+
+// React Components
 import React from "react";
 
+// My Components
+import TodoistaAppHeader from "./TodoistaAppHeader";
+
+// Grommet Components
+import App from "grommet/components/App";
+
+// Functional component, with implicit return
 const NotFound = () => (
-  <div>
-    <h1>Not FOUND!!</h1>
-  </div>
+  <App centered={false}>
+    <TodoistaAppHeader/>
+  </App>
 );
 
 export default NotFound;

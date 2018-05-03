@@ -10,8 +10,9 @@
 import React, {Component} from "react";
 
 // My Components
-import MyList from "./MyList";
-import MyListItemForm from "./MyListItemForm";
+import MyTodoList from "./MyTodoList";
+import MyTodoForm from "./MyTodoForm";
+import TodoistaAppHeader from "./TodoistaAppHeader";
 
 // Grommet Components
 import App from "grommet/components/App";
@@ -27,8 +28,12 @@ import CheckboxSelected from 'grommet/components/icons/base/CheckboxSelected';
 import Button from "grommet/components/Button";
 import Task from "grommet/components/icons/base/Task"
 
+/**
+ * Todoista App top-level component.
+ */
 class TodoistaApp extends Component {
 
+  // React application state
   state = {
     myListItems: {}
   };
@@ -44,35 +49,19 @@ class TodoistaApp extends Component {
     };
     // 2. Add new list item
     listItems[`listItem${Date.now()}`] = listItem;
-
+    // 3. set the new state
     this.setState({myListItems: listItems});
   }
 
   /**
-   * Load sample list items
+   * render method
    */
-  loadSampleListItems = () => {
-    console.log("loading sample list items")
-  }
-
   render() {
     return (
       <App centered={false}>
         <Box full={true} flex={false}>
-          {/* Main Header */}
-          <Header
-            pad='medium'
-            colorIndex='neutral-2'
-            primary={true}
-            appCentered={true}
-            size="large">
-            <CheckboxSelected/>&nbsp;
-            <Title>
-              Todo-ista
-            </Title>
-          </Header>
-
-          {/* Main App Area */}
+          {/* App Header */}
+          <TodoistaAppHeader/> {/* Main App Area */}
           <Box>
             {/* <Header pad='medium'>
               <Title>
@@ -80,23 +69,21 @@ class TodoistaApp extends Component {
               </Title>
             </Header> */}
             <Box pad='medium'>
-              <MyListItemForm addListItem={this.addListItem}/>
+              <MyTodoForm addListItem={this.addListItem}/>
             </Box>
           </Box>
-          <Box flex='grow' colorIndex='light-2'>
+          <Box flex='grow' colorIndex='neutral-4-a'>
             {/* <Header pad='medium'>
               {<Title>
                 Things to Do
               </Title> }
             </Header> */}
             <Box pad='medium'>
-              <MyList
-                loadSampleListItems={this.loadSampleListItems}
-                listItems={this.state.myListItems}/>
+              <MyTodoList listItems={this.state.myListItems}/>
             </Box>
           </Box>
 
-          {/* Main Footer */}
+          {/* Main App Footer */}
           <Footer
             primary={true}
             appCentered={true}
