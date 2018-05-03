@@ -1,5 +1,7 @@
-* Application created using React, create-react-app, react-router, 
+* Application created using React, create-react-app, react-router, Semantic-UI
 *
 * Refs:
 * create-react-app: https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md
 * React tutorial: https://reactjs.org/tutorial/tutorial.html
+* Semantic UI: https://react.semantic-ui.com/introduction
+* Semantic UI themeing: https://jsramblings.com/2018/03/04/how-to-use-semantic-ui-with-a-custom-theme-in-your-CRA-app.html
