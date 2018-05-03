@@ -11,14 +11,10 @@
     "react-simple-storage": "^1.0.2"
   },
   "scripts": {
-    "build-semantic": "cd src/semantic && gulp build-css build-assets",
-    "watch-semantic": "cd src/semantic && npm run build-semantic && gulp watch",
-    "start": "npm run build-semantic && react-scripts start",
-    "build": "npm run build-semantic && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "semantic-ui": "^2.3.1"
-  }
+  "devDependencies": {}
 }

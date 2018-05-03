@@ -8,7 +8,6 @@
 import React, {Component, Fragment} from "react";
 import MyList from "./MyList";
 import MyListItemForm from "./MyListItemForm";
-import '../semantic/dist/semantic.min.css';
 
 class TodoistaApp extends Component {
   render() {

@@ -1,8 +1,14 @@
-* Application created using React, create-react-app, react-router, Semantic-UI, react-simple-storage
-*
-* Refs:
-* create-react-app: https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md
-* React tutorial: https://reactjs.org/tutorial/tutorial.html
-* Semantic UI: https://react.semantic-ui.com/introduction
-* Semantic UI themeing: https://jsramblings.com/2018/03/04/how-to-use-semantic-ui-with-a-custom-theme-in-your-CRA-app.html
-* React Component wrapper for local storage : https://hackernoon.com/how-to-take-advantage-of-local-storage-in-your-react-projects-a895f2b2d3f2
+* Application created using:
+** React 
+** create-react-app
+** react-router-dom
+** react-simple-storage
+
+* Package Refs:
+** create-react-app: https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md
+** react-simple-storage: https://www.npmjs.com/package/react-simple-storage
+** react-router-dom: https://www.npmjs.com/package/react-router-dom
+
+* Tutorial Refs:
+** Main React tutorial: https://reactjs.org/tutorial/tutorial.html
+** Tutorial for local storage in React : https://hackernoon.com/how-to-take-advantage-of-local-storage-in-your-react-projects-a895f2b2d3f2
