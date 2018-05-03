@@ -7,7 +7,7 @@
  */
 import React, {Component, Fragment} from "react";
 import MyList from "./MyList";
-import MyListForm from "./MyListForm";
+import MyListItemForm from "./MyListItemForm";
 import '../semantic/dist/semantic.min.css';
 
 class TodoistaApp extends Component {
@@ -15,7 +15,7 @@ class TodoistaApp extends Component {
     return (
       <Fragment>
         <p>Welcome to TodoistaApp</p>
-        <MyListForm/>
+        <MyListItemForm/>
         <MyList/>
       </Fragment>
     );

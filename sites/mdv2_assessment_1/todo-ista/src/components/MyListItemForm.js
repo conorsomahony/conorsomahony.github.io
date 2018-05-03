@@ -7,22 +7,21 @@
  */
 import React, {Component, Fragment} from "react";
 
-class MyListForm extends Component {
+class MyListItemForm extends Component {
   render() {
     return (
       <Fragment>
-        <form action="" onSubmit={this.handleClick}>
-          <input type="text" name="" id="" required placeholder="Enter new item"/>
+        <form onSubmit={this.handleClick}>
+          <input type="text" name="itemText" required placeholder="Enter new item"/>
           <button type="submit">+</button>
         </form>
       </Fragment>
     );
   }
-
   handleClick(event) {
     event.preventDefault();
     console.log("clicked!");
   }
 }
 
-export default MyListForm;
+export default MyListItemForm;
