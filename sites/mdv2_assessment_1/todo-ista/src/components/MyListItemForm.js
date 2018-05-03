@@ -18,24 +18,19 @@ import Heading from "grommet/components/Heading";
 import TextInput from "grommet/components/TextInput";
 import Button from "grommet/components/Button";
 import Add from "grommet/components/icons/base/Add"
-import Split from "grommet/components/Split"
 
 class MyListItemForm extends Component {
   render() {
     return (
-      <Form onSubmit={this.handleClick}>
-        {/* <Header>
-            <Heading h2>
-              Add New Item
-            </Heading>
-          </Header> */}
-        {/* <Box direction='row' justify='start' align='center' appCentered> */}
-        <TextInput
-          required
-          fill={true}
-          suggestions={['Feed the dog', 'Put out the cat', 'Make a list']}/>
-        <Button type='submit' icon={< Add />} primary={true}/> {/* </Box> */}
-      </Form>
+      <Box pad="medium">
+        <Form onSubmit={this.handleClick}>
+          <TextInput
+            required
+            placeHolder="Add new item"
+            suggestions={['Feed the dog', 'Put out the cat', 'Make a list']}/>
+          <Button type='submit' icon={< Add />}/>
+        </Form>
+      </Box>
     );
   }
   handleClick(event) {

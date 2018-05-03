@@ -18,7 +18,7 @@ import Box from "grommet/components/Box";
 class MyList extends Component {
   render() {
     return (
-      <Box>
+      <Box pad="medium">
         <MyListItem todoTitle="Feed the Dog"/>
         <MyListItem todoTitle="Put out the Cat"/>
       </Box>

@@ -21,28 +21,53 @@ import Footer from "grommet/components/Footer";
 import Section from "grommet/components/Section";
 import Title from "grommet/components/Title";
 import Paragraph from "grommet/components/Paragraph";
-import Article from "grommet/components/Article";
+import Split from "grommet/components/Split";
+import Sidebar from "grommet/components/Sidebar";
+import PlatformReactjsIcon from 'grommet/components/icons/base/PlatformReactjs';
+import Button from "grommet/components/Button";
 
 class TodoistaApp extends Component {
   render() {
     return (
-      <App>
-        <Article>
-          <Header pad='medium' colorIndex='neutral-2-t'>
+      <App centered={false}>
+        <Box full={true} flex={false}>
+          {/* Main Header */}
+          <Header pad='medium' colorIndex='neutral-2-t' primary={true} appCentered={true}>
             <Title>
               Todo-ista
             </Title>
           </Header>
-          <Section margin='none' pad='none'>
-            <Box colorIndex='light-1' justify='center' align='center' pad='medium'>
+
+          {/* Main App Area */}
+          <Box>
+            <Header pad='medium' justify='between' large={true}>
+              <Title>
+                Add an item
+              </Title>
+            </Header>
+            <Box pad='medium'>
               <MyListItemForm/>
+            </Box>
+          </Box>
+          <Box flex='grow' colorIndex='light-2'>
+            <Header pad='medium' justify='between'>
+              <Title>
+                Things to Do
+              </Title>
+            </Header>
+            <Box pad='medium'>
               <MyList/>
             </Box>
-          </Section>
-          <Footer justify='between' colorIndex='light-2'>
-            <Title>
-              Todo-ista
-            </Title>
+          </Box>
+
+          {/* Main Footer */}
+          <Footer
+            primary={true}
+            appCentered={true}
+            direction="column"
+            align="center"
+            pad="small"
+            colorIndex="grey-1">
             <Box
               direction='row'
               align='center'
@@ -54,7 +79,7 @@ class TodoistaApp extends Component {
               </Paragraph>
             </Box>
           </Footer>
-        </Article>
+        </Box>
       </App>
     );
   }
