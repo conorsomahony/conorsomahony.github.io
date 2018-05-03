@@ -15,12 +15,20 @@ import MyListItem from "./MyListItem";
 // Grommet components
 import Box from "grommet/components/Box";
 
+/**
+ *
+ */
 class MyList extends Component {
   render() {
+    console.log(this.props.listItems);
+
     return (
       <Fragment>
-        <MyListItem todoTitle="Feed the Dog"/>
-        <MyListItem todoTitle="Put out the Cat"/>
+        <ul>
+          {Object
+            .keys(this.props.listItems)
+            .map(key => <MyListItem listItem={this.props.listItems[key]} key={key}>{key}</MyListItem>)}
+        </ul>
       </Fragment>
     )
   }

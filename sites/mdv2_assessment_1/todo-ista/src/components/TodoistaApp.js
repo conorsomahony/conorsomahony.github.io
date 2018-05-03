@@ -29,6 +29,32 @@ import Task from "grommet/components/icons/base/Task"
 
 class TodoistaApp extends Component {
 
+  state = {
+    myListItems: {}
+  };
+
+  /*
+  * Update App state to add a new list item
+  */
+  addListItem = (listItem) => {
+    console.log("Adding a list item");
+    // 1. take copy of existing state
+    const listItems = {
+      ...this.state.myListItems
+    };
+    // 2. Add new list item
+    listItems[`listItem${Date.now()}`] = listItem;
+
+    this.setState({myListItems: listItems});
+  }
+
+  /**
+   * Load sample list items
+   */
+  loadSampleListItems = () => {
+    console.log("loading sample list items")
+  }
+
   render() {
     return (
       <App centered={false}>
@@ -54,17 +80,19 @@ class TodoistaApp extends Component {
               </Title>
             </Header> */}
             <Box pad='medium'>
-              <MyListItemForm/>
+              <MyListItemForm addListItem={this.addListItem}/>
             </Box>
           </Box>
           <Box flex='grow' colorIndex='light-2'>
-            <Header pad='medium'>
-              <Title>
+            {/* <Header pad='medium'>
+              {<Title>
                 Things to Do
-              </Title>
-            </Header>
+              </Title> }
+            </Header> */}
             <Box pad='medium'>
-              <MyList/>
+              <MyList
+                loadSampleListItems={this.loadSampleListItems}
+                listItems={this.state.myListItems}/>
             </Box>
           </Box>
 

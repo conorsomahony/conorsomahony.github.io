@@ -28,12 +28,29 @@ class MyListItemForm extends Component {
   listItemTitle = React.createRef();
   listItemPriority = React.createRef();
 
+  /**
+   * Process the list item form
+   */
   handleClick = event => {
+    // stop the form submitting
     event.preventDefault();
-    console.log(this.listItemTitle.current.componentRef.value);
-    console.log(this.listItemPriority.value);
+    // create list item from form data
+    const listItem = {
+      listItemTitle: this.listItemTitle.current.componentRef.value
+    }
+    // update the state via method passed down via props
+    this
+      .props
+      .addListItem(listItem);
+    // reset the form
+    event
+      .currentTarget
+      .reset();
   }
 
+  /**
+   * render method
+   */
   render() {
     return (
       <Form onSubmit={this.handleClick}>

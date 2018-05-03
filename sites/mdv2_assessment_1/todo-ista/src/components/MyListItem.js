@@ -10,7 +10,7 @@ import React, {Component} from "react";
 class MyListItem extends Component {
     render() {
         return (
-            <div>{this.props.todoTitle}</div>
+            <li>Title? :{this.props.listItem.listItemTitle}</li>
         )
     }
 }
