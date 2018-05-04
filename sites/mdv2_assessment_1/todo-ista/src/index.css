@@ -8,3 +8,16 @@ body {
   text-decoration: line-through;
   color: #999999;
 }
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper input[type="text"] {
+  flex: 1 1 auto;
+}
+
+.formButton {
+  margin-left: auto;
+}

@@ -104,19 +104,20 @@ class TodoistaApp extends Component {
           <TodoistaAppHeader/>
           <Box>
             {/* Todo Form */}
-            <Box pad='none'>
-              <Box margin="medium" colorIndex="neutral-1-a" pad="medium">
-                <Heading margin="none" tag="h4">Add New Todo</Heading>
+            <Box>
+              <Box pad="medium" margin="large">
+                <MyTodoForm addListItem={this.addListItem}/>
               </Box>
-              <MyTodoForm addListItem={this.addListItem}/>
             </Box>
           </Box>
           <Box flex='grow'>
-            {/* Tooo List */}
-            <Box pad='none'>
-              <Box margin="medium" colorIndex="neutral-4-a" pad="medium">
-                <Heading margin="none" tag="h4">Things To Do</Heading>
-              </Box>
+            {/* Tooo List - flex='grow'  */}
+            <Box colorIndex="neutral-4-a" pad="medium" margin="medium">
+              <Heading margin="none" tag="h4">Things To Do</Heading>
+            </Box>
+            <Box pad={{
+              vertical: "none"
+            }}>
               <MyTodoList
                 listItems={this.state.myListItems}
                 toggleDone={this.toggleDone}

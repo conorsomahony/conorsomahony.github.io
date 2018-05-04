@@ -7,7 +7,7 @@
  */
 
 // React components
-import React, {Component, Fragment} from "react";
+import React, {Component} from "react";
 
 // My components
 import MyTodoItem from "./MyTodoItem";
@@ -22,29 +22,38 @@ import ListPlaceholder from 'grommet-addons/components/ListPlaceholder';
  */
 class MyTodoList extends Component {
 
+  /**
+   * render method - create list (or placeholder if we don't have any items)
+   */
   render() {
     if (Object.keys(this.props.listItems).length === 0) {
-      return (
-        <Fragment>
-          <ListPlaceholder emptyMessage='You do not have any items at the moment.'/>
-        </Fragment>
-      )
+      return (<ListPlaceholder
+        emptyMessage="You have nothing to do at the moment. Why don't you put your feet up?"
+        filteredTotal={0}
+        unfilteredTotal={0}/>)
     } else {
       return (
-        <Fragment>
-          <Box margin="medium">
-            <List>
-              {Object
-                .keys(this.props.listItems)
-                .map(key => <MyTodoItem
-                  index={key}
-                  toggleDone={this.props.toggleDone}
-                  removeListItem={this.props.removeListItem}
-                  todoItem={this.props.listItems[key]}
-                  key={key}>{key}</MyTodoItem>)}
-            </List>
-          </Box>
-        </Fragment>
+        <List>
+          {Object
+            .keys(this.props.listItems)
+            .sort((a, b) => {
+              const aItem = this.props.listItems[a];
+              const bItem = this.props.listItems[b];
+              if (aItem.done === bItem.done) {
+                return aItem.priority - bItem.priority;
+              } else {
+                return (aItem.done
+                  ? 1
+                  : -1);
+              }
+            })
+            .map(key => <MyTodoItem
+              index={key}
+              toggleDone={this.props.toggleDone}
+              removeListItem={this.props.removeListItem}
+              todoItem={this.props.listItems[key]}
+              key={key}>{key}</MyTodoItem>)}
+        </List>
       )
     }
   }

@@ -14,7 +14,8 @@ import Button from "grommet/components/Button";
 import Box from "grommet/components/Box";
 import Checkmark from "grommet/components/icons/base/Checkmark"
 import CheckboxSelected from "grommet/components/icons/base/CheckboxSelected"
-import Close from "grommet/components/icons/base/Close"
+import Close from "grommet/components/icons/base/Close";
+import Trash from "grommet/components/icons/base/Trash";
 import ListItem from 'grommet/components/ListItem';
 import Flag from "grommet/components/icons/base/Flag"
 
@@ -47,27 +48,29 @@ class MyTodoItem extends Component {
                         wrap={false}
                         responsive={false}
                         pad='none'
-                        margin='none'>
-                        <Box>
-                            <span>{getIcon(done, priority)}</span>&nbsp;
-                        </Box>
-                        <Box>
+                        margin='none'
+                        flex="grow">
+                        {/* Priority Icon */}
+                        {getPriorityIcon(done, priority)}&nbsp;
+                        <Box flex="grow">
+                            {/* Todo Title */}
                             <span
                                 className={done
                                 ? "doneItem"
                                 : ""}>{todoTitle}</span>
                         </Box>
                         <Box>
+                            {/* Mark done/not done */}
                             <span>
                                 <Button
-                                    icon={< Checkmark />}
+                                    icon={getTodoIcon(done)}
                                     onClick={() => this.props.toggleDone(this.props.index)}/>
                             </span>
                         </Box>
                         <Box>
                             <span>
                                 <Button
-                                    icon={< Close />}
+                                    icon={< Trash />}
                                     onClick={() => this.props.removeListItem(this.props.index)}/>
                             </span>
                         </Box>
@@ -79,11 +82,16 @@ class MyTodoItem extends Component {
         }
     }
 }
+function getTodoIcon(done) {
+    return (!done
+        ? <Checkmark/>
+        : <Close/>);
+}
 
 /*
 * Helper function: Return colored flag based on done state and priority.
 */
-function getIcon(done, priority) {
+function getPriorityIcon(done, priority) {
     if (done) {
         return <CheckboxSelected colorIndex="unknown"/>
     } else {
