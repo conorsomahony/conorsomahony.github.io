@@ -2,12 +2,10 @@
 ** React.js,
 ** create-react-app for React boilerplate,
 ** react-router-dom for simple routing,
-** react-simple-storage as wrapper for local storage in React,
 ** grommet for CSS styling.
 
 * Package Refs:
 ** create-react-app: https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md
-** react-simple-storage: https://www.npmjs.com/package/react-simple-storage
 ** react-router-dom: https://www.npmjs.com/package/react-router-dom
 ** grommet: http://grommet.io/
 

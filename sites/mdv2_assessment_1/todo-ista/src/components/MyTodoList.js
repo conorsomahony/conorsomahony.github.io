@@ -36,12 +36,10 @@ class MyTodoList extends Component {
             <List>
               {Object
                 .keys(this.props.listItems)
-                .sort((a, b) => {
-                  return this.props.listItems[a].priority > this.props.listItems[b].priority;
-                })
                 .map(key => <MyTodoItem
                   index={key}
                   toggleDone={this.props.toggleDone}
+                  removeListItem={this.props.removeListItem}
                   todoItem={this.props.listItems[key]}
                   key={key}>{key}</MyTodoItem>)}
             </List>

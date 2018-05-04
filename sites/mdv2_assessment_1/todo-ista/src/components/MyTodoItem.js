@@ -13,6 +13,7 @@ import React, {Component} from "react";
 import Button from "grommet/components/Button";
 import Box from "grommet/components/Box";
 import Checkmark from "grommet/components/icons/base/Checkmark"
+import CheckboxSelected from "grommet/components/icons/base/CheckboxSelected"
 import Close from "grommet/components/icons/base/Close"
 import ListItem from 'grommet/components/ListItem';
 import Flag from "grommet/components/icons/base/Flag"
@@ -22,8 +23,10 @@ import Flag from "grommet/components/icons/base/Flag"
  */
 class MyTodoItem extends Component {
 
+    /**
+     * Toggle whether item is done or not when it is clicked.
+     */
     handleClick = () => {
-        console.log("item clicked");
         this
             .props
             .toggleDone(this.props.index);
@@ -33,40 +36,66 @@ class MyTodoItem extends Component {
      */
     render() {
         // ES6 "destructuring"
-        const {todoTitle, priority, done} = this.props.todoItem;
-        return (
-            <ListItem onClick={this.handleClick}>
-                <Box
-                    direction='row'
-                    justify='start'
-                    align='center'
-                    wrap={false}
-                    responsive={false}>
-                    <span>{this.getFlag(done, priority)}</span>&nbsp;
-                    <span
-                        className={done
-                        ? "doneItem"
-                        : ""}>{todoTitle}</span>
-                </Box>
-            </ListItem>
-        )
-    }
-
-    /*
-    * Return colored flag based on done state and priority
-    */
-    getFlag(done, priority) {
-        if (done) {
-            return <Flag colorIndex="unknown"/>
+        if (this.props.todoItem) {
+            const {todoTitle, priority, done} = this.props.todoItem;
+            return (
+                <ListItem>
+                    <Box
+                        direction='row'
+                        justify='start'
+                        align='center'
+                        wrap={false}
+                        responsive={false}
+                        pad='none'
+                        margin='none'>
+                        <Box>
+                            <span>{getIcon(done, priority)}</span>&nbsp;
+                        </Box>
+                        <Box>
+                            <span
+                                className={done
+                                ? "doneItem"
+                                : ""}>{todoTitle}</span>
+                        </Box>
+                        <Box>
+                            <span>
+                                <Button
+                                    icon={< Checkmark />}
+                                    onClick={() => this.props.toggleDone(this.props.index)}/>
+                            </span>
+                        </Box>
+                        <Box>
+                            <span>
+                                <Button
+                                    icon={< Close />}
+                                    onClick={() => this.props.removeListItem(this.props.index)}/>
+                            </span>
+                        </Box>
+                    </Box>
+                </ListItem>
+            )
         } else {
-            switch (priority) {
-                case 1:
-                    return <Flag colorIndex="critical"/>
-                case 2:
-                    return <Flag colorIndex="warning"/>
-                case 3:
-                    return <Flag colorIndex="ok"/>
-            }
+            return null;
+        }
+    }
+}
+
+/*
+* Helper function: Return colored flag based on done state and priority.
+*/
+function getIcon(done, priority) {
+    if (done) {
+        return <CheckboxSelected colorIndex="unknown"/>
+    } else {
+        switch (priority) {
+            case 1:
+                return <Flag colorIndex="critical"/>
+            case 2:
+                return <Flag colorIndex="warning"/>
+            case 3:
+                return <Flag colorIndex="ok"/>
+            default:
+                return <Flag/>
         }
     }
 }

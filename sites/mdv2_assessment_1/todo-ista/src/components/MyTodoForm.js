@@ -13,7 +13,6 @@ import React, {Component, Fragment} from "react";
 import Box from "grommet/components/Box";
 import Button from "grommet/components/Button";
 import Form from "grommet/components/Form";
-import Label from "grommet/components/Label";
 import Add from "grommet/components/icons/base/Add"
 
 /*
@@ -27,14 +26,12 @@ class MyTodoForm extends Component {
 
   /**
    * Process the item form, adding new todo item to the todo list.
-   * Note - No need to bind method in a constructor, as we create a property handleClick,
-   * set to an arrow function, which is bound.
+   * (Note - No need to bind method to this, in a constructor, since we create a property handleClick,
+   * set to an arrow function, which is bound.)
    */
   handleClick = (event) => {
     // 1. stop the form submitting
     event.preventDefault();
-    console.log(this.todoTitle.current.value);
-    console.log(this.priority.current.value);
     // 2. create list item from form data
     const listItem = {
       todoTitle: this.todoTitle.current.value,
@@ -71,7 +68,7 @@ class MyTodoForm extends Component {
                 name="todoTitle"
                 id="todoFormTextInput"
                 required
-                placeholder="Add new todo"/>
+                placeholder="Add New Todo"/>
             </Box>
             <Box direction='row' justify='between' align='center' responsive={false}>
               {/* <Label>Priority&nbsp;</Label> */}
