@@ -12,14 +12,9 @@ import React, {Component, Fragment} from "react";
 // Grommet components
 import Box from "grommet/components/Box";
 import Button from "grommet/components/Button";
-import Heading from "grommet/components/Heading";
-import TextInput from "grommet/components/TextInput";
 import Form from "grommet/components/Form";
-import FormField from "grommet/components/FormField";
 import Label from "grommet/components/Label";
-import RadioButton from "grommet/components/RadioButton";
 import Add from "grommet/components/icons/base/Add"
-import Flag from "grommet/components/icons/base/Flag"
 
 /*
 * My Todo Form Component

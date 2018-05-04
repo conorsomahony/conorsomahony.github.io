@@ -14,10 +14,6 @@ import MyTodoItem from "./MyTodoItem";
 
 // Grommet components
 import Box from "grommet/components/Box";
-import Heading from "grommet/components/Heading";
-import Table from 'grommet/components/Table';
-import TableHeader from 'grommet/components/TableHeader';
-import TableRow from 'grommet/components/TableRow';
 import List from 'grommet/components/List';
 import ListPlaceholder from 'grommet-addons/components/ListPlaceholder';
 
@@ -27,29 +23,32 @@ import ListPlaceholder from 'grommet-addons/components/ListPlaceholder';
 class MyTodoList extends Component {
 
   render() {
-    console.log(Object.keys(this.props.listItems).length);
     if (Object.keys(this.props.listItems).length === 0) {
-      return (<ListPlaceholder emptyMessage='You do not have any items at the moment.'/>)
+      return (
+        <Fragment>
+          <ListPlaceholder emptyMessage='You do not have any items at the moment.'/>
+        </Fragment>
+      )
     } else {
       return (
         <Fragment>
-          <List>
-            {Object
-              .keys(this.props.listItems)
-              .sort((a, b) => {
-                return this.props.listItems[a].priority > this.props.listItems[b].priority;
-              })
-              .map(key => <MyTodoItem
-                index={key}
-                toggleDone={this.props.toggleDone}
-                todoItem={this.props.listItems[key]}
-                key={key}>{key}</MyTodoItem>)}
-          </List>
+          <Box margin="medium">
+            <List>
+              {Object
+                .keys(this.props.listItems)
+                .sort((a, b) => {
+                  return this.props.listItems[a].priority > this.props.listItems[b].priority;
+                })
+                .map(key => <MyTodoItem
+                  index={key}
+                  toggleDone={this.props.toggleDone}
+                  todoItem={this.props.listItems[key]}
+                  key={key}>{key}</MyTodoItem>)}
+            </List>
+          </Box>
         </Fragment>
       )
-
     }
-
   }
 }
 

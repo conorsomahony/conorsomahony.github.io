@@ -10,7 +10,6 @@
 import React, {Component} from "react";
 
 // Grommet Components
-import TableRow from "grommet/components/TableRow";
 import Button from "grommet/components/Button";
 import Box from "grommet/components/Box";
 import Checkmark from "grommet/components/icons/base/Checkmark"

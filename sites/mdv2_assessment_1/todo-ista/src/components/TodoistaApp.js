@@ -18,17 +18,7 @@ import TodoistaAppFooter from "./TodoistaAppFooter";
 // Grommet Components
 import App from "grommet/components/App";
 import Box from "grommet/components/Box";
-import Header from "grommet/components/Header";
-import Footer from "grommet/components/Footer";
-import Section from "grommet/components/Section";
-import Title from "grommet/components/Title";
-import Paragraph from "grommet/components/Paragraph";
-import Split from "grommet/components/Split";
-import Sidebar from "grommet/components/Sidebar";
-import CheckboxSelected from 'grommet/components/icons/base/CheckboxSelected';
-import Button from "grommet/components/Button";
 import Heading from "grommet/components/Heading";
-import Task from "grommet/components/icons/base/Task"
 
 /**
  * Todoista App top-level component.
@@ -39,6 +29,12 @@ class TodoistaApp extends Component {
   state = {
     myListItems: {}
   };
+
+  // Lifecycle
+  componentDidMount()
+  {
+    console.log("did mount!");
+  }
 
   /*
   * Update App state to add a new list item
@@ -81,14 +77,17 @@ class TodoistaApp extends Component {
           <Box>
             {/* Todo Form */}
             <Box pad='medium'>
+              <Box margin="medium" colorIndex="neutral-1-a" pad="medium">
+                <Heading margin="none" tag="h4">Add New Todo</Heading>
+              </Box>
               <MyTodoForm addListItem={this.addListItem}/>
             </Box>
           </Box>
           <Box flex='grow'>
             {/* Tooo List */}
             <Box pad='medium'>
-              <Box margin="none" colorIndex="neutral-1-a" pad="medium">
-                <Heading margin="none">Things To Do</Heading>
+              <Box margin="medium" colorIndex="neutral-1-a" pad="medium">
+                <Heading margin="none" tag="h4">Things To Do</Heading>
               </Box>
               <MyTodoList listItems={this.state.myListItems} toggleDone={this.toggleDone}/>
             </Box>

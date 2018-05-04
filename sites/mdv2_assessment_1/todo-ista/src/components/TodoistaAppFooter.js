@@ -7,11 +7,10 @@
  */
 
 // React Components
-import React, {Component} from "react";
+import React from "react";
 
 // Grommet Components
 import Footer from "grommet/components/Footer";
-import CheckboxSelected from 'grommet/components/icons/base/CheckboxSelected';
 import Paragraph from "grommet/components/Paragraph";
 import Box from "grommet/components/Box";
 

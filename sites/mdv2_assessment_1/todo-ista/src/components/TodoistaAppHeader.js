@@ -7,11 +7,7 @@
  */
 
 // React Components
-import React, {Component} from "react";
-
-// My Components
-import MyTodoList from "./MyTodoList";
-import MyTodoForm from "./MyTodoForm";
+import React from "react";
 
 // Grommet Components
 import Header from "grommet/components/Header";
