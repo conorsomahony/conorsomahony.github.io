@@ -44,7 +44,7 @@ class TodoistaApp extends Component {
   */
   addListItem = (listItem) => {
     console.log("Adding a list item");
-    // 1. take copy of existing state
+    // 1. take copy of existing state (ES6 copy syntax)
     const listItems = {
       ...this.state.myListItems
     };
@@ -52,6 +52,20 @@ class TodoistaApp extends Component {
     listItems[`listItem${Date.now()}`] = listItem;
     // 3. set the new state
     this.setState({myListItems: listItems});
+  }
+
+  /*
+  * Update App state to toggle done state
+  */
+  toggleDone = (key) => {
+    // 1. take a copy of state (ES6 copy syntax)
+    const myListItems = {
+      ...this.state.myListItems
+    };
+    // 2. toggle done state
+    myListItems[key].done = !myListItems[key].done;
+    // 3. set the new state
+    this.setState(myListItems);
   }
 
   /**
@@ -72,7 +86,7 @@ class TodoistaApp extends Component {
           <Box flex='grow'>
             {/* Tooo List */}
             <Box pad='medium'>
-              <MyTodoList listItems={this.state.myListItems}/>
+              <MyTodoList listItems={this.state.myListItems} toggleDone={this.toggleDone}/>
             </Box>
           </Box>
 

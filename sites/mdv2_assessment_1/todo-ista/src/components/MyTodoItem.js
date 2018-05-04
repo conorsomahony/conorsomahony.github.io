@@ -22,12 +22,27 @@ import Flag from "grommet/components/icons/base/Flag"
  * My Todo Item Component
  */
 class MyTodoItem extends Component {
+
+    handleClick = () => {
+        console.log("item clicked");
+        this
+            .props
+            .toggleDone(this.props.index);
+    }
+    /**
+     * render the todo item
+     */
     render() {
         // ES6 "destructuring"
-        const {todoTitle, priority} = this.props.todoItem;
+        const {todoTitle, priority, done} = this.props.todoItem;
         return (
-            <ListItem>
-                <Box direction='row' justify='start' align='center' wrap={true}>{this.getFlag(priority)} {todoTitle}</Box>
+            <ListItem onClick={this.handleClick}>
+                <Box direction='row' justify='start' align='center' wrap={true}>{this.getFlag(priority)}
+                    <span
+                        className={done
+                        ? "doneItem"
+                        : ""}>{todoTitle}</span>
+                </Box>
             </ListItem>
         )
     }
@@ -42,6 +57,7 @@ class MyTodoItem extends Component {
                 return <Flag colorIndex="ok"/>
         }
     }
+
 }
 
 export default MyTodoItem;

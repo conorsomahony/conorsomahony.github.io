@@ -24,6 +24,7 @@ import List from 'grommet/components/List';
  * My Todo List Component
  */
 class MyTodoList extends Component {
+
   render() {
     return (
       <Fragment>
@@ -33,7 +34,11 @@ class MyTodoList extends Component {
         <List>
           {Object
             .keys(this.props.listItems)
-            .map(key => <MyTodoItem todoItem={this.props.listItems[key]} key={key}>{key}</MyTodoItem>)}
+            .map(key => <MyTodoItem
+              index={key}
+              toggleDone={this.props.toggleDone}
+              todoItem={this.props.listItems[key]}
+              key={key}>{key}</MyTodoItem>)}
         </List>
       </Fragment>
     )
