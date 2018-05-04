@@ -12,8 +12,11 @@ import React, {Component} from "react";
 // Grommet Components
 import TableRow from "grommet/components/TableRow";
 import Button from "grommet/components/Button";
+import Box from "grommet/components/Box";
 import Checkmark from "grommet/components/icons/base/Checkmark"
 import Close from "grommet/components/icons/base/Close"
+import ListItem from 'grommet/components/ListItem';
+import Flag from "grommet/components/icons/base/Flag"
 
 /**
  * My Todo Item Component
@@ -22,15 +25,22 @@ class MyTodoItem extends Component {
     render() {
         // ES6 "destructuring"
         const {todoTitle, priority} = this.props.todoItem;
-        // each todo item is a row in a table
         return (
-            <TableRow>
-                <td>{todoTitle}</td>
-                <td>{priority}</td>
-                <td><Button secondary={true} icon={< Checkmark />}/></td>
-                <td><Button secondary={true} icon={< Close />}/></td>
-            </TableRow>
+            <ListItem>
+                <Box direction='row' justify='start' align='center' wrap={true}>{this.getFlag(priority)} {todoTitle}</Box>
+            </ListItem>
         )
+    }
+
+    getFlag(priority) {
+        switch (priority) {
+            case 1:
+                return <Flag colorIndex="critical"/>
+            case 2:
+                return <Flag colorIndex="warning"/>
+            case 3:
+                return <Flag colorIndex="ok"/>
+        }
     }
 }
 

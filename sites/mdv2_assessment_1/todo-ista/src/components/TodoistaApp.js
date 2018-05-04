@@ -60,25 +60,17 @@ class TodoistaApp extends Component {
   render() {
     return (
       <App centered={false}>
-        <Box full={true} flex={false}>
+        <Box full={true}>
           {/* App Header */}
           <TodoistaAppHeader/>
           <Box>
-            {/* <Header pad='medium'>
-              <Title>
-                Add an item
-              </Title>
-            </Header> */}
+            {/* Todo Form */}
             <Box pad='medium'>
               <MyTodoForm addListItem={this.addListItem}/>
             </Box>
           </Box>
-          <Box flex='grow' colorIndex='neutral-4-a'>
-            {/* <Header pad='medium'>
-              {<Title>
-                Things to Do
-              </Title> }
-            </Header> */}
+          <Box flex='grow'>
+            {/* Tooo List */}
             <Box pad='medium'>
               <MyTodoList listItems={this.state.myListItems}/>
             </Box>

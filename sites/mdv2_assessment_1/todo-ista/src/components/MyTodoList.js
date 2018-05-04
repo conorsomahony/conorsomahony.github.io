@@ -18,27 +18,23 @@ import Heading from "grommet/components/Heading";
 import Table from 'grommet/components/Table';
 import TableHeader from 'grommet/components/TableHeader';
 import TableRow from 'grommet/components/TableRow';
+import List from 'grommet/components/List';
 
 /**
  * My Todo List Component
  */
 class MyTodoList extends Component {
   render() {
-    console.log(this.props.listItems);
-
     return (
       <Fragment>
-        <Heading margin="medium">Things To Do</Heading>
-        {/* The list of todo items is displayed in a table */}
-        <Table>
-          <TableHeader labels={['Todo', 'Priority', 'Done', 'Delete']}/>
-          <tbody>
-            {/* Loop over our list of items from props to create todo items */}
-            {Object
-              .keys(this.props.listItems)
-              .map(key => <MyTodoItem todoItem={this.props.listItems[key]} key={key}>{key}</MyTodoItem>)}
-          </tbody>
-        </Table>
+        <Box margin="none" colorIndex="neutral-1-a" pad="medium">
+          <Heading margin="none">Things To Do</Heading>
+        </Box>
+        <List>
+          {Object
+            .keys(this.props.listItems)
+            .map(key => <MyTodoItem todoItem={this.props.listItems[key]} key={key}>{key}</MyTodoItem>)}
+        </List>
       </Fragment>
     )
   }
