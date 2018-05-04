@@ -18,6 +18,9 @@ import Header from "grommet/components/Header";
 import CheckboxSelected from 'grommet/components/icons/base/CheckboxSelected';
 import Title from "grommet/components/Title";
 
+/**
+ * Component for the App Header
+ */
 const TodoistaAppHeader = () => (
     <Header
         pad='medium'

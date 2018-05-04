@@ -5,16 +5,22 @@
  * Date: 02/05/2018
  * Refs:
  */
+
+// React Components
 import React from "react";
+
+// React Router Components
 import {BrowserRouter, Switch, Route} from "react-router-dom";
+
+// My Components
 import TodoistaApp from "./TodoistaApp";
-import NotFound from "./NotFound";
+import TodoistaNotFound from "./TodoistaNotFound";
 
 const MyRouter = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={TodoistaApp}/>
-      <Route component={NotFound}/>
+      <Route component={TodoistaNotFound}/>
     </Switch>
   </BrowserRouter>
 );

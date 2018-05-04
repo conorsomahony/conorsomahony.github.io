@@ -13,6 +13,7 @@ import React, {Component} from "react";
 import MyTodoList from "./MyTodoList";
 import MyTodoForm from "./MyTodoForm";
 import TodoistaAppHeader from "./TodoistaAppHeader";
+import TodoistaAppFooter from "./TodoistaAppFooter";
 
 // Grommet Components
 import App from "grommet/components/App";
@@ -61,7 +62,7 @@ class TodoistaApp extends Component {
       <App centered={false}>
         <Box full={true} flex={false}>
           {/* App Header */}
-          <TodoistaAppHeader/> {/* Main App Area */}
+          <TodoistaAppHeader/>
           <Box>
             {/* <Header pad='medium'>
               <Title>
@@ -84,24 +85,7 @@ class TodoistaApp extends Component {
           </Box>
 
           {/* Main App Footer */}
-          <Footer
-            primary={true}
-            appCentered={true}
-            direction="column"
-            align="center"
-            pad="small"
-            colorIndex="grey-1">
-            <Box
-              direction='row'
-              align='center'
-              pad={{
-              "between": "medium"
-            }}>
-              <Paragraph margin='none'>
-                © 2018 Todo-ista
-              </Paragraph>
-            </Box>
-          </Footer>
+          <TodoistaAppFooter/>
         </Box>
       </App>
     );
