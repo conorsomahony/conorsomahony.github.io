@@ -10,13 +10,16 @@
 import React from "react";
 
 // React Router Components
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // My Components
 import TodoistaApp from "./TodoistaApp";
 import TodoistaNotFound from "./TodoistaNotFound";
 
-const MyRouter = () => (
+/**
+ * Todoista App router
+ */
+const TodoistaAppRouter = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={TodoistaApp}/>
@@ -25,4 +28,4 @@ const MyRouter = () => (
   </BrowserRouter>
 );
 
-export default MyRouter;
+export default TodoistaAppRouter;
