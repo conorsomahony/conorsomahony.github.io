@@ -19,6 +19,7 @@ import Table from 'grommet/components/Table';
 import TableHeader from 'grommet/components/TableHeader';
 import TableRow from 'grommet/components/TableRow';
 import List from 'grommet/components/List';
+import ListPlaceholder from 'grommet-addons/components/ListPlaceholder';
 
 /**
  * My Todo List Component
@@ -26,22 +27,29 @@ import List from 'grommet/components/List';
 class MyTodoList extends Component {
 
   render() {
-    return (
-      <Fragment>
-        <Box margin="none" colorIndex="neutral-1-a" pad="medium">
-          <Heading margin="none">Things To Do</Heading>
-        </Box>
-        <List>
-          {Object
-            .keys(this.props.listItems)
-            .map(key => <MyTodoItem
-              index={key}
-              toggleDone={this.props.toggleDone}
-              todoItem={this.props.listItems[key]}
-              key={key}>{key}</MyTodoItem>)}
-        </List>
-      </Fragment>
-    )
+    console.log(Object.keys(this.props.listItems).length);
+    if (Object.keys(this.props.listItems).length === 0) {
+      return (<ListPlaceholder emptyMessage='You do not have any items at the moment.'/>)
+    } else {
+      return (
+        <Fragment>
+          <List>
+            {Object
+              .keys(this.props.listItems)
+              .sort((a, b) => {
+                return this.props.listItems[a].priority > this.props.listItems[b].priority;
+              })
+              .map(key => <MyTodoItem
+                index={key}
+                toggleDone={this.props.toggleDone}
+                todoItem={this.props.listItems[key]}
+                key={key}>{key}</MyTodoItem>)}
+          </List>
+        </Fragment>
+      )
+
+    }
+
   }
 }
 

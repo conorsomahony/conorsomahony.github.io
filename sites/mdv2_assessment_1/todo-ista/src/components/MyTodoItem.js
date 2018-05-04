@@ -37,7 +37,13 @@ class MyTodoItem extends Component {
         const {todoTitle, priority, done} = this.props.todoItem;
         return (
             <ListItem onClick={this.handleClick}>
-                <Box direction='row' justify='start' align='center' wrap={true}>{this.getFlag(priority)}
+                <Box
+                    direction='row'
+                    justify='start'
+                    align='center'
+                    wrap={false}
+                    responsive={false}>
+                    <span>{this.getFlag(done, priority)}</span>&nbsp;
                     <span
                         className={done
                         ? "doneItem"
@@ -47,17 +53,23 @@ class MyTodoItem extends Component {
         )
     }
 
-    getFlag(priority) {
-        switch (priority) {
-            case 1:
-                return <Flag colorIndex="critical"/>
-            case 2:
-                return <Flag colorIndex="warning"/>
-            case 3:
-                return <Flag colorIndex="ok"/>
+    /*
+    * Return colored flag based on done state and priority
+    */
+    getFlag(done, priority) {
+        if (done) {
+            return <Flag colorIndex="unknown"/>
+        } else {
+            switch (priority) {
+                case 1:
+                    return <Flag colorIndex="critical"/>
+                case 2:
+                    return <Flag colorIndex="warning"/>
+                case 3:
+                    return <Flag colorIndex="ok"/>
+            }
         }
     }
-
 }
 
 export default MyTodoItem;

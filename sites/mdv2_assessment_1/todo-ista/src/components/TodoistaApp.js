@@ -27,6 +27,7 @@ import Split from "grommet/components/Split";
 import Sidebar from "grommet/components/Sidebar";
 import CheckboxSelected from 'grommet/components/icons/base/CheckboxSelected';
 import Button from "grommet/components/Button";
+import Heading from "grommet/components/Heading";
 import Task from "grommet/components/icons/base/Task"
 
 /**
@@ -86,6 +87,9 @@ class TodoistaApp extends Component {
           <Box flex='grow'>
             {/* Tooo List */}
             <Box pad='medium'>
+              <Box margin="none" colorIndex="neutral-1-a" pad="medium">
+                <Heading margin="none">Things To Do</Heading>
+              </Box>
               <MyTodoList listItems={this.state.myListItems} toggleDone={this.toggleDone}/>
             </Box>
           </Box>
