@@ -18,7 +18,10 @@ import TodoistaAppFooter from "./TodoistaAppFooter";
 // Grommet Components
 import App from "grommet/components/App";
 import Box from "grommet/components/Box";
-import Heading from "grommet/components/Heading";
+import Title from "grommet/components/Title";
+import CheckBox from "grommet/components/CheckBox";
+
+import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
 
 /**
  * Todoista App top-level component.
@@ -27,7 +30,8 @@ class TodoistaApp extends Component {
 
   // React application state
   state = {
-    myListItems: {}
+    myListItems: {},
+    sort: false
   };
 
   /**
@@ -35,6 +39,7 @@ class TodoistaApp extends Component {
    */
   componentDidUpdate() {
     localStorage.setItem('myListItems', JSON.stringify(this.state.myListItems));
+    localStorage.setItem('sort', this.state.sort);
   }
 
   /**
@@ -46,6 +51,12 @@ class TodoistaApp extends Component {
       this.setState({
         myListItems: JSON.parse(localStorageRef)
       });
+    }
+    const sortValue = localStorage.getItem('sort');
+    if (sortValue) {
+      this.setState({
+        sort: JSON.parse(sortValue)
+      })
     }
   }
 
@@ -94,37 +105,63 @@ class TodoistaApp extends Component {
   }
 
   /**
-   * render method
+   * Delete all list items.
+   */
+  deleteAll = () => {
+    this.setState({myListItems: {}});
+  }
+
+  /**
+   * Toggle sort
+   */
+  toggleSort = () => {
+    const sortValue = this.state.sort;
+    this.setState({
+      sort: !sortValue
+    })
+  }
+
+  /**
+   * render method - layout of main Todoista App
    */
   render() {
     return (
       <App centered={false}>
         <Box full={true}>
           {/* App Header */}
-          <TodoistaAppHeader/>
-          <Box>
+          <TodoistaAppHeader deleteAll={this.deleteAll}/>
+
+          <Box pad="medium" margin="medium">
             {/* Todo Form */}
-            <Box>
-              <Box pad="medium" margin="large">
-                <MyTodoForm addListItem={this.addListItem}/>
-              </Box>
-            </Box>
+            <MyTodoForm addListItem={this.addListItem}/>
           </Box>
           <Box flex='grow'>
-            {/* Tooo List - flex='grow'  */}
-            <Box colorIndex="neutral-4-a" pad="medium" margin="medium">
-              <Heading margin="none" tag="h4">Things To Do</Heading>
+            {/* Tooo List Container - flex='grow'  */}
+            <Box
+              direction="row"
+              justify="between"
+              wrap={false}
+              responsive={false}
+              pad="medium"
+              margin="medium"
+              colorIndex="neutral-4-a">
+              <Title>Things To Do</Title>
+              {/* Todo List Title */}
+              <CheckBox
+                toggle={true}
+                label="Sort"
+                onChange={this.toggleSort}
+                checked={this.state.sort}/> {/* A toggle whether or not to sort the list */}
             </Box>
-            <Box pad={{
-              vertical: "none"
-            }}>
+            <Box pad="medium">
+              {/* Todo List */}
               <MyTodoList
                 listItems={this.state.myListItems}
                 toggleDone={this.toggleDone}
-                removeListItem={this.removeListItem}/>
+                removeListItem={this.removeListItem}
+                sortList={this.state.sort}/>
             </Box>
           </Box>
-
           {/* Main App Footer */}
           <TodoistaAppFooter/>
         </Box>

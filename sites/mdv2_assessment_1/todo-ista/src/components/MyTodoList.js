@@ -13,7 +13,6 @@ import React, {Component} from "react";
 import MyTodoItem from "./MyTodoItem";
 
 // Grommet components
-import Box from "grommet/components/Box";
 import List from 'grommet/components/List';
 import ListPlaceholder from 'grommet-addons/components/ListPlaceholder';
 
@@ -27,26 +26,19 @@ class MyTodoList extends Component {
    */
   render() {
     if (Object.keys(this.props.listItems).length === 0) {
+
+      // return placeholder for empty list
       return (<ListPlaceholder
         emptyMessage="You have nothing to do at the moment. Why don't you put your feet up?"
         filteredTotal={0}
         unfilteredTotal={0}/>)
     } else {
+
+      // create actual list
       return (
         <List>
-          {Object
-            .keys(this.props.listItems)
-            .sort((a, b) => {
-              const aItem = this.props.listItems[a];
-              const bItem = this.props.listItems[b];
-              if (aItem.done === bItem.done) {
-                return aItem.priority - bItem.priority;
-              } else {
-                return (aItem.done
-                  ? 1
-                  : -1);
-              }
-            })
+          {this
+            .getKeys()
             .map(key => <MyTodoItem
               index={key}
               toggleDone={this.props.toggleDone}
@@ -56,6 +48,27 @@ class MyTodoList extends Component {
         </List>
       )
     }
+  }
+
+  /**
+   * get the list item keys, depending on wheter or not the todo items are to be sorted
+   */
+  getKeys = () => {
+    const keys = Object.keys(this.props.listItems);
+    if (this.props.sortList) {
+      keys.sort((a, b) => {
+        const aItem = this.props.listItems[a];
+        const bItem = this.props.listItems[b];
+        if (aItem.done === bItem.done) {
+          return aItem.priority - bItem.priority;
+        } else {
+          return (aItem.done
+            ? 1
+            : -1);
+        }
+      })
+    }
+    return keys;
   }
 }
 

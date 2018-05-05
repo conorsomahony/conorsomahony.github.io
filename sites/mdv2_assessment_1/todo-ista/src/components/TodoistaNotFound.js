@@ -14,11 +14,16 @@ import TodoistaAppHeader from "./TodoistaAppHeader";
 
 // Grommet Components
 import App from "grommet/components/App";
+import Box from "grommet/components/Box";
+import Title from "grommet/components/Title";
 
 // Functional component, with implicit return
 const TodoistaNotFound = () => (
   <App centered={false}>
     <TodoistaAppHeader/>
+    <Box pad="medium" margin="medium" appCentered={true}>
+      <Title>Page Not Found</Title>
+    </Box>
   </App>
 );
 

@@ -12,6 +12,7 @@ import React, {Component} from "react";
 // Grommet Components
 import Button from "grommet/components/Button";
 import Box from "grommet/components/Box";
+import Checkbox from "grommet/components/icons/base/Checkbox"
 import Checkmark from "grommet/components/icons/base/Checkmark"
 import CheckboxSelected from "grommet/components/icons/base/CheckboxSelected"
 import Close from "grommet/components/icons/base/Close";
@@ -36,43 +37,45 @@ class MyTodoItem extends Component {
      * render the todo item
      */
     render() {
-        // ES6 "destructuring"
         if (this.props.todoItem) {
+            // ES6 "destructuring"
             const {todoTitle, priority, done} = this.props.todoItem;
             return (
                 <ListItem>
                     <Box
+                        flex="grow"
                         direction='row'
                         justify='start'
                         align='center'
                         wrap={false}
-                        responsive={false}
-                        pad='none'
-                        margin='none'
-                        flex="grow">
-                        {/* Priority Icon */}
-                        {getPriorityIcon(done, priority)}&nbsp;
-                        <Box flex="grow">
+                        responsive={false}>
+                        <Box>
+                            {/* Mark done/not done */}
+                            <Button
+                                critical={true}
+                                icon={getTodoIcon(done)}
+                                onClick={() => this.props.toggleDone(this.props.index)}/>
+                        </Box>
+                        <Box
+                            flex="grow"
+                            direction="row"
+                            justify='start'
+                            align='center'
+                            wrap={false}
+                            responsive={false}>
                             {/* Todo Title */}
                             <span
                                 className={done
                                 ? "doneItem"
                                 : ""}>{todoTitle}</span>
+                            &nbsp; {getPriorityIcon(done, priority)}
                         </Box>
                         <Box>
-                            {/* Mark done/not done */}
-                            <span>
-                                <Button
-                                    icon={getTodoIcon(done)}
-                                    onClick={() => this.props.toggleDone(this.props.index)}/>
-                            </span>
-                        </Box>
-                        <Box>
-                            <span>
-                                <Button
-                                    icon={< Trash />}
-                                    onClick={() => this.props.removeListItem(this.props.index)}/>
-                            </span>
+
+                            <Button
+                                icon={< Trash />}
+                                onClick={() => this.props.removeListItem(this.props.index)}/>
+
                         </Box>
                     </Box>
                 </ListItem>
@@ -84,8 +87,8 @@ class MyTodoItem extends Component {
 }
 function getTodoIcon(done) {
     return (!done
-        ? <Checkmark/>
-        : <Close/>);
+        ? <Checkbox/>
+        : <CheckboxSelected/>);
 }
 
 /*
@@ -93,7 +96,7 @@ function getTodoIcon(done) {
 */
 function getPriorityIcon(done, priority) {
     if (done) {
-        return <CheckboxSelected colorIndex="unknown"/>
+        return <Flag colorIndex="unknown"/>
     } else {
         switch (priority) {
             case 1:
