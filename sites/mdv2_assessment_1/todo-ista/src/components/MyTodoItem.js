@@ -3,7 +3,7 @@
  * Assignment: Mobile and Device Development II - Assessment 1
  * Student ID: STU-00001490
  * Date: 02/05/2018
- * Refs:
+ * Refs: see MyReferences.md
  */
 
 // React Components
@@ -50,7 +50,7 @@ class MyTodoItem extends Component {
                         wrap={false}
                         responsive={false}>
                         <Box>
-                            {/* Mark done/not done */}
+                            {/* Button to mark Todo done or not done */}
                             <Button
                                 critical={true}
                                 icon={getTodoIcon(done)}
@@ -63,19 +63,18 @@ class MyTodoItem extends Component {
                             align='center'
                             wrap={false}
                             responsive={false}>
-                            {/* Todo Title */}
+                            {/* Todo Text and Priority Icon */}
                             <span
                                 className={done
                                 ? "doneItem"
                                 : ""}>{todoTitle}</span>
-                            &nbsp; {getPriorityIcon(done, priority)}
+                            &nbsp;&nbsp;{getPriorityIcon(done, priority)}
                         </Box>
                         <Box>
-
+                            {/* Delete Button */}
                             <Button
                                 icon={< Trash />}
                                 onClick={() => this.props.removeListItem(this.props.index)}/>
-
                         </Box>
                     </Box>
                 </ListItem>

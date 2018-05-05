@@ -3,7 +3,7 @@
  * Assignment: Mobile and Device Development II - Assessment 1
  * Student ID: STU-00001490
  * Date: 02/05/2018
- * Refs:
+ * Refs: see MyReferences.md
  */
 
 // React Components
@@ -19,7 +19,7 @@ import Actions from "grommet/components/icons/base/Actions";
 import Anchor from "grommet/components/Anchor";
 
 /**
- * Component for the App Header
+ * Component for the Todoista App Header
  */
 class TodoistaAppHeader extends Component
 {

@@ -3,7 +3,7 @@
  * Assignment: Mobile and Device Development II - Assessment 1
  * Student ID: STU-00001490
  * Date: 02/05/2018
- * Refs:
+ * Refs: see MyReferences.md
  */
 
 // React components
