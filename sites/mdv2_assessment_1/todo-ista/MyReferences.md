@@ -4,14 +4,12 @@
 
 * React.js
 * create-react-app for React boilerplate
-* react-router-dom for simple routing
 * grommet and grommet-addons for CSS styling and React Components
 * Local Storage
 
 ## Package Refs:
 
 * create-react-app: https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md
-* react-router-dom: https://www.npmjs.com/package/react-router-dom
 * grommet: http://grommet.io/
 
 ## Tutorial Refs:
