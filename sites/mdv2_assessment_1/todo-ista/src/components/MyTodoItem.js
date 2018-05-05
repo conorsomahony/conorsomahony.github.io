@@ -13,9 +13,7 @@ import React, {Component} from "react";
 import Button from "grommet/components/Button";
 import Box from "grommet/components/Box";
 import Checkbox from "grommet/components/icons/base/Checkbox"
-import Checkmark from "grommet/components/icons/base/Checkmark"
 import CheckboxSelected from "grommet/components/icons/base/CheckboxSelected"
-import Close from "grommet/components/icons/base/Close";
 import Trash from "grommet/components/icons/base/Trash";
 import ListItem from 'grommet/components/ListItem';
 import Flag from "grommet/components/icons/base/Flag"

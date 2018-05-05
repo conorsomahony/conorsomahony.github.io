@@ -21,8 +21,6 @@ import Box from "grommet/components/Box";
 import Title from "grommet/components/Title";
 import CheckBox from "grommet/components/CheckBox";
 
-import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
-
 /**
  * Todoista App top-level component.
  */

@@ -7,14 +7,12 @@
  */
 
 // React components
-import React, {Component, Fragment} from "react";
+import React, {Component} from "react";
 
 // Grommet components
-import Box from "grommet/components/Box";
 import Button from "grommet/components/Button";
 import Form from "grommet/components/Form";
 import Add from "grommet/components/icons/base/Add";
-import AddCircle from "grommet/components/icons/base/AddCircle";
 
 /*
 * My Todo Form Component
