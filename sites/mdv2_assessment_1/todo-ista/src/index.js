@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import 'grommet/grommet.min.css';
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
-import TodoistaAppRouter from "./components/TodoistaAppRouter";
+import TodoistaApp from "./components/TodoistaApp";
 
 ReactDOM.render(
-  <TodoistaAppRouter/>, document.getElementById("root"));
+  <TodoistaApp/>, document.getElementById("root"));
 registerServiceWorker();

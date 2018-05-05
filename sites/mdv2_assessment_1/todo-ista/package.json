@@ -2,7 +2,7 @@
   "name": "todo-ista",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://www.conorsomahony.net/sites/mdv2_assessment_1/todo-ista/build/",
+  "homepage": "http://site323.digitalskillsacademy.me/sites/mdv2/assessment_1/todoista/",
   "dependencies": {
     "grommet": "^1.10.1",
     "grommet-addons": "^0.6.0",
