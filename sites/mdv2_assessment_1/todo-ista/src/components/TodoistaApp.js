@@ -36,6 +36,7 @@ class TodoistaApp extends Component {
    * Lifecycle method - store items in localStorage when state is updated.
    */
   componentDidUpdate() {
+    console.log(" (Store state to Local Storage)");
     localStorage.setItem('myListItems', JSON.stringify(this.state.myListItems));
     localStorage.setItem('sort', this.state.sort);
   }
@@ -44,6 +45,7 @@ class TodoistaApp extends Component {
    * Lifecycle method -restore items from localStorage when mounting.
    */
   componentDidMount() {
+    console.log(" (Restore state from Local Storage)");
     const localStorageRef = localStorage.getItem('myListItems');
     if (localStorageRef) {
       this.setState({
@@ -92,6 +94,7 @@ class TodoistaApp extends Component {
   * Update App state to toggle done state of an item
   */
   toggleDone = (key) => {
+    console.log("Toggle list item done");
     // 1. take a copy of state (ES6 copy syntax)
     const myListItems = {
       ...this.state.myListItems
@@ -106,6 +109,7 @@ class TodoistaApp extends Component {
    * Delete all list items.
    */
   deleteAll = () => {
+    console.log("Delete all items");
     this.setState({myListItems: {}});
   }
 
@@ -113,6 +117,7 @@ class TodoistaApp extends Component {
    * Toggle sort
    */
   toggleSort = () => {
+    console.log("Toggle sorting");
     const sortValue = this.state.sort;
     this.setState({
       sort: !sortValue
