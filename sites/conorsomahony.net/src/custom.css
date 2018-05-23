@@ -21,26 +21,15 @@ body {
 
 .fullheight {
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .jumbotron {
   text-align: center;
-  background-image: radial-gradient(circle, #ffffff, #17a3b88f);
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
+  background-image: radial-gradient(circle, #ffffff, #17a2b8);
   flex-grow: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
