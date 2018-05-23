@@ -5,12 +5,15 @@ h4,
 h5,
 h6,
 .navbar-brand,
+a,
+button,
+input[type=button],
 footer {
-  font-family: "Abel", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-  font-family: "Oswald", sans-serif;
+  font-family: "Hind", sans-serif;
 }
 
 #profile-image {
@@ -35,7 +38,7 @@ body {
 
 .jumbotron {
   text-align: center;
-  background-image: radial-gradient(circle, #ffffff, #17a3b88f);
+  background-image: radial-gradient(circle, #ffffff, #999999);
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
