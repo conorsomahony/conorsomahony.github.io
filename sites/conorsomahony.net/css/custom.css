@@ -13,15 +13,24 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
-.jumbotron {
-  text-align: center;
-  background-image: radial-gradient(circle, #ffffff, #e9ecef);
-}
-
 #profile-image {
   width: 200px;
   border-radius: 50%;
   border: 8px solid white;
+}
+
+.fullheight {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.jumbotron {
+  text-align: center;
+  background-image: radial-gradient(circle, #ffffff, #e9ecef);
+  flex-grow: 1;
+  display: flex;
 }
 
 .card {
