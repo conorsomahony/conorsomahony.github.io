@@ -39,3 +39,7 @@ body {
 .card {
   min-width: 200px;
 }
+
+.restrictWidth {
+  max-width: 640px;
+}
