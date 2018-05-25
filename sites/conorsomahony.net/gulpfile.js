@@ -3,6 +3,7 @@ var browserSync = require('browser-sync');
 var autoprefixer = require('gulp-autoprefixer');
 var csso = require('gulp-csso');
 var htmlmin = require('gulp-htmlmin');
+var minifyInline = require('gulp-minify-inline');
 
 gulp.task("hello", function () {
     console.log("Hello!");
@@ -21,6 +22,7 @@ gulp.task('pages', function () {
     return gulp
         .src(['./src/**/*.html'])
         .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
+        .pipe(minifyInline())
         .pipe(gulp.dest('./build'));
 });
 
