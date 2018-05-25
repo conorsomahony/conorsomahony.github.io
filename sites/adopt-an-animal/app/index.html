@@ -15,6 +15,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,21 +53,22 @@
         <!-- content -->
         <div role="main" class="ui-content">
             <div class="cons-center">
-                <img id="large-logo" src="./img/large_logo.png" alt="Adopt an Animal Logo" class="grit"/>
+                <img id="large-logo" src="./img/large_logo.png" alt="Adopt an Animal Logo" class="grit" />
             </div>
             <div class="main-text cons-center ui-bar-b ui-bar">
                 <p class="cons-center">
                     If you would like to help save the world, please consider adopting one of our animals below, they are all looking for a good
-                    home, and we promise that they won't eat you.<sup>*</sup>
+                    home, and we promise that they won't eat you.
+                    <sup>*</sup>
                 </p>
                 <p class="cons-center">
                     <small>* Warning- Animals may actually eat you.</small>
                 </p>
             </div>
             <!-- <div class="ui-body ui-body-b"> -->
-                <!-- list populated by script -->
-                <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-autodividers="true" data-divider-theme="a"
-                    data-theme="a" data-filter-placeholder="Search"></ul>
+            <!-- list populated by script -->
+            <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-autodividers="true"
+                data-divider-theme="a" data-theme="a" data-filter-placeholder="Search"></ul>
             <!-- </div> -->
         </div>
         <!-- /content -->
@@ -75,7 +77,9 @@
         <div data-role="footer">
             <h4>Copyright &copy; 2018 Adopt-An-Animal</h4>
             <div class="cons-center">
-                <a href='https://www.freepik.com/free-vector/collection-of-logos-with-animals_1719720.htm'><small>Logo vector created by Freepik</small></a>
+                <a href='https://www.freepik.com/free-vector/collection-of-logos-with-animals_1719720.htm'>
+                    <small>Logo vector created by Freepik</small>
+                </a>
             </div>
         </div>
         <!-- /footer -->
@@ -102,7 +106,7 @@
             <div class="ui-body-b">
                 <img class="animal-image" src="" alt="">
             </div>
-            
+
             <!-- animal information -->
             <div>
                 <div class="ui-bar ui-bar-b">Country of Origin</div>
@@ -130,7 +134,7 @@
             </p>
         </div>
         <!-- /content -->
-        
+
         <!-- footer -->
         <div data-role="footer">
             <h4>Copyright &copy; 2018 Adopt-An-Animal</h4>
@@ -177,7 +181,8 @@
                     $animalPage.attr('id', "animal" + item.id);
                     $animalPage.find('.animal-name').html(item.name + ' the ' + item.breed);
                     $animalPage.find('.animal-info').html(item.description);
-                    $animalPage.find('.animal-image').attr('src', item.avatar).attr('alt', animalName);
+                    $animalPage.find('.animal-image').attr('src', item.avatar).attr('alt',
+                        animalName);
                     $animalPage.find('.animal-country').html(item.country);
                     $animalPage.find('.animal-colour').html(item.colour);
                     $animalPage.find('.animal-diet').html(item.food);
@@ -186,11 +191,14 @@
                     $animalPage.find('.animal-endangered').html((item.boolean_1 ? 'Yes' : 'No'));
 
                     // Change "Adopt" button and link to the popup
-                    $animalPage.find('#foo').attr('href', '#popup' + item.id).attr('id', "foo" + item.id).html("Adopt " + item.name + " now!");
+                    $animalPage.find('#foo').attr('href', '#popup' + item.id).attr('id', "foo" +
+                        item.id).html("Adopt " + item.name + " now!");
 
                     // Link popup to "Adopt" button
-                    $animalPage.find('#popup').attr("id", "popup" + item.id).find("p").html("Congratulations! You have adopted " + item.name
-                        + "! <br>Your animal will be delivered in the post, please keep an eye out for the postman.");
+                    $animalPage.find('#popup').attr("id", "popup" + item.id).find("p").html(
+                        "Congratulations! You have adopted " + item.name +
+                        "! <br>Your animal will be delivered in the post, please keep an eye out for the postman."
+                    );
 
                     // add our animal page
                     $('#main-page').after($animalPage);
@@ -233,7 +241,6 @@
             e.stopPropagation();
             return false;
         });
-
     </script>
 </body>
 
