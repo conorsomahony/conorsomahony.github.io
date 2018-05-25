@@ -16,5 +16,7 @@
     "gulp-minify-inline": "^1.0.0",
     "html-min": "0.0.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
