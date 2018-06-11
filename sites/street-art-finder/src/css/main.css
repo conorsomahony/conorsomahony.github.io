@@ -26,6 +26,10 @@ html {
   background-color: rgba(1, 22, 39, 0.5);
   color: inherit; }
 
+.carousel-item img {
+  margin: auto;
+  max-height: 100vh; }
+
 footer {
   height: 100px; }
 
