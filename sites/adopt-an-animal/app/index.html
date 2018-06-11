@@ -126,11 +126,11 @@
             </div>
             <!-- Adopt button -->
             <p>
-                <a href="#" data-rel="popup" id="foo" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-top ui-icon-shop">Adopt animal!</a>
+                <a href="#" data-rel="popup" id="foo" class="ui-btn ui-shadow ui-corner-all ui-btn-d ui-btn-icon-top ui-icon-shop">Adopt animal!</a>
             </p>
             <!-- Back Button -->
             <p>
-                <a href="#main-page" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-icon-top ui-icon-back">Back to List</a>
+                <a href="#main-page" data-transition="fade" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Back to List</a>
             </p>
         </div>
         <!-- /content -->
@@ -171,7 +171,7 @@
                     // here we construct our html list markup in one string
                     // - create <li> for each animal object in the main list
                     var animalName = item.name + ' the ' + item.breed;
-                    listhtml += '<li><a data-transition="slide" href="#animal' + item.id +
+                    listhtml += '<li><a data-transition="fade" href="#animal' + item.id +
                         '"><img src="' + item.avatar + '" alt ="' + animalName + '"/>' + item.breed +
                         ' - ' + animalName + '</a></li>';
 
