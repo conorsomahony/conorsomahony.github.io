@@ -3,225 +3,211 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Page Title</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Page Title</title>
 
-    <!-- ThemeRoller CSS -->
-    <link rel="stylesheet" href="./css/themes/cons-custom-theme.min.css" />
-    <link rel="stylesheet" href="./css/themes/jquery.mobile.icons.min.css" />
+        <!-- ThemeRoller CSS -->
+        <link rel="stylesheet" href="./css/themes/cons-custom-theme.min.css"/>
+        <link rel="stylesheet" href="./css/themes/jquery.mobile.icons.min.css"/>
 
-    <!-- Local JQuery CSS files -->
-    <!-- jquery.mobile.structure css is for use with Themeroller custom theme -->
-    <link rel="stylesheet" href="./css/jquery.mobile.structure-1.4.5.min.css">
+        <!-- Local JQuery CSS files -->
+        <!-- jquery.mobile.structure css is for use with Themeroller custom theme -->
+        <link rel="stylesheet" href="./css/jquery.mobile.structure-1.4.5.min.css">
 
-    <!-- Custom CSS (generated from SASS) -->
-    <link rel="stylesheet" href="./css/custom.css">
+        <!-- Custom CSS (generated from SASS) -->
+        <link rel="stylesheet" href="./css/custom.css">
 
-    <!-- Local JS files -->
-    <!-- Including these here as improved Google PageSpeed Insights Optimisation Score! -->
-    <script src="./js/jquery-1.11.1.min.js"></script>
-    <script src="./js/jquery.mobile-1.4.5.min.js"></script>
-</head>
+        <!-- Local JS files -->
+        <!-- Including these here as improved Google PageSpeed Insights Optimisation Score! -->
+        <script src="./js/jquery-1.11.1.min.js"></script>
+        <script src="./js/jquery.mobile-1.4.5.min.js"></script>
+    </head>
 
-<body>
-    <!-- Main Page -->
-    <div id="main-page" data-role="page" data-theme="b">
-        <!-- header -->
-        <div data-role="header">
-            <h1>Adopt-An-Animal</h1>
-        </div>
-        <!-- /header -->
-
-        <!-- content -->
-        <div role="main" class="ui-content">
-            <div class="cons-center">
-                <img id="large-logo" src="./img/large_logo.png" alt="Adopt an Animal Logo" class="grit" />
+    <body>
+        <!-- Main Page -->
+        <div id="main-page" data-role="page" data-theme="b">
+            <!-- header -->
+            <div data-role="header">
+                <h1>Adopt-An-Animal</h1>
             </div>
-            <div class="main-text cons-center ui-bar-b ui-bar">
-                <p class="cons-center">
-                    If you would like to help save the world, please consider adopting one of our animals below, they are all looking for a good
-                    home, and we promise that they won't eat you.
-                    <sup>*</sup>
+            <!-- /header -->
+
+            <!-- content -->
+            <div role="main" class="ui-content">
+                <div class="cons-center">
+                    <img id="large-logo" src="./img/large_logo.png" alt="Adopt an Animal Logo" class="grit"/>
+                </div>
+                <div class="main-text cons-center ui-bar-b ui-bar">
+                    <p class="cons-center">
+                        If you would like to help save the world, please consider adopting one of our animals below, they are all looking for a good home, and we promise that they won't eat you.
+                        <sup>*</sup>
+                    </p>
+                    <p class="cons-center">
+                        <small>* Warning- Animals may actually eat you.</small>
+                    </p>
+                </div>
+                <!-- <div class="ui-body ui-body-b"> -->
+                <!-- list populated by script -->
+                <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-autodividers="true" data-divider-theme="a" data-theme="a" data-filter-placeholder="Search"></ul>
+                <!-- </div> -->
+            </div>
+            <!-- /content -->
+
+            <!-- footer -->
+            <div data-role="footer">
+                <h4>Copyright &copy; 2018 Adopt-An-Animal</h4>
+                <div class="cons-center">
+                    <a href='https://www.freepik.com/free-vector/collection-of-logos-with-animals_1719720.htm'>
+                        <small>Logo vector created by Freepik</small>
+                    </a>
+                </div>
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page Main Page -->
+
+        <!-- Animal Page - This serves as a template for each animal page -->
+        <div data-role="page" id="animal-template" data-theme="b">
+            <!-- header -->
+            <div data-role="header">
+                <h1>Adopt-An-Animal</h1>
+            </div>
+            <!-- /header -->
+            <!-- content -->
+            <div role="main" class="ui-content cons-center">
+
+                <!-- animal name -->
+                <h2 class="ui-bar ui-bar-b ui-corner-all animal-name">Heading</h2>
+
+                <!-- animal image -->
+                <div class="ui-body-b">
+                    <img class="animal-image" src="" alt="">
+                </div>
+
+                <!-- animal information -->
+                <div>
+                    <div class="ui-bar ui-bar-b">Species</div>
+                    <div class="animal-species ui-body ui-body-b"></div>
+                    <div class="ui-bar ui-bar-b">Description</div>
+                    <div class="animal-description ui-body ui-body-b"></div>
+                    <div class="ui-bar ui-bar-b">Sex</div>
+                    <div class="animal-sex ui-body ui-body-b"></div>
+                </div>
+                <!-- Adopt button -->
+                <p>
+                    <a href="#" data-rel="popup" id="foo" class="ui-btn ui-shadow ui-corner-all ui-btn-d ui-btn-icon-top ui-icon-shop">Adopt animal!</a>
                 </p>
-                <p class="cons-center">
-                    <small>* Warning- Animals may actually eat you.</small>
+                <!-- Back Button -->
+                <p>
+                    <a href="#main-page" data-transition="fade" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Back to List</a>
                 </p>
             </div>
-            <!-- <div class="ui-body ui-body-b"> -->
-            <!-- list populated by script -->
-            <ul id="main-list" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-autodividers="true"
-                data-divider-theme="a" data-theme="a" data-filter-placeholder="Search"></ul>
-            <!-- </div> -->
-        </div>
-        <!-- /content -->
+            <!-- /content -->
 
-        <!-- footer -->
-        <div data-role="footer">
-            <h4>Copyright &copy; 2018 Adopt-An-Animal</h4>
-            <div class="cons-center">
-                <a href='https://www.freepik.com/free-vector/collection-of-logos-with-animals_1719720.htm'>
-                    <small>Logo vector created by Freepik</small>
-                </a>
+            <!-- footer -->
+            <div data-role="footer">
+                <h4>Copyright &copy; 2018 Adopt-An-Animal</h4>
             </div>
-        </div>
-        <!-- /footer -->
-    </div>
-    <!-- /page Main Page -->
+            <!-- /footer -->
 
-    <!-- Animal Page - This serves as a template for each animal page -->
-    <div data-role="page" id="animal-template" data-theme="b">
-        <!-- header -->
-        <div data-role="header">
-            <h1>Adopt-An-Animal</h1>
-        </div>
-        <!-- /header -->
-        <!-- content -->
-        <div role="main" class="ui-content cons-center">
-
-            <!-- animal name -->
-            <h2 class="ui-bar ui-bar-b ui-corner-all animal-name">Heading</h2>
-
-            <!-- animal image -->
-            <div class="ui-body-b">
-                <img class="animal-image" src="" alt="">
+            <!-- popup -->
+            <div data-role="popup" id="popup" data-theme="a" data-overlay-theme="b" data-position-to="window" class="ui-content cons-center">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <p>Congratulations! Your animal will be delivered in the post!</p>
             </div>
-
-            <!-- animal information -->
-            <div>
-                <div class="ui-bar ui-bar-b">Species</div>
-                <div class="animal-species ui-body ui-body-b"></div>
-                <div class="ui-bar ui-bar-b">Description</div>
-                <div class="animal-description ui-body ui-body-b"></div>
-                <div class="ui-bar ui-bar-b">Sex</div>
-                <div class="animal-sex ui-body ui-body-b"></div>
-            </div>
-            <!-- Adopt button -->
-            <p>
-                <a href="#" data-rel="popup" id="foo" class="ui-btn ui-shadow ui-corner-all ui-btn-d ui-btn-icon-top ui-icon-shop">Adopt animal!</a>
-            </p>
-            <!-- Back Button -->
-            <p>
-                <a href="#main-page" data-transition="fade" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-a">Back to List</a>
-            </p>
+            <!-- /popup -->
         </div>
-        <!-- /content -->
+        <!-- /page Animal Page -->
 
-        <!-- footer -->
-        <div data-role="footer">
-            <h4>Copyright &copy; 2018 Adopt-An-Animal</h4>
-        </div>
-        <!-- /footer -->
+        <script>
+            $(document).on("pagecreate", "#main-page", function () {
 
-        <!-- popup -->
-        <div data-role="popup" id="popup" data-theme="a" data-overlay-theme="b" data-position-to="window" class="ui-content cons-center">
-            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-            <p>Congratulations! Your animal will be delivered in the post!</p>
-        </div>
-        <!-- /popup -->
-    </div>
-    <!-- /page Animal Page -->
+                // Load JSON data from our data file
+                // use Promise Interface .done() method to process
+                //
+                //$.getJSON(  "https://localhost/src/mvc/assessment_1/index.php/AnimalWebServiceController/getAllAnimalSpeciesData" ).done(function
+                //(data) {
+                //
+                $.getJSON("https://conorsomahony.net/sites/mvc-web-service/index.php/AnimalWebServiceController/getAllAnimalSpeciesData").done(function (data) {
+                    // console.log(data);
+                    var listItems = data;
 
-    <script>
-        $(document).on("pagecreate", "#main-page", function () {
+                    // sort list items alphabetically - already ordered by SQL Query
+                    //listItems.sort(function (a, b) {
+                    //    var aName = a.name.toLowerCase();
+                    //    var bName = b.name.toLowerCase();
+                    //    return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+                    // });
 
-            // Load JSON data from our data file
-            // use Promise Interface .done() method to process
-            //
-            //$.getJSON( // "https://localhost/src/mvc/assessment_1/index.php/AnimalWebServiceController/getAllAnimalSpeciesData" //).done(function
-            //(data) {
-            //
-            $.getJSON(
-                "https://conorsomahony.net/sites/mvc-web-service/index.php/AnimalWebServiceController/getAllAnimalData"
-            ).done(function (data) {
-                // console.log(data);
-                var listItems = data;
+                    var listhtml = ""; // for creating our list
+                    $.each(listItems, function (i, item) {
 
-                // sort list items alphabetically - already ordered by SQL Query
-                //listItems.sort(function (a, b) {
-                //    var aName = a.name.toLowerCase();
-                //    var bName = b.name.toLowerCase();
-                //    return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
-                // });
+                        // here we construct our html list markup in one string
+                        // - create <li> for each animal object in the main list
+                        var animalName = item.name + ' the ' + item.species_name;
+                        listhtml += '<li><a data-transition="fade" href="#animal' + item.id + '"><img src="' + item.image + '" alt="' + item.animalName + ' ' + item.species_name + '"/>' + animalName + '</a></li>';
 
-                var listhtml = ""; // for creating our list
-                $.each(listItems, function (i, item) {
+                        // different approach here
+                        // clone our animal-template html page and customise for each animal
+                        var $animalPage = $('#animal-template').clone();
+                        $animalPage.attr('id', "animal" + item.id);
+                        $animalPage.find('.animal-name').html(item.name + " the " + item.species_name);
+                        $animalPage.find('.animal-description').html(item.description);
+                        $animalPage.find('.animal-sex').html(item.sex);
+                        $animalPage.find('.animal-species').html(item.species_name);
+                        $animalPage.find('.animal-image').attr('src', item.image).attr('alt', animalName);
 
-                    // here we construct our html list markup in one string
-                    // - create <li> for each animal object in the main list
-                    var animalName = item.name + ' the ' + item.species_name;
-                    listhtml += '<li><a data-transition="fade" href="#animal' + item.id +
-                        '"><img src="' +
-                        item.image + '" alt="' + item.animalName + ' ' + item.species_name +
-                        '"/>' + animalName +
-                        '</a></li>';
+                        // Change "Adopt" button and link to the popup
+                        $animalPage.find('#foo').attr('href', '#popup' + item.id).attr('id', "foo" + item.id).html("Adopt " + item.name + " now!");
 
-                    // different approach here
-                    // clone our animal-template html page and customise for each animal
-                    var $animalPage = $('#animal-template').clone();
-                    $animalPage.attr('id', "animal" + item.id);
-                    $animalPage.find('.animal-name').html(item.name + " the " + item.species_name);
-                    $animalPage.find('.animal-description').html(item.description);
-                    $animalPage.find('.animal-sex').html(item.sex);
-                    $animalPage.find('.animal-species').html(item.species_name);
-                    $animalPage.find('.animal-image').attr('src', item.image).attr('alt',
-                        animalName);
+                        // Link popup to "Adopt" button
+                        $animalPage.find('#popup').attr("id", "popup" + item.id).find("p").html("Congratulations! You have adopted " + item.name + "! <br>Your animal will be delivered in the post, please keep an eye out for the postman.");
 
-                    // Change "Adopt" button and link to the popup
-                    $animalPage.find('#foo').attr('href', '#popup' + item.id).attr('id', "foo" +
-                        item.id).html(
-                        "Adopt " + item.name + " now!");
+                        // add our animal page
+                        $('#main-page').after($animalPage);
+                    });
 
-                    // Link popup to "Adopt" button
-                    $animalPage.find('#popup').attr("id", "popup" + item.id).find("p").html(
-                        "Congratulations! You have adopted " + item.name +
-                        "! <br>Your animal will be delivered in the post, please keep an eye out for the postman."
-                    );
+                    $('#main-list').html(listhtml);
+                    // see https://api.jquerymobile.com/listview/#method-refresh
+                    $('#main-list').listview('refresh');
+                    $('#main-list').enhanceWithin();
 
-                    // add our animal page
-                    $('#main-page').after($animalPage);
+                    // Code Reuse - Ref https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
+                    // add a +/- icon to the autodivider (class .ul-li-divider)
+                    var ic = '<span class="ui-icon-minus ui-btn-icon-notext inlineIcon"></span>';
+                    $(".ui-li-divider").prepend(ic);
                 });
-
-                $('#main-list').html(listhtml);
-                // see https://api.jquerymobile.com/listview/#method-refresh
-                $('#main-list').listview('refresh');
-                $('#main-list').enhanceWithin();
-
-                // Code Reuse - Ref https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
-                // add a +/- icon to the autodivider (class .ul-li-divider)
-                var ic = '<span class="ui-icon-minus ui-btn-icon-notext inlineIcon"></span>';
-                $(".ui-li-divider").prepend(ic);
             });
-        });
 
-        //
-        // Code Reuse - Ref https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
-        //
-        $(document).on("click", '.ui-li-divider', function (e) {
-            var IsCollapsed = false;
-            var TheDivider = $(this);
-            var li = TheDivider.next(':not(.ui-li-divider)');
+            //
+            // Code Reuse - Ref https://jqmtricks.wordpress.com/2014/05/02/make-listview-dividers-collapsible/
+            //
+            $(document).on("click", '.ui-li-divider', function (e) {
+                var IsCollapsed = false;
+                var TheDivider = $(this);
+                var li = TheDivider.next(':not(.ui-li-divider)');
 
-            // collapse/expand all list items for clicked divider
-            while (li.length > 0) {
-                IsCollapsed = li.css('display') == 'none';
-                li.slideToggle(300);
-                li = li.next(':not(.ui-li-divider)');
-            }
+                // collapse/expand all list items for clicked divider
+                while (li.length > 0) {
+                    IsCollapsed = li.css('display') == 'none';
+                    li.slideToggle(300);
+                    li = li.next(':not(.ui-li-divider)');
+                }
 
-            // change the icon on the divider
-            var $icon = TheDivider.find('.inlineIcon');
-            if (!IsCollapsed) {
-                $icon.removeClass('ui-icon-minus').addClass('ui-icon-plus');
-            } else {
-                $icon.removeClass('ui-icon-plus').addClass('ui-icon-minus');
-            }
-            e.stopPropagation();
-            return false;
-        });
-    </script>
-</body>
+                // change the icon on the divider
+                var $icon = TheDivider.find('.inlineIcon');
+                if (!IsCollapsed) {
+                    $icon.removeClass('ui-icon-minus').addClass('ui-icon-plus');
+                } else {
+                    $icon.removeClass('ui-icon-plus').addClass('ui-icon-minus');
+                }
+                e.stopPropagation();
+                return false;
+            });
+        </script>
+    </body>
 
 </html>
