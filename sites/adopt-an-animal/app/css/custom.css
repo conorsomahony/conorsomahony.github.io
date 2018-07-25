@@ -42,7 +42,7 @@ button,
 
 @media only screen and (min-width: 620px) {
   body {
-    background-color: #999 !important; }
+    background-color: #ffffff !important; }
   .ui-page {
     width: 620px !important;
     margin: auto !important;
