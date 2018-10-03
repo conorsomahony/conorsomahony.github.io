@@ -40,6 +40,17 @@ body {
   min-width: 200px;
 }
 
+@media (min-width: 768px) {
+  .index-card {
+    border-right: 8px solid white;
+  }
+
+  .index-card:last-child {
+    border-right: none;
+  }
+}
+
+
 .restrictWidth {
   max-width: 640px;
 }
