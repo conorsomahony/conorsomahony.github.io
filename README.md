@@ -1,3 +1,3 @@
 # conorsomahony.github.io
 
-Ongoing website development - see https://conorsomahony.info for more
+This was a github pages hosted site, but now it has moved - see https://conorsomahony.info for more
